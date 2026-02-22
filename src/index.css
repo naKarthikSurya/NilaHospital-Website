@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Nila Hospital Brand Colors */
+    --nila-blue: 208 38% 53%;
+    --nila-navy: 214 51% 24%;
+    --nila-light-blue: 205 37% 76%;
+    --nila-soft-grey: 210 33% 96%;
+    --nila-white: 0 0% 100%;
+    --nila-warm: 12 76% 61%;
+    --nila-warm-light: 12 80% 95%;
+    --nila-gold: 38 70% 55%;
+
+    --background: 210 33% 99%;
+    --foreground: 214 51% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 51% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 51% 18%;
+
+    --primary: 208 38% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 33% 96%;
+    --secondary-foreground: 214 51% 24%;
+
+    --muted: 210 25% 95%;
+    --muted-foreground: 208 18% 48%;
+
+    --accent: 205 37% 76%;
+    --accent-foreground: 214 51% 24%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 208 38% 53%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  p, span, a, button, li, label, input, textarea {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  .nila-gradient {
+    background: linear-gradient(145deg, hsl(214 51% 20%) 0%, hsl(208 42% 42%) 60%, hsl(205 37% 56%) 100%);
+  }
+  .nila-gradient-light {
+    background: linear-gradient(135deg, hsl(var(--nila-soft-grey)) 0%, hsl(var(--nila-light-blue) / 0.3) 100%);
+  }
+  .nila-gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--nila-warm-light)) 0%, hsl(var(--nila-soft-grey)) 100%);
+  }
+  .section-animate {
+    animation: fadeInUp 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  .nila-decoration {
+    position: relative;
+  }
+  .nila-decoration::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--nila-warm)), hsl(var(--nila-blue)));
+    border-radius: 2px;
+  }
+  .nila-decoration-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nila-card-hover {
+    transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .nila-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -12px hsl(var(--nila-blue) / 0.2);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative wave SVG for section dividers */
+.wave-divider {
+  position: relative;
+  overflow: hidden;
+}
+.wave-divider::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48'%3E%3Cpath fill='%23ffffff' d='M0,32L60,26.7C120,21,240,11,360,10.7C480,11,600,21,720,26.7C840,32,960,32,1080,26.7C1200,21,1320,11,1380,5.3L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+  background-size: cover;
+}
