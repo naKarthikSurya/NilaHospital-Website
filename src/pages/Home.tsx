@@ -56,10 +56,10 @@ const quickInfoCards = [
   {
     icon: Clock,
     title: "OPD Timings",
-    value: "Mon – Sat: 9AM – 8PM",
-    sub: "Sunday: Emergency Only",
+    value: "Mon - Fri: 9AM – 1PM & 6PM – 9PM",
+    sub: "Sat & Sun: 9AM – 1PM",
     href: null,
-  },
+  }, 
 ];
 
 export default function Home() {
@@ -116,13 +116,13 @@ export default function Home() {
             {quickInfoCards.map((card) => (
               <Card key={card.title} className="shadow-xl border-0 nila-card-hover bg-card">
                 <CardContent className="p-6 flex items-start gap-4">
-                  <div className="bg-[hsl(var(--nila-warm-light))] rounded-2xl p-3">
+                  <div className="bg-[hsl(var(--nila-warm-light))] rounded-2xl p-3 shrink-0">
                     <card.icon className="h-6 w-6 text-[hsl(var(--nila-warm))]" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">{card.title}</div>
                     {card.href ? (
-                      <a href={card.href} target={card.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors text-sm block">
+                      <a href={card.href} target={card.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors text-sm block truncate">
                         {card.value}
                       </a>
                     ) : (
@@ -211,9 +211,9 @@ export default function Home() {
                     Senior Consultant
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-1">
-                    Dr. [Name]
+                    Dr. Nithya Subashini
                   </h3>
-                  <div className="text-muted-foreground text-sm mb-1">MD, DGO</div>
+                  <div className="text-muted-foreground text-sm mb-1">MBBS, DGO</div>
                   <div className="text-primary text-sm font-medium mb-5">Consultant Obstetrician & Gynaecologist</div>
                   <ul className="space-y-2 mb-6">
                     {[

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, MapPin, GraduationCap, Stethoscope, Clock, Languages, CheckCircle, Star } from "lucide-react";
+import { doctorsList } from "@/data/doctors";
 
 const MAPS_URL = "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+Tamil+Nadu";
 const PHONE = "tel:+919655225192";
@@ -22,8 +23,8 @@ const careApproaches = [
 ];
 
 const timings = [
-  { day: "Monday – Saturday", time: "09:00 AM – 08:00 PM", badge: "OPD" },
-  { day: "Sunday", time: "Emergency Only", badge: "Emergency" },
+  { day: "Monday - Friday", time: "09:00 AM – 01:00 PM & 06:00 PM – 09:00 PM", badge: "OPD" },
+  { day: "Saturday & Sunday", time: "09:00 AM – 01:00 PM", badge: "Weekend OPD" },
 ];
 
 const commonReasons = [
