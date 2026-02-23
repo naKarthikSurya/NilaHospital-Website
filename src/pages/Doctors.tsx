@@ -8,10 +8,9 @@ const MAPS_URL = "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+T
 const PHONE = "tel:+919655225192";
 
 const infoCards = [
-  { icon: GraduationCap, title: "Qualifications", items: ["MD (Obstetrics & Gynaecology)", "DGO (Diploma in Gynaecology)", "Registered Medical Practitioner"] },
+  { icon: GraduationCap, title: "Qualifications", items: ["MBBS", "DGO (Diploma in Gynaecology)", "Registered Medical Practitioner"] },
   { icon: Stethoscope, title: "Specializations", items: ["High-Risk Pregnancy", "Normal & Surgical Delivery", "PCOS / PCOD Management", "Gynaecological Disorders"] },
   { icon: Star, title: "Experience", items: ["Extensive clinical experience", "Performed hundreds of deliveries", "Expert in laparoscopic procedures", "Trusted by families in Namakkal"] },
-  { icon: Languages, title: "Languages", items: ["Tamil", "English"] },
 ];
 
 const careApproaches = [
@@ -48,8 +47,8 @@ export default function Doctors() {
               <Badge className="bg-[hsl(var(--nila-warm))]/20 text-[hsl(var(--nila-warm))] border-0 mb-3 text-xs font-bold uppercase tracking-widest">
                 Senior Consultant
               </Badge>
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">Dr. [Name]</h1>
-              <div className="text-nila-light-blue text-base mb-1">MD, DGO</div>
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">Dr. Nithya Subashini</h1>
+              <div className="text-nila-light-blue text-base mb-1">MBBS, DGO</div>
               <div className="text-white/80 text-base font-medium mb-6">Consultant Obstetrician &amp; Gynaecologist</div>
               <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                 <a href={PHONE}>
@@ -71,7 +70,7 @@ export default function Doctors() {
       {/* 4 Info Cards */}
       <section className="bg-background py-14">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 -mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 -mt-10 max-w-5xl mx-auto">
             {infoCards.map((card) => (
               <Card key={card.title} className="border-0 shadow-xl nila-card-hover">
                 <CardContent className="p-6">

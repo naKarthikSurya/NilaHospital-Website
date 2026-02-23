@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
-import logoWhite from "@/assets/Nila_Hospital_Logo_2.png";
+import logoWhite from "@/assets/NHLogo_NB.svg";
 
 export default function Footer() {
   return (
@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Tagline */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-3">
-              <img src={logoWhite} alt="Nila Hospital" className="h-12 w-auto" />
+            <div className="flex items-center gap-0.5 mb-3">
+              <img src={logoWhite} alt="Nila Hospital" className="h-20 w-auto" />
               <div>
                 <div className="font-bold text-lg leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Nila Hospital</div>
                 <div className="text-nila-light-blue text-xs tracking-wide">Obstetrics & Gynaecology</div>

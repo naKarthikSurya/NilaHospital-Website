@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import logoWhite from "@/assets/Nila_Hospital_Logo_2.png";
+import logoWhite from "@/assets/NHLogo_NB.svg";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -21,10 +21,17 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-nila-navy/95 backdrop-blur-md shadow-lg">
       <div className="container max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <img src={logoWhite} alt="Nila Hospital Logo" className="h-12 w-auto" />
+        <Link to="/" className="flex items-center gap-0.5 group">
+          <img
+            src={logoWhite}
+            alt="Nila Hospital Logo"
+            className="h-20 w-auto"
+          />
           <div>
-            <div className="text-white font-bold text-lg leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <div
+              className="text-white font-bold text-lg leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               Nila Hospital
             </div>
             <div className="text-nila-light-blue text-xs leading-tight tracking-wide">
@@ -68,9 +75,17 @@ export default function Header() {
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-nila-navy border-nila-blue w-72">
+            <SheetContent
+              side="right"
+              className="bg-nila-navy border-nila-blue w-72"
+            >
               <div className="flex justify-between items-center mb-8">
-                <span className="text-white font-bold text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>Menu</span>
+                <span
+                  className="text-white font-bold text-lg"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Menu
+                </span>
                 <button onClick={() => setOpen(false)} className="text-white">
                   <X className="h-5 w-5" />
                 </button>
