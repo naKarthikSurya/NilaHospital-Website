@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# Nila Hospital - Healthcare at its Finest
 
-## Project info
+A modern, responsive healthcare website for **Nila Hospital**, specializing in Obstetrics and Gynaecology. Designed with a premium aesthetic and focused on patient-centered communication and care.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🏥 About the Hospital
 
-## How can I edit this code?
+Located in Namakkal, Nila Hospital is a trusted destination for women's healthcare, led by **Dr. Nithya Subashini (MBBS, DGO)**. The hospital specializes in:
 
-There are several ways of editing your application.
+- High-Risk Pregnancy Management
+- Normal & Surgical Deliveries
+- PCOS / PCOD Treatment
+- Gynaecological Disorders
 
-**Use Lovable**
+## 🚀 Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+This project is built using modern web development standards for performance and reliability:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: [React](https://reactjs.org/) with [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Animations**: Custom Tailwind transitions and hover effects
 
-**Use your preferred IDE**
+## 🎨 Asset Management
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+To maintain the premium look of the site, please follow these guidelines for images and logos:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Logos**: Always use SVGs for branding (located in `src/assets/`). Current logos are:
+  - `NHLogo_NB.svg`: Main white wordmark logo for dark backgrounds.
+  - `NHLogo_2.svg`: Blue background icon logo.
+- **Favicon**: The browser tab icon is handled via `public/favicon.svg`.
+- **Placeholders**: Generic image placeholders can be found in the `public/` folder.
 
-Follow these steps:
+## 💻 Local Development
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone & Install**:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+   ```bash
+   git clone <repo-url>
+   cd nilahospital-website
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Run Dev Server**:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
-**Edit a file directly in GitHub**
+3. **Build for Production**:
+   ```bash
+   npm run build
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Key Components
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Header/Footer**: Standardized branding with `h-20` SVG logos and optimized spacing.
+- **Doctor Profile**: A clean 1x3 grid layout highlighting qualifications, specializations, and experience.
+- **Consultation CTAs**: Strategically placed "Call Now" and "Directions" buttons across all pages.
