@@ -80,6 +80,33 @@
   .nila-gradient {
     background: linear-gradient(145deg, hsl(214 51% 20%) 0%, hsl(208 42% 42%) 60%, hsl(205 37% 56%) 100%);
   }
+  .nila-gradient-motion {
+    --gx: 50%;
+    --gy: 45%;
+    background: linear-gradient(145deg, hsl(214 51% 20%) 0%, hsl(208 42% 42%) 60%, hsl(205 37% 56%) 100%);
+    background-size: 220% 220%;
+    animation: nilaGradientDrift 10s ease-in-out infinite;
+  }
+  .nila-gradient-interactive {
+    position: relative;
+    isolation: isolate;
+    touch-action: pan-y;
+  }
+  .nila-gradient-interactive::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at var(--gx) var(--gy),
+      hsl(var(--nila-light-blue) / 0.26) 0%,
+      hsl(var(--nila-blue) / 0.14) 18%,
+      transparent 44%
+    );
+    opacity: 0.9;
+    mix-blend-mode: screen;
+    transition: background 180ms linear, opacity 220ms ease;
+  }
   .nila-gradient-light {
     background: linear-gradient(135deg, hsl(var(--nila-soft-grey)) 0%, hsl(var(--nila-light-blue) / 0.3) 100%);
   }
@@ -123,6 +150,28 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes nilaGradientDrift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nila-gradient-motion {
+    animation: none;
+  }
+  .nila-gradient-interactive::after {
+    transition: none;
+    opacity: 0.35;
   }
 }
 

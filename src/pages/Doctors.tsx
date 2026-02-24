@@ -1,11 +1,13 @@
 import Layout from "@/components/Layout";
+import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, MapPin, GraduationCap, Stethoscope, Clock, Languages, CheckCircle, Star } from "lucide-react";
 import { doctorsList } from "@/data/doctors";
 
-const MAPS_URL = "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+Tamil+Nadu";
+const MAPS_URL =
+  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
 const PHONE = "tel:+919655225192";
 
 const infoCards = [
@@ -36,7 +38,7 @@ export default function Doctors() {
   return (
     <Layout>
       {/* Doctor Profile Header */}
-      <section className="nila-gradient py-20 relative overflow-hidden">
+      <HeroGradientSection className="py-20 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
         <div className="container max-w-6xl mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-10">
@@ -66,7 +68,7 @@ export default function Doctors() {
             </div>
           </div>
         </div>
-      </section>
+      </HeroGradientSection>
 
       {/* 4 Info Cards */}
       <section className="bg-background py-14">
@@ -186,7 +188,7 @@ export default function Doctors() {
             </a>
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
-                <MapPin className="h-5 w-5" /> Contact Hospital
+                <MapPin className="h-5 w-5" /> Get Directions
               </Button>
             </a>
           </div>

@@ -1,9 +1,11 @@
 import Layout from "@/components/Layout";
+import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield } from "lucide-react";
 
-const MAPS_URL = "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+Tamil+Nadu";
+const MAPS_URL =
+  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
 const PHONE = "tel:+919655225192";
 
 const serviceCategories = [
@@ -50,7 +52,7 @@ export default function Services() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="nila-gradient text-white py-20 relative overflow-hidden">
+      <HeroGradientSection className="text-white py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
         <div className="container max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">
@@ -63,7 +65,7 @@ export default function Services() {
             From the first prenatal visit to postnatal recovery and beyond — we provide complete women's healthcare under one roof.
           </p>
         </div>
-      </section>
+      </HeroGradientSection>
 
       {/* Service Categories */}
       {serviceCategories.map((category, catIdx) => (

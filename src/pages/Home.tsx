@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -17,7 +18,8 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const MAPS_URL = "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+Tamil+Nadu";
+const MAPS_URL =
+  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
 const PHONE = "tel:+919655225192";
 
 const services = [
@@ -41,9 +43,9 @@ const trustPoints = [
 const quickInfoCards = [
   {
     icon: Phone,
-    title: "Emergency Call",
+    title: "Our Contact",
     value: "+91 96552 25192",
-    sub: "04286 - 297192",
+    sub: "Available 24/7",
     href: PHONE,
   },
   {
@@ -56,8 +58,8 @@ const quickInfoCards = [
   {
     icon: Clock,
     title: "OPD Timings",
-    value: "Mon - Fri: 9AM – 1PM & 6PM – 9PM",
-    sub: "Sat & Sun: 9AM – 1PM",
+    value: "Mon - Sat: 09:00 AM - 01:00 PM & 06:00 PM - 09:00 PM",
+    sub: "Sunday: 09:00 AM - 01:00 PM",
     href: null,
   }, 
 ];
@@ -66,7 +68,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="nila-gradient text-white py-24 md:py-36 relative overflow-hidden">
+      <HeroGradientSection className="text-white py-24 md:py-36 relative overflow-hidden">
         {/* Decorative circles */}
         <div className="absolute top-10 right-10 w-72 h-72 rounded-full bg-white/5 blur-3xl" />
         <div className="absolute bottom-10 left-10 w-56 h-56 rounded-full bg-[hsl(var(--nila-warm))]/10 blur-3xl" />
@@ -81,7 +83,7 @@ export default function Home() {
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
             Obstetrics &amp; Gynaecology Care in Namakkal — trusted by women and families across the region.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={PHONE}>
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg shadow-[hsl(var(--nila-warm))]/20 text-base">
                 <Phone className="h-5 w-5" /> Call Now
@@ -93,21 +95,8 @@ export default function Home() {
               </Button>
             </a>
           </div>
-          {/* Stats */}
-          <div className="flex justify-center gap-12 md:gap-16">
-            {[
-              { val: "15+", label: "Hospital Beds" },
-              { val: "02", label: "OT Units" },
-              { val: "100%", label: "Women-Focused" },
-            ].map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white">{s.val}</div>
-                <div className="text-white/60 text-sm mt-1 tracking-wide">{s.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
+      </HeroGradientSection>
 
       {/* Quick Info Cards */}
       <section className="bg-background py-10 relative z-10">
