@@ -19,7 +19,7 @@ import {
 import { Link } from "react-router-dom";
 
 const MAPS_URL =
-  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
+  "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
 const PHONE = "tel:+919655225192";
 
 const services = [
