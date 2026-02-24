@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Navigation } from "lucide-react";
 
 const MAPS_URL =
-  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
+  "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
 const PHONE_PRIMARY = "tel:+919655225192";
 const MAP_EMBED_URL =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.2183490634034!2d78.16326507578772!3d11.24534185036797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babcf0311c61c21%3A0xef2619b4195dd4b2!2sNila%20Hospital!5e0!3m2!1sen!2sin!4v1771914117542!5m2!1sen!2sin";
