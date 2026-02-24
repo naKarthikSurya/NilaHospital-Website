@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
 
-const MAPS_URL = "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+Tamil+Nadu";
+const MAPS_URL =
+  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
 const PHONE = "tel:+919655225192";
 
 const highlights = [
@@ -30,7 +31,7 @@ export default function About() {
   return (
     <Layout>
       {/* Mission Hero */}
-      <section className="nila-gradient text-white py-20 relative overflow-hidden">
+      <section className="nila-gradient nila-gradient-motion text-white py-20 relative overflow-hidden">
         <div className="absolute top-10 left-10 w-56 h-56 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
         <div className="container max-w-6xl mx-auto px-4 text-center relative z-10">
           <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">About Us</div>

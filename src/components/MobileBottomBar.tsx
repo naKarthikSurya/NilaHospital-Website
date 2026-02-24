@@ -1,7 +1,7 @@
 import { Phone, MapPin } from "lucide-react";
 
 const MAPS_URL =
-  "https://maps.google.com/?q=Nila+Hospital+Namakkal+Salem+Road+Tamil+Nadu";
+  "https://www.google.com/maps/place/Nila+Hospital/@11.24534185036797,78.16326507578772,17z";
 
 export default function MobileBottomBar() {
   return (
