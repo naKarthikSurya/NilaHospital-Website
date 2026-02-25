@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
+import { Phone, MapPin, Clock, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -26,6 +26,30 @@ const commitments = [
 ];
 
 const gallerySlots = ["Hospital Exterior", "Reception", "Consultation Room", "Operation Theatre", "Waiting Area", "Hospital Signage"];
+
+const quickInfoCards = [
+  {
+    icon: Phone,
+    title: "Our Contact",
+    value: "+91 96552 25192",
+    sub: "Available 24/7",
+    href: PHONE,
+  },
+  {
+    icon: MapPin,
+    title: "Our Location",
+    value: "Salem Rd, Swamy Nagar",
+    sub: "Namakkal, Tamil Nadu 637001",
+    href: MAPS_URL,
+  },
+  {
+    icon: Clock,
+    title: "OPD Timings",
+    value: "Mon - Sat: 09:00 AM - 01:00 PM & 06:00 PM - 09:00 PM",
+    sub: "Sunday: 09:00 AM - 01:00 PM",
+    href: null,
+  }, 
+];
 
 export default function About() {
   return (
@@ -190,6 +214,35 @@ export default function About() {
         <div className="absolute top-0 left-0 w-64 h-64 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
         <div className="container max-w-6xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Come Visit Us in Namakkal</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+            {quickInfoCards.map((card) => (
+              <Card key={card.title} className="shadow-xl border-0 nila-card-hover bg-card text-left">
+                <CardContent className="p-6 flex items-start gap-4">
+                  <div className="bg-[hsl(var(--nila-warm-light))] rounded-2xl p-3 shrink-0">
+                    <card.icon className="h-6 w-6 text-[hsl(var(--nila-warm))]" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                      {card.title}
+                    </div>
+                    {card.href ? (
+                      <a
+                        href={card.href}
+                        target={card.href.startsWith("http") ? "_blank" : undefined}
+                        rel="noopener noreferrer"
+                        className="font-semibold text-foreground hover:text-primary transition-colors text-sm block truncate"
+                      >
+                        {card.value}
+                      </a>
+                    ) : (
+                      <div className="font-semibold text-foreground text-sm">{card.value}</div>
+                    )}
+                    <div className="text-muted-foreground text-xs mt-0.5">{card.sub}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={PHONE}>
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">

@@ -51,15 +51,16 @@ const quickInfoCards = [
   {
     icon: MapPin,
     title: "Our Location",
-    value: "MNR Complex, Salem Road",
+    value: "Salem Rd, Swamy Nagar",
     sub: "Namakkal, Tamil Nadu 637001",
     href: MAPS_URL,
   },
   {
     icon: Clock,
-    title: "OPD Timings",
-    value: "Mon - Sat: 09:00 AM - 01:00 PM & 06:00 PM - 09:00 PM",
-    sub: "Sunday: 09:00 AM - 01:00 PM",
+    title: "Clinic Hours",
+    value: "Every Day: 9 AM - 1 PM & 6 PM - 9 PM",
+    sub: null,
+    extra: null,
     href: null,
   }, 
 ];
@@ -83,48 +84,59 @@ export default function Home() {
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
             Obstetrics &amp; Gynaecology Care in Namakkal — trusted by women and families across the region.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
-              <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg shadow-[hsl(var(--nila-warm))]/20 text-base">
-                <Phone className="h-5 w-5" /> Call Now
+
+          {/* Quick Info Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 mb-8">
+            {quickInfoCards.map((card) => (
+              <Card key={card.title} className="shadow-xl border-0 nila-card-hover bg-card text-left h-full">
+                <CardContent className="p-5 md:p-6 h-full flex items-center gap-4">
+                  <div className="bg-[hsl(var(--nila-warm-light))] rounded-2xl p-2.5 shrink-0">
+                    <card.icon className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
+                  </div>
+                  <div className="min-w-0 flex-1 flex flex-col justify-center">
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground mb-1">
+                      {card.title}
+                    </div>
+                    {card.href ? (
+                      <a
+                        href={card.href}
+                        target={card.href.startsWith("http") ? "_blank" : undefined}
+                        rel="noopener noreferrer"
+                        className="font-semibold text-foreground hover:text-primary transition-colors text-[1rem] leading-tight block"
+                      >
+                        {card.value}
+                      </a>
+                    ) : (
+                      <div className="font-semibold text-foreground text-[1rem] leading-tight">{card.value}</div>
+                    )}
+                    {card.sub ? (
+                      <div className="text-muted-foreground text-xs mt-1 leading-tight">{card.sub}</div>
+                    ) : null}
+                    {"extra" in card && card.extra ? (
+                      <div className="text-muted-foreground text-xs leading-tight">{card.extra}</div>
+                    ) : null}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href={PHONE} className="w-full sm:w-auto">
+              <Button className="h-9 min-h-9 bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-6 gap-2 w-full sm:w-auto shadow-lg shadow-[hsl(var(--nila-warm))]/20 text-sm leading-none">
+                <Phone className="h-4 w-4" /> Call Now
               </Button>
             </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
-                <MapPin className="h-5 w-5" /> Get Directions
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <Button className="h-9 min-h-9 bg-white text-nila-navy hover:bg-white/90 font-bold px-6 gap-2 w-full sm:w-auto text-sm leading-none">
+                <MapPin className="h-4 w-4" /> Get Directions
               </Button>
             </a>
           </div>
         </div>
       </HeroGradientSection>
 
-      {/* Quick Info Cards */}
-      <section className="bg-background py-10 relative z-10">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 -mt-20">
-            {quickInfoCards.map((card) => (
-              <Card key={card.title} className="shadow-xl border-0 nila-card-hover bg-card">
-                <CardContent className="p-6 flex items-start gap-4">
-                  <div className="bg-[hsl(var(--nila-warm-light))] rounded-2xl p-3 shrink-0">
-                    <card.icon className="h-6 w-6 text-[hsl(var(--nila-warm))]" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">{card.title}</div>
-                    {card.href ? (
-                      <a href={card.href} target={card.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors text-sm block truncate">
-                        {card.value}
-                      </a>
-                    ) : (
-                      <div className="font-semibold text-foreground text-sm">{card.value}</div>
-                    )}
-                    <div className="text-muted-foreground text-xs mt-0.5">{card.sub}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Key Services */}
       <section className="py-20 bg-background">
