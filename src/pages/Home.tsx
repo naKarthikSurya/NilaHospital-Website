@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import Gallery from "@/components/Gallery";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -58,9 +59,8 @@ const quickInfoCards = [
   {
     icon: Clock,
     title: "Clinic Hours",
-    value: "Every Day: 9 AM - 1 PM & 6 PM - 9 PM",
-    sub: null,
-    extra: null,
+    value: "9 AM - 1 PM & 6 PM - 9 PM",
+    sub: "Everyday",
     href: null,
   }, 
 ];
@@ -249,17 +249,15 @@ export default function Home() {
               A Clean, Safe Environment
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {["Hospital Exterior", "Reception & Waiting", "Consultation Suite"].map((label) => (
-              <div key={label} className="rounded-2xl overflow-hidden shadow-md bg-card aspect-video flex flex-col items-center justify-center border border-border nila-card-hover">
-                <div className="nila-gradient w-full h-full flex flex-col items-center justify-center gap-3 opacity-80">
-                  <Bed className="h-10 w-10 text-white" />
-                  <span className="text-white font-semibold text-sm">{label}</span>
-                  <span className="text-white/50 text-xs">Photo coming soon</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Gallery
+            images={[
+              { src: "/images/gallery/521A6952.JPG", alt: "Hospital Exterior" },
+              { src: "/images/gallery/521A6945.JPG", alt: "Reception Area" },
+              { src: "/images/gallery/521A6872.JPG", alt: "Consultation Room" },
+              { src: "/images/gallery/521A6892.JPG", alt: "Operation Theatre" },
+              { src: "/images/gallery/521A6864.JPG", alt: "Patient Ward" },
+            ]}
+          />
         </div>
       </section>
 

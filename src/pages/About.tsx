@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
+import Gallery from "@/components/Gallery";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -171,17 +172,17 @@ export default function About() {
             <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">Gallery</div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground nila-decoration nila-decoration-center inline-block pb-4">Our Hospital</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {gallerySlots.map((slot) => (
-              <div key={slot} className="aspect-video rounded-2xl overflow-hidden shadow-md nila-card-hover">
-                <div className="nila-gradient w-full h-full flex flex-col items-center justify-center gap-2">
-                  <Building className="h-8 w-8 text-white/50" />
-                  <span className="text-white font-medium text-sm">{slot}</span>
-                  <span className="text-white/40 text-xs">Photo coming soon</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Gallery
+            images={[
+              { src: "/images/gallery/521A6952.JPG", alt: "Hospital Exterior" },
+              { src: "/images/gallery/521A6945.JPG", alt: "Reception Area" },
+              { src: "/images/gallery/521A6872.JPG", alt: "Consultation Room" },
+              { src: "/images/gallery/521A6864.JPG", alt: "Patient Ward" },
+              { src: "/images/gallery/521A6892.JPG", alt: "Operation Theatre" },
+              { src: "/images/gallery/521A6862.JPG", alt: "Treatment Area" },
+              { src: "/images/gallery/521A6833.JPG", alt: "Diagnostic Equipment" },
+            ]}
+          />
         </div>
       </section>
 
