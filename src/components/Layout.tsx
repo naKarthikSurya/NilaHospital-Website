@@ -1,9 +1,22 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import MobileBottomBar from "./MobileBottomBar";
 
-export default function Layout({ children }: { children: ReactNode }) {
+interface LayoutProps {
+  children: ReactNode;
+  title?: string;
+}
+
+export default function Layout({ children, title }: LayoutProps) {
+  useEffect(() => {
+    if (title) {
+      document.title = `${title} | Nila Hospital`;
+    } else {
+      document.title = "Nila Hospital | Best Obstetrics & Gynaecology Specialty in Namakkal";
+    }
+  }, [title]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

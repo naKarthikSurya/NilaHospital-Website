@@ -50,7 +50,7 @@ const serviceCategories = [
 
 export default function Services() {
   return (
-    <Layout>
+    <Layout title="Maternity & Gynaecology Services in Namakkal">
       {/* Hero */}
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />

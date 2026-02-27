@@ -36,7 +36,7 @@ const commonReasons = [
 
 export default function Doctors() {
   return (
-    <Layout>
+    <Layout title="Dr. Nithya Subashini | Senior Gynaecologist in Namakkal">
       {/* Doctor Profile Header */}
       <HeroGradientSection className="py-20 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
