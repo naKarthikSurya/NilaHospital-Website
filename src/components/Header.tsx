@@ -21,13 +21,13 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-nila-navy/95 backdrop-blur-md shadow-lg">
       <div className="container max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-0.5 group">
+        <Link to="/" className="flex items-center gap-0 group">
           <img
             src={logoWhite}
             alt="Nila Hospital Logo"
-            className="h-20 w-auto"
+            className="h-20 md:h-24 w-auto transition-transform group-hover:scale-105"
           />
-          <div>
+          <div className="-ml-4">
             <div
               className="text-white font-bold text-lg leading-tight"
               style={{ fontFamily: "'Playfair Display', serif" }}
