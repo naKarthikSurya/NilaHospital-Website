@@ -78,7 +78,7 @@ export default function Home() {
             Namakkal's Women's Specialty Hospital
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-[1.15]">
-            Nila Hospital Namakkal<br />
+           Dedicated to<br />
             <span className="text-[hsl(var(--nila-warm))] text-3xl md:text-5xl">Maternal Excellence</span>
           </h1>
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
