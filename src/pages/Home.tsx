@@ -67,7 +67,7 @@ const quickInfoCards = [
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout title="Best Obstetrics & Gynaecology Specialty in Namakkal">
       {/* Hero */}
       <HeroGradientSection className="text-white py-24 md:py-36 relative overflow-hidden">
         {/* Decorative circles */}
@@ -112,9 +112,9 @@ export default function Home() {
                     {card.sub ? (
                       <div className="text-muted-foreground text-xs mt-1 leading-tight">{card.sub}</div>
                     ) : null}
-                    {"extra" in card && card.extra ? (
+                    {"extra" in card && typeof card.extra === 'string' && (
                       <div className="text-muted-foreground text-xs leading-tight">{card.extra}</div>
-                    ) : null}
+                    )}
                   </div>
                 </CardContent>
               </Card>

@@ -54,7 +54,7 @@ const quickInfoCards = [
 
 export default function About() {
   return (
-    <Layout>
+    <Layout title="About Our Women's Specialty Hospital">
       {/* Mission Hero */}
       <section className="nila-gradient nila-gradient-motion text-white py-20 relative overflow-hidden">
         <div className="absolute top-10 left-10 w-56 h-56 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
