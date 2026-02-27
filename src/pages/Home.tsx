@@ -78,8 +78,8 @@ export default function Home() {
             Namakkal's Women's Specialty Hospital
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-[1.15]">
-            Dedicated to<br />
-            <span className="text-[hsl(var(--nila-warm))]">Maternal Excellence</span>
+            Nila Hospital Namakkal<br />
+            <span className="text-[hsl(var(--nila-warm))] text-3xl md:text-5xl">Maternal Excellence</span>
           </h1>
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
             Obstetrics &amp; Gynaecology Care in Namakkal — trusted by women and families across the region.

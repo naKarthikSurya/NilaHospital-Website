@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Logo & Tagline */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-0 mb-4">
-              <img src={logoWhite} alt="Nila Hospital" className="h-24 w-auto" />
+              <img src={logoWhite} alt="Nila Hospital" className="h-32 w-auto" />
               <div className="-ml-4">
                 <div className="font-bold text-lg leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>Nila Hospital</div>
                 <div className="text-nila-light-blue text-xs tracking-wide">Obstetrics & Gynaecology</div>
