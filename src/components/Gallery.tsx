@@ -9,6 +9,7 @@ import 'lightgallery/css/lg-thumbnail.css';
 // Import lightgallery plugins
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
+import lgHash from 'lightgallery/plugins/hash';
 
 import {
   Carousel,
@@ -60,12 +61,21 @@ const Gallery: React.FC<GalleryProps> = ({ images, layout = 'carousel' }) => {
     <div className="w-full relative py-4">
       <LightGallery
         speed={500}
-        plugins={[lgThumbnail, lgZoom]}
+        plugins={[lgThumbnail, lgZoom, lgHash]}
         selector=".gallery-trigger"
         download={false}
         counter={false}
         backdropDuration={300}
         elementClassNames="w-full"
+        hash={true}
+        galleryId="hospital-gallery"
+        closable={true}
+        showCloseIcon={true}
+        mobileSettings={{
+          controls: true,
+          showCloseIcon: true,
+          closable: true,
+        }}
       >
         {layout === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
