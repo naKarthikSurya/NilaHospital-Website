@@ -67,7 +67,10 @@ const quickInfoCards = [
 
 export default function Home() {
   return (
-    <Layout title="Best Obstetrics & Gynaecology Specialty in Namakkal">
+    <Layout 
+      title="Best Obstetrics & Gynaecology Hospital in Namakkal"
+      description="Nila Hospital Namakkal: Leading women's specialty hospital for Obstetrics & Gynaecology. Trusted pregnancy care, safe deliveries, and expert gynaecological health services by Dr. Nithya Subashini."
+    >
       {/* Hero */}
       <HeroGradientSection className="text-white py-24 md:py-36 relative overflow-hidden">
         {/* Decorative circles */}

@@ -13,54 +13,96 @@
     <meta name="author" content="Nila Hospital" />
     <link rel="canonical" href="https://nilahospital.com" />
 
-    <!-- Google Site Name & Local Business Structured Data -->
+    <!-- Google Site Name & Advanced Medical Structured Data -->
     <script type="application/ld+json">
-    [
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Nila Hospital Namakkal",
-        "alternateName": ["Nila Hospital"],
-        "url": "https://nilahospital.com/"
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        "name": "Nila Hospital Namakkal",
-        "image": "https://nilahospital.com/images/gallery/521A6952.JPG",
-        "@id": "https://nilahospital.com/#hospital",
-        "url": "https://nilahospital.com",
-        "telephone": "+919655225192",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "743, A/1, A/2, Salem Road",
-          "addressLocality": "Namakkal",
-          "postalCode": "637001",
-          "addressRegion": "Tamil Nadu",
-          "addressCountry": "IN"
-        },
-        "openingHoursSpecification": [
+        "@graph": [
           {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "09:00",
-            "closes": "13:00"
+            "@type": "WebSite",
+            "@id": "https://nilahospital.com/#website",
+            "url": "https://nilahospital.com/",
+            "name": "Nila Hospital Namakkal",
+            "alternateName": ["Nila Hospital", "Nila Maternity Hospital"],
+            "publisher": { "@id": "https://nilahospital.com/#hospital" }
           },
           {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "18:00",
-            "closes": "21:00"
+            "@type": "Hospital",
+            "@id": "https://nilahospital.com/#hospital",
+            "name": "Nila Hospital Namakkal",
+            "url": "https://nilahospital.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://nilahospital.com/favicon.svg"
+            },
+            "image": "https://nilahospital.com/images/gallery/521A6952.JPG",
+            "telephone": "+919655225192",
+            "emergencyService": "true",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "743, A/1, A/2, Salem Road, Swamy Nagar",
+              "addressLocality": "Namakkal",
+              "postalCode": "637001",
+              "addressRegion": "Tamil Nadu",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "11.2453",
+              "longitude": "78.1633"
+            },
+            "hasMap": "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+919655225192",
+              "contactType": "emergency",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Tamil"]
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "21:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "09:00",
+                "closes": "13:00"
+              }
+            ],
+            "medicalSpecialty": [
+              "ObstetricAndGynecologic",
+              "GynecologicSpecialty",
+              "PreventiveSpecialty"
+            ]
           },
           {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Saturday", "Sunday"],
-            "opens": "09:00",
-            "closes": "13:00"
+            "@type": "Physician",
+            "name": "Dr. Nithya Subashini",
+            "image": "https://nilahospital.com/images/gallery/placeholder.svg",
+            "jobTitle": "Consultant Obstetrician & Gynaecologist",
+            "memberOf": { "@id": "https://nilahospital.com/#hospital" },
+            "medicalSpecialty": "ObstetricAndGynecologic",
+            "knowsAbout": [
+              "Pregnancy Care",
+              "High-Risk Pregnancy",
+              "PCOS",
+              "Normal Delivery"
+            ],
+            "credentials": "MBBS, DGO"
           }
         ]
       }
-    ]
     </script>
 
     <!-- Open Graph / Facebook -->

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield } from "lucide-react";
+import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield, CheckCircle, Clock } from "lucide-react";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -48,9 +48,12 @@ const serviceCategories = [
   },
 ];
 
-export default function Services() {
+export default function Doctors() {
   return (
-    <Layout title="Maternity & Gynaecology Services in Namakkal">
+    <Layout 
+      title="Nila Hospital — Comprehensive Gynaecology & Obstetrics Services in Namakkal"
+      description="Explore comprehensive women's healthcare services at Nila Hospital in Namakkal, including pregnancy care, delivery, gynaecology, and preventive health. Expert care for every stage of life."
+    >
       {/* Hero */}
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-72 h-72 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
@@ -58,6 +61,7 @@ export default function Services() {
           <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">
             Nila Hospital — Services
           </div>
+
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             Comprehensive Care for<br />Every Stage of Life
           </h1>
@@ -114,6 +118,9 @@ export default function Services() {
             Have Questions About Our Services?
           </h2>
           <p className="text-nila-light-blue mb-8 max-w-md mx-auto">We're happy to explain any service in detail. Just give us a call.</p>
+          <div className="mb-8 text-[10px] text-white/40 uppercase tracking-[0.2em]">
+            Clinical information based on <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">WHO</a> & <a href="https://www.nih.gov" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">NIH</a> standards
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={PHONE}>
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">

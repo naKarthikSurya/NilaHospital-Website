@@ -3,7 +3,7 @@ import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, MapPin, GraduationCap, Stethoscope, Clock, Languages, CheckCircle, Star } from "lucide-react";
+import { Phone, MapPin, GraduationCap, Stethoscope, Clock, Languages, CheckCircle, Star, Shield } from "lucide-react";
 import { doctorsList } from "@/data/doctors";
 
 const MAPS_URL =
@@ -36,7 +36,10 @@ const commonReasons = [
 
 export default function Doctors() {
   return (
-    <Layout title="Dr. Nithya Subashini | Senior Gynaecologist in Namakkal">
+    <Layout 
+      title="Dr. Nithya Subashini | Senior Gynaecologist in Namakkal"
+      description="Meet Dr. Nithya Subashini (MBBS, DGO), a highly experienced consultant Obstetrician & Gynaecologist in Namakkal. Specialising in high-risk pregnancy and women's wellness."
+    >
       {/* Doctor Profile Header */}
       <HeroGradientSection className="py-20 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
@@ -50,6 +53,7 @@ export default function Doctors() {
               <Badge className="bg-[hsl(var(--nila-warm))]/20 text-[hsl(var(--nila-warm))] border-0 mb-3 text-xs font-bold uppercase tracking-widest">
                 Senior Consultant
               </Badge>
+
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">Dr. Nithya Subashini</h1>
               <div className="text-nila-light-blue text-base mb-1">MBBS, DGO</div>
               <div className="text-white/80 text-base font-medium mb-6">Consultant Obstetrician &amp; Gynaecologist</div>
