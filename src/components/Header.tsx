@@ -25,46 +25,50 @@ export default function Header() {
           <img
             src={logoWhite}
             alt="Nila Hospital Logo"
+            style={{height: "120px"}}
             className="h-20 md:h-[90px] w-auto transition-transform group-hover:scale-105"
           />
           <div className="-ml-4">
             <div
               className="text-white font-bold text-lg leading-tight"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px" }}
             >
               Nila Hospital
             </div>
-            <div className="text-nila-light-blue text-xs leading-tight tracking-wide">
+            <div className="text-nila-light-blue text-xs leading-tight tracking-wide"
+            style={{ fontSize: "14px" }}
+            >
               Obstetrics & Gynaecology
             </div>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-sm font-medium px-3 py-2 rounded-lg transition-all ${
-                location.pathname === link.path
-                  ? "text-white bg-white/15"
-                  : "text-nila-light-blue hover:text-white hover:bg-white/10"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Desktop Nav & Call Button Group */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-all ${
+                  location.pathname === link.path
+                    ? "text-white bg-white/15"
+                    : "text-nila-light-blue hover:text-white hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Right side: Call Button (Desktop) */}
-        <div className="hidden md:flex items-center">
-          <a href="tel:+919655225192">
-            <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white gap-2 font-semibold shadow-md">
-              <Phone className="h-4 w-4" />
-              Call Now
-            </Button>
-          </a>
+          <div className="flex items-center">
+            <a href="tel:+919655225192">
+              <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white gap-2 font-semibold shadow-md">
+                <Phone className="h-4 w-4" />
+                Call Now
+              </Button>
+            </a>
+          </div>
         </div>
 
         {/* Mobile: Menu */}
