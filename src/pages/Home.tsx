@@ -68,8 +68,8 @@ const quickInfoCards = [
 export default function Home() {
   return (
     <Layout 
-      title="Best Obstetrics & Gynaecology Hospital in Namakkal"
-      description="Nila Hospital Namakkal: Leading women's specialty hospital for Obstetrics & Gynaecology. Trusted pregnancy care, safe deliveries, and expert gynaecological health services by Dr. Nithya Subashini."
+      title="Nila Hospital | Best Gynaecology Specialty in Namakkal"
+      description="Leading hospital for Obstetrics & Gynaecology in Namakkal. Expert pregnancy monitoring, infertility treatments, and safe maternity services. Care you trust."
     >
       {/* Hero */}
       <HeroGradientSection className="text-white py-24 md:py-36 relative overflow-hidden">
@@ -243,24 +243,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Facilities Gallery */}
-      <section className="py-20 bg-muted">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">Our Facility</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground nila-decoration nila-decoration-center inline-block pb-4">
-              A Clean, Safe Environment
+      {/* Content Expansion Paragraphs */}
+      <section className="py-20 bg-background border-t border-border">
+        <div className="container max-w-4xl mx-auto px-4">
+          <div className="prose prose-nila max-w-none">
+            <h2 className="text-3xl font-bold text-nila-navy mb-8 text-center nila-decoration nila-decoration-center inline-block pb-4 w-full">
+              Maternal Excellence: Your Journey to Motherhood at Nila Hospital
             </h2>
+            
+            <div className="space-y-8 text-foreground leading-relaxed">
+              <p>
+                Choosing where to bring your child into the world is one of the most significant decisions a family can make. At <strong>Nila Hospital</strong>, we take this responsibility with the utmost seriousness and compassion. Our facility, located in the heart of <strong>Namakkal</strong>, has become a beacon of hope and health for thousands of women seeking expert <strong>Obstetrics & Gynaecology</strong> care.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-primary">Pre-conception & Early Pregnancy Care</h3>
+                  <p className="text-sm">
+                    Infertility and pre-conception hurdles can be stressful for couples. We provide detailed <strong>ANC screenings</strong>, hormonal management, and genetic counselling to ensure your body is ready for the beautiful journey ahead. Dr. Nithya Subashini specializes in <strong>High-Risk Pregnancy</strong> monitoring, ensuring that every complication is detected and managed early.
+                  </p>
+                  <ul className="list-disc pl-5 text-sm space-y-1">
+                    <li>Comprehensive Blood Work & Screenings</li>
+                    <li>Nutritional & Lifestyle Counselling</li>
+                    <li>Advanced Ultrasound Monitoring</li>
+                  </ul>
+                </div>
+                <div className="bg-[hsl(var(--nila-warm-light))] p-6 rounded-2xl border border-[hsl(var(--nila-warm))]/10">
+                  <h3 className="text-xl font-bold text-[hsl(var(--nila-warm))]">The Nila Birth Experience</h3>
+                  <p className="text-sm mt-3">
+                    We prioritize <strong>Natural Normal Delivery</strong> whenever safe for the mother and baby. Our labor rooms are designed for comfort and privacy, promoting a stress-free environment. If a surgical delivery (<strong>C-Section</strong>) is medically indicated, our state-of-the-art sterile Operation Theatre and senior surgical nursing staff provide gold-standard clinical care.
+                  </p>
+                </div>
+              </div>
+
+              <p>
+                As a leading <strong>Women's Specialty Hospital</strong>, our commitment extends beyond delivery. We offer specialized care for <strong>PCOS / PCOD</strong> management, which has become increasingly common among young women. Our approach combines clinical expertise with lifestyle modifications, helping our patients regain hormonal balance and confidence.
+              </p>
+
+              <div className="bg-muted p-8 rounded-3xl border border-border">
+                <h3 className="text-2xl font-bold text-nila-navy mb-4">Why Trust Nila Hospital in Namakkal?</h3>
+                <p className="text-sm mb-6">
+                  In a YMYL (Your Money or Your Life) category like healthcare, trust is built on clinical transparency and patient satisfaction. Every patient at Nila Hospital is seen directly by <strong>Dr. Nithya Subashini (MBBS, DGO)</strong>, ensuring continuity of care that is often missing in larger corporate hospitals.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Compassionate & Respectful Care",
+                    "A Clean & Sterile Medical Environment",
+                    "Expertise in High-Risk Pregnancies",
+                    "Affordable & Transparent Pricing",
+                    "24/7 Emergency Obstetric Support",
+                    "Patient Privacy & Dignity"
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" />
+                      <span className="text-sm font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p>
+                Our <strong>Gynaecology</strong> department also addresses complex issues like uterine fibroids, ovarian cysts, and menstrual irregularities. We utilize modern diagnostic tools and evidence-based medicine (citing WHO and international clinical standards) to provide treatments that are both safe and effective.
+              </p>
+
+              <p className="text-center font-semibold text-primary italic">
+                Experience the difference of personalized medical care at Namakkal's most trusted maternity center.
+              </p>
+            </div>
           </div>
-          <Gallery
-            images={[
-              { src: "/images/gallery/521A6952.JPG", alt: "Hospital Exterior" },
-              { src: "/images/gallery/521A6945.JPG", alt: "Reception Area" },
-              { src: "/images/gallery/521A6872.JPG", alt: "Consultation Room" },
-              { src: "/images/gallery/521A6892.JPG", alt: "Operation Theatre" },
-              { src: "/images/gallery/521A6864.JPG", alt: "Patient Ward" },
-            ]}
-          />
         </div>
       </section>
 

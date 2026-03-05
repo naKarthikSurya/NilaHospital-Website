@@ -51,8 +51,8 @@ const serviceCategories = [
 export default function Doctors() {
   return (
     <Layout 
-      title="Nila Hospital — Comprehensive Gynaecology & Obstetrics Services in Namakkal"
-      description="Explore comprehensive women's healthcare services at Nila Hospital in Namakkal, including pregnancy care, delivery, gynaecology, and preventive health. Expert care for every stage of life."
+      title="Expert Obstetric & Gynaecology Services"
+      description="Comprehensive women's healthcare in Namakkal: ANC checkups, normal delivery, C-section, and fertility services. Trusted by families for maternal excellence."
     >
       {/* Hero */}
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">
