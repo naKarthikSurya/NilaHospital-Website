@@ -37,8 +37,8 @@ const commonReasons = [
 export default function Doctors() {
   return (
     <Layout 
-      title="Dr. Nithya Subashini | Senior Gynaecologist in Namakkal"
-      description="Meet Dr. Nithya Subashini (MBBS, DGO), a highly experienced consultant Obstetrician & Gynaecologist in Namakkal. Specialising in high-risk pregnancy and women's wellness."
+      title="Dr. Nithya Subashini | Expert Gynaecologist in Namakkal"
+      description="Meet Dr. Nithya Subashini (MBBS, DGO), senior consultant at Nila Hospital. Specialist in high-risk pregnancy, safe deliveries, and compassionate women's care."
     >
       {/* Doctor Profile Header */}
       <HeroGradientSection className="py-20 relative overflow-hidden">

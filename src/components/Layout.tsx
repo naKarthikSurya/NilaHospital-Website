@@ -12,13 +12,14 @@ interface LayoutProps {
 export default function Layout({ children, title, description }: LayoutProps) {
   useEffect(() => {
     // Update Title
-    const finalTitle = title ? `${title} | Nila Hospital` : "Nila Hospital | Best Obstetrics & Gynaecology Specialty in Namakkal";
+    const isFullTitle = title === "Nila Hospital | Best Gynaecology Specialty in Namakkal";
+    const finalTitle = isFullTitle ? title : (title ? `${title} | Nila Hospital` : "Nila Hospital | Best Gynaecology Specialty in Namakkal");
     document.title = finalTitle;
 
     // Update Meta Description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", description || "Nila Hospital Namakkal: Leading women's specialty hospital for Obstetrics & Gynaecology. expert pregnancy care, safe deliveries, and compassionate health services.");
+      metaDescription.setAttribute("content", description || "Leading hospital for Obstetrics & Gynaecology in Namakkal. Expert pregnancy monitoring, infertility treatments, and safe maternity services. Care you trust.");
     }
 
     // Update Canonical URL

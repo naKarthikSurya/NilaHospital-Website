@@ -54,7 +54,10 @@ const quickInfoCards = [
 
 export default function About() {
   return (
-    <Layout title="About Our Women's Specialty Hospital">
+    <Layout 
+      title="About Nila Hospital | Leading Maternity Care in Namakkal"
+      description="Learn more about Nila Hospital's commitment to maternal excellence. 15+ beds, sterile OTs, and personalized care by Dr. Nithya Subashini in Namakkal."
+    >
       {/* Mission Hero */}
       <section className="nila-gradient nila-gradient-motion text-white py-20 relative overflow-hidden">
         <div className="absolute top-10 left-10 w-56 h-56 bg-[hsl(var(--nila-warm))]/10 rounded-full blur-3xl" />
