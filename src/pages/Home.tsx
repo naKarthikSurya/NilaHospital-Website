@@ -6,40 +6,14 @@ import {
   Phone,
   MapPin,
   Clock,
-  Heart,
-  Baby,
-  Stethoscope,
-  Shield,
-  Star,
   CheckCircle,
-  Bed,
-  Activity,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Gallery from "@/components/Gallery";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
 const PHONE = "tel:+919655225192";
-
-const services = [
-  { icon: Baby, title: "Pregnancy Care", desc: "Comprehensive ANC checkups and prenatal monitoring" },
-  { icon: Heart, title: "Normal Delivery", desc: "Safe and supportive natural birth experience" },
-  { icon: Activity, title: "C-Section", desc: "Expert surgical delivery when medically indicated" },
-  { icon: Stethoscope, title: "PCOS / PCOD", desc: "Hormonal management and lifestyle guidance" },
-  { icon: Shield, title: "Gynaecology", desc: "Treatment for infections, menstrual disorders, and more" },
-  { icon: Star, title: "Preventive Care", desc: "Cervical screening, pre-conception counselling" },
-];
-
-const trustPoints = [
-  "Personal attention — every patient seen by the doctor directly",
-  "Women-focused environment with full privacy and dignity",
-  "Sterile, clean OT and consultation rooms",
-  "Clear communication in Tamil and English",
-  "Compassionate, respectful care at every visit",
-  "Transparent approach with no unnecessary procedures",
-];
 
 const quickInfoCards = [
   {
@@ -141,176 +115,128 @@ export default function Home() {
 
       
 
-      {/* Key Services */}
-      <section className="py-20 bg-background">
+      {/* Maternal Journey Narrative */}
+      <section className="py-24 bg-background overflow-hidden">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">What We Offer</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground nila-decoration nila-decoration-center inline-block pb-4">
-              Our Key Services
+          <div className="max-w-3xl mx-auto mb-20 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-nila-navy mb-8 leading-tight">
+              Maternal Excellence:<br />
+              <span className="text-[hsl(var(--nila-warm))]">Your Journey to Motherhood</span>
             </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Choosing where to bring your child into the world is one of the most significant decisions a family can make. At <strong>Nila Hospital</strong>, we take this responsibility with the utmost seriousness and compassion.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Card key={s.title} className="border border-border nila-card-hover group overflow-hidden">
-                <CardContent className="p-6">
-                  <div className="bg-secondary rounded-2xl p-3 w-fit mb-4 group-hover:bg-[hsl(var(--nila-warm-light))] transition-colors">
-                    <s.icon className="h-6 w-6 text-primary group-hover:text-[hsl(var(--nila-warm))] transition-colors" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div className="space-y-8">
+              <div className="inline-block bg-[hsl(var(--nila-warm-light))] text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                Early Care
+              </div>
+              <h3 className="text-3xl font-bold text-nila-navy">Pre-conception & Early Pregnancy Care</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Infertility and pre-conception hurdles can be stressful for couples. We provide detailed <strong>ANC screenings</strong>, hormonal management, and genetic counselling to ensure your body is ready for the beautiful journey ahead.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Dr. Nithya Subashini specializes in <strong>High-Risk Pregnancy</strong> monitoring, ensuring that every complication is detected and managed early.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                {[
+                  "Blood Work & Screenings",
+                  "Lifestyle Counselling",
+                  "Advanced Ultrasound"
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
+                    <span className="font-medium text-foreground">{item}</span>
                   </div>
-                  <h3 className="font-bold text-foreground mb-2 text-lg">{s.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-[hsl(var(--nila-warm))]/5 rounded-3xl -rotate-1" />
+              <Card className="relative border-border/50 shadow-2xl overflow-hidden rounded-3xl bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-8 md:p-10">
+                  <h3 className="text-2xl font-bold text-[hsl(var(--nila-warm))] mb-6">The Nila Birth Experience</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-8">
+                    We prioritize <strong>Natural Normal Delivery</strong> whenever safe for the mother and baby. Our labor rooms are designed for comfort and privacy, promoting a stress-free environment.
+                  </p>
+                  <div className="p-6 bg-background rounded-2xl border border-border/50 shadow-inner">
+                    <p className="text-sm font-medium italic text-primary leading-relaxed">
+                      "If a surgical delivery (C-Section) is medically indicated, our state-of-the-art sterile Operation Theatre and senior surgical nursing staff provide gold-standard clinical care."
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
-            ))}
+            </div>
           </div>
-          <div className="text-center mt-10">
-            <Link to="/services">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white gap-2 font-semibold">
-                View All Services <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Why Choose Nila */}
-      <section className="py-20 nila-gradient-warm">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-center mb-14">
-            <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">Our Promise</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground nila-decoration nila-decoration-center inline-block pb-4">
-              Why Choose Nila Hospital?
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {trustPoints.map((point, i) => (
-              <div key={i} className="flex items-start gap-3 bg-card rounded-xl p-5 shadow-sm border border-border nila-card-hover">
-                <div className="bg-[hsl(var(--nila-warm-light))] rounded-full p-1.5 shrink-0 mt-0.5">
-                  <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" />
-                </div>
-                <span className="text-foreground text-sm leading-relaxed">{point}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Doctor Snapshot */}
-      <section className="py-20 bg-background">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-0 shadow-2xl overflow-hidden rounded-2xl">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="nila-gradient flex flex-col items-center justify-center p-12 min-h-64 relative">
-                  <div className="absolute inset-0 bg-[hsl(var(--nila-warm))]/5" />
-                  <div className="relative z-10">
-                    <div className="bg-white/20 rounded-full p-8 mb-4 backdrop-blur-sm">
-                      <Stethoscope className="h-16 w-16 text-white" />
-                    </div>
-                    <div className="text-white/60 text-sm">Doctor Photo</div>
-                  </div>
-                </div>
-                <CardContent className="p-8 md:p-10 flex flex-col justify-center">
-                  <div className="inline-block bg-[hsl(var(--nila-warm-light))] text-[hsl(var(--nila-warm))] text-xs font-bold uppercase px-3 py-1 rounded-full mb-3 w-fit tracking-wider">
-                    Senior Consultant
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-1">
-                    Dr. Nithya Subashini
-                  </h3>
-                  <div className="text-muted-foreground text-sm mb-1">MBBS, DGO</div>
-                  <div className="text-primary text-sm font-medium mb-5">Consultant Obstetrician & Gynaecologist</div>
-                  <ul className="space-y-2 mb-6">
-                    {[
-                      "Patient-centered, respectful approach",
-                      "Clear communication in Tamil & English",
-                      "Strict privacy for every consultation",
-                    ].map((p, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-foreground">
-                        <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))] shrink-0" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href={PHONE}>
-                    <Button className="gap-2 w-full sm:w-auto bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white shadow-md">
-                      <Phone className="h-4 w-4" /> Call for Consultation
-                    </Button>
-                  </a>
-                </CardContent>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Expansion Paragraphs */}
-      <section className="py-20 bg-background border-t border-border">
-        <div className="container max-w-4xl mx-auto px-4">
-          <div className="prose prose-nila max-w-none">
-            <h2 className="text-3xl font-bold text-nila-navy mb-8 text-center nila-decoration nila-decoration-center inline-block pb-4 w-full">
-              Maternal Excellence: Your Journey to Motherhood at Nila Hospital
-            </h2>
-            
-            <div className="space-y-8 text-foreground leading-relaxed">
-              <p>
-                Choosing where to bring your child into the world is one of the most significant decisions a family can make. At <strong>Nila Hospital</strong>, we take this responsibility with the utmost seriousness and compassion. Our facility, located in the heart of <strong>Namakkal</strong>, has become a beacon of hope and health for thousands of women seeking expert <strong>Obstetrics & Gynaecology</strong> care.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-primary">Pre-conception & Early Pregnancy Care</h3>
-                  <p className="text-sm">
-                    Infertility and pre-conception hurdles can be stressful for couples. We provide detailed <strong>ANC screenings</strong>, hormonal management, and genetic counselling to ensure your body is ready for the beautiful journey ahead. Dr. Nithya Subashini specializes in <strong>High-Risk Pregnancy</strong> monitoring, ensuring that every complication is detected and managed early.
-                  </p>
-                  <ul className="list-disc pl-5 text-sm space-y-1">
-                    <li>Comprehensive Blood Work & Screenings</li>
-                    <li>Nutritional & Lifestyle Counselling</li>
-                    <li>Advanced Ultrasound Monitoring</li>
-                  </ul>
-                </div>
-                <div className="bg-[hsl(var(--nila-warm-light))] p-6 rounded-2xl border border-[hsl(var(--nila-warm))]/10">
-                  <h3 className="text-xl font-bold text-[hsl(var(--nila-warm))]">The Nila Birth Experience</h3>
-                  <p className="text-sm mt-3">
-                    We prioritize <strong>Natural Normal Delivery</strong> whenever safe for the mother and baby. Our labor rooms are designed for comfort and privacy, promoting a stress-free environment. If a surgical delivery (<strong>C-Section</strong>) is medically indicated, our state-of-the-art sterile Operation Theatre and senior surgical nursing staff provide gold-standard clinical care.
-                  </p>
-                </div>
-              </div>
-
-              <p>
-                As a leading <strong>Women's Specialty Hospital</strong>, our commitment extends beyond delivery. We offer specialized care for <strong>PCOS / PCOD</strong> management, which has become increasingly common among young women. Our approach combines clinical expertise with lifestyle modifications, helping our patients regain hormonal balance and confidence.
-              </p>
-
-              <div className="bg-muted p-8 rounded-3xl border border-border">
-                <h3 className="text-2xl font-bold text-nila-navy mb-4">Why Trust Nila Hospital in Namakkal?</h3>
-                <p className="text-sm mb-6">
-                  In a YMYL (Your Money or Your Life) category like healthcare, trust is built on clinical transparency and patient satisfaction. Every patient at Nila Hospital is seen directly by <strong>Dr. Nithya Subashini (MBBS, DGO)</strong>, ensuring continuity of care that is often missing in larger corporate hospitals.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    "Compassionate & Respectful Care",
-                    "A Clean & Sterile Medical Environment",
-                    "Expertise in High-Risk Pregnancies",
-                    "Affordable & Transparent Pricing",
-                    "24/7 Emergency Obstetric Support",
-                    "Patient Privacy & Dignity"
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" />
-                      <span className="text-sm font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <p>
-                Our <strong>Gynaecology</strong> department also addresses complex issues like uterine fibroids, ovarian cysts, and menstrual irregularities. We utilize modern diagnostic tools and evidence-based medicine (citing WHO and international clinical standards) to provide treatments that are both safe and effective.
-              </p>
-
-              <p className="text-center font-semibold text-primary italic">
-                Experience the difference of personalized medical care at Namakkal's most trusted maternity center.
+          <div className="max-w-4xl mx-auto p-12 bg-nila-navy rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">Leading Women's Specialty Hospital</h3>
+              <p className="text-lg text-white/80 leading-relaxed mb-0">
+                Our commitment extends beyond delivery. We offer specialized care for <strong>PCOS / PCOD management</strong>, combining clinical expertise with lifestyle modifications to help patients regain hormonal balance and confidence.
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Trust & Transparency */}
+      <section className="py-24 bg-muted/30">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-12 text-center mb-12">
+              <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-4">Foundation of Care</div>
+              <h2 className="text-3xl md:text-5xl font-bold text-nila-navy">Why Trust Nila Hospital?</h2>
+            </div>
+            
+            <div className="lg:col-span-5 space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                In a category like healthcare, trust is built on clinical transparency and patient satisfaction. 
+              </p>
+              <div className="bg-card p-8 rounded-3xl border border-border shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-1 h-full bg-[hsl(var(--nila-warm))]" />
+                <p className="text-xl font-bold text-foreground leading-snug">
+                  "Every patient at Nila Hospital is seen directly by <span className="text-[hsl(var(--nila-warm))]">Dr. Nithya Subashini (MBBS, DGO)</span>, ensuring continuity of care that is often missing in larger corporate hospitals."
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                "Compassionate & Respectful Care",
+                "A Clean & Sterile Medical Environment",
+                "Expertise in High-Risk Pregnancies",
+                "Affordable & Transparent Pricing",
+                "24/7 Emergency Obstetric Support",
+                "Patient Privacy & Dignity"
+              ].map((item, idx) => (
+                <Card key={idx} className="border-0 shadow-sm bg-card hover:bg-white transition-colors">
+                  <CardContent className="p-6 flex items-center gap-4">
+                    <div className="bg-[hsl(var(--nila-warm-light))] p-2.5 rounded-xl shrink-0">
+                      <CheckCircle className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
+                    </div>
+                    <span className="font-semibold text-nila-navy leading-tight">{item}</span>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Gynaecology Services */}
+      <section className="py-24 bg-background">
+        <div className="container max-w-4xl mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold text-nila-navy mb-8">Comprehensive Gynaecological Care</h3>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-12">
+            Our Gynaecology department also addresses complex issues like <strong>uterine fibroids</strong>, ovarian cysts, and menstrual irregularities. We utilize modern diagnostic tools and evidence-based medicine (citing WHO standards) to provide treatments that are both safe and effective.
+          </p>
+          <p className="text-2xl font-bold text-primary italic">
+            Experience the difference of personalized medical care at Namakkal's most trusted maternity center.
+          </p>
         </div>
       </section>
 
