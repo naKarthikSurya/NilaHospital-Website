@@ -7,9 +7,10 @@ interface LayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  hideMobileBar?: boolean;
 }
 
-export default function Layout({ children, title, description }: LayoutProps) {
+export default function Layout({ children, title, description, hideMobileBar = false }: LayoutProps) {
   useEffect(() => {
     // Update Title
     const isFullTitle = title === "Nila Hospital | Best Gynaecology Specialty in Namakkal";
@@ -62,7 +63,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
       <Header />
       <main className="flex-1 pt-[72px] pb-20 md:pb-0">{children}</main>
       <Footer />
-      <MobileBottomBar />
+      {!hideMobileBar && <MobileBottomBar />}
     </div>
   );
 }
