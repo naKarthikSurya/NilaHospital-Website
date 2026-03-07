@@ -1,8 +1,19 @@
 {
   "redirects": [
     {
-      "source": "/www.(.*)",
-      "destination": "https://$1",
+      "source": "/home(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.nilahospital.com"
+        }
+      ],
+      "destination": "https://nilahospital.com/:path*",
       "permanent": true
     }
   ],
