@@ -12,6 +12,8 @@ interface LayoutProps {
 
 export default function Layout({ children, title, description, hideMobileBar = false }: LayoutProps) {
   useEffect(() => {
+    if (typeof window === "undefined" || typeof document === "undefined") return;
+
     // Update Title
     const isFullTitle = title === "Nila Hospital | Best Gynaecology Specialty in Namakkal";
     const finalTitle = isFullTitle ? title : (title ? `${title} | Nila Hospital` : "Nila Hospital | Best Gynaecology Specialty in Namakkal");

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield, CheckCircle, Clock } from "lucide-react";
+import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield, CheckCircle, Clock, Users } from "lucide-react";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -109,6 +109,63 @@ export default function Doctors() {
           </div>
         </section>
       ))}
+
+      {/* Advanced Care Narrative Section — SEO Powerhouse */}
+      <section className="py-24 bg-background">
+        <div className="container max-w-5xl mx-auto px-4">
+          <div className="prose prose-slate max-w-none">
+            <h2 className="text-3xl md:text-4xl font-bold text-nila-navy mb-8 text-center">
+              Why Nila Hospital is Considered the <span className="text-[hsl(var(--nila-warm))]">Best Gynaecology Hospital in Namakkal</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Comprehensive Maternal & Fetal Medicine</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  At Nila Hospital, our approach to maternity care goes beyond standard checkups. We understand that every pregnancy journey is unique, which is why we offer specialized <strong>Fetal Medicine</strong> consultations and advanced <strong>Prenatal Screenings (ANC)</strong>. 
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Dr. Nithya Subashini and our team utilize high-resolution ultrasound monitoring to track fetal development at every critical milestone. This allows for the early detection and management of <strong>high-risk pregnancy</strong> complications, ensuring the safety of both mother and baby.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">State-of-the-Art Surgical Excellence</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our hospital features globally-compliant sterile <strong>Operation Theatres (OT)</strong> specifically designed for obstetric and gynaecological surgeries. Whether it is a routine <strong>Cesarean Section (C-Section)</strong> or a complex laparoscopic procedure, our surgical team maintains the highest clinical hygiene standards.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  We are primary advocates for <strong>Natural Normal Delivery</strong>. Our labor suites are equipped with monitoring systems that allow mothers to labor in a stress-free, private environment, supported by a compassionate nursing team trained in neonatal resuscitation.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-16 bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border/50 shadow-sm">
+              <h3 className="text-2xl font-bold text-nila-navy mb-6 text-center">Specialized PCOS & Hormonal Management</h3>
+              <p className="text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
+                PCOS (Polycystic Ovary Syndrome) is one of the most common hormonal disorders affecting women today. At Nila Hospital Namakkal, we don't just treat the symptoms; we address the root cause. Our <strong>PCOS Clinic</strong> integrates clinical treatment with metabolic management and personalized lifestyle counselling. We help women manage menstrual irregularities, infertility issues, and hormonal acne through evidence-based medicine and sustainable diet advice.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-center">
+              <div className="p-6">
+                <CheckCircle className="h-10 w-10 text-[hsl(var(--nila-warm))] mx-auto mb-4" />
+                <h4 className="font-bold mb-2">Evidence-Based Treatment</h4>
+                <p className="text-sm text-muted-foreground">Following WHO and international clinical guidelines for all obstetric procedures.</p>
+              </div>
+              <div className="p-6">
+                <Shield className="h-10 w-10 text-[hsl(var(--nila-warm))] mx-auto mb-4" />
+                <h4 className="font-bold mb-2">Sterile Environment</h4>
+                <p className="text-sm text-muted-foreground">Rigid infection control protocols in our theaters and patient wards.</p>
+              </div>
+              <div className="p-6">
+                <Users className="h-10 w-10 text-[hsl(var(--nila-warm))] mx-auto mb-4" />
+                <h4 className="font-bold mb-2">Continuity of Care</h4>
+                <p className="text-sm text-muted-foreground">Direct access to the same consultant doctor for every visit and procedure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Strip */}
       <section className="bg-nila-navy py-14 relative overflow-hidden">

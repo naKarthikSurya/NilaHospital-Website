@@ -6,9 +6,8 @@ export interface Doctor {
     title: string;
     qualifications: string;
     badge: string;
-    category: "gynaecologist" | "anaesthesiologist" | "palliative care specialist" | "dm critical care";
+    category: "gynaecologist" | "anaesthesiologist";
     type: "practitioner" | "pg";
-    pursuing?: string;
     seesOP: boolean;
     roleContext: string;
     description: string;
