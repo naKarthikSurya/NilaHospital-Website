@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 export default function Doctors() {
   const practitioners = doctorsList.filter(d => d.type === 'practitioner');
-  const pgStudents = doctorsList.filter(d => d.type === 'pg');
 
   const DoctorCard = ({ doctor }: { doctor: typeof doctorsList[0] }) => (
     <Card className="border border-border nila-card-hover group overflow-hidden bg-card h-full flex flex-col items-center text-center">
@@ -50,7 +49,7 @@ export default function Doctors() {
   return (
     <Layout 
       title="Our Doctors | Nila Hospital Namakkal"
-      description="Meet our team of expert medical professionals at Nila Hospital. Specialized in Gynaecology, Anaesthesia, Palliative Care, and Critical Care."
+      description="Meet our team of expert medical professionals at Nila Hospital. Specialized in Obstetrics, Gynaecology, Anaesthesia, and Newborn Care."
     >
       <HeroGradientSection className="py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
@@ -81,22 +80,6 @@ export default function Doctors() {
         </div>
       </section>
 
-      {/* PG Students Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="mb-14 text-center">
-            <h2 className="text-3xl font-bold text-nila-navy nila-decoration nila-decoration-center pb-4 inline-block">Education & Specialization</h2>
-            <p className="text-muted-foreground mt-4 max-w-xl mx-auto">Junior specialists pursuing advanced technical training across critical medical fields.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {pgStudents.map((doctor) => (
-              <DoctorCard key={doctor.id} doctor={doctor} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Trust Section */}
       <section className="py-16 bg-background border-t border-border">
         <div className="container max-w-3xl mx-auto px-4 text-center">
@@ -105,8 +88,8 @@ export default function Doctors() {
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Patient-First Care Always</h2>
           <p className="text-muted-foreground leading-relaxed">
-            At Nila Hospital, we believe in a team-based approach to medicine. Our senior consultants work alongside specialized 
-            medical trainees to ensure that every patient receives round-the-clock monitoring and the benefit of multiple clinical perspectives.
+            At Nila Hospital, we believe in personalized attention for every patient. Our senior consultants ensure 
+            complete continuity of care, providing the benefit of decades of clinical expertise throughout your healthcare journey.
           </p>
         </div>
       </section>
