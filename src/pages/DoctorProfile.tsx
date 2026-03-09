@@ -19,13 +19,11 @@ export default function DoctorProfile() {
   }
 
   const isPG = doctor.type === 'pg';
-  const isRestrictedDoctor = doctor.id === 'deepika' || doctor.id === 'rajesh';
 
   return (
     <Layout 
       title={`${doctor.name} | ${doctor.title} at Nila Hospital`}
       description={`${doctor.name} (${doctor.qualifications}), ${doctor.badge} at Nila Hospital. ${doctor.description}`}
-      hideMobileBar={isRestrictedDoctor}
     >
       {/* Hero Profile Section */}
       <HeroGradientSection className="pb-24 pt-20 relative overflow-hidden">
@@ -59,20 +57,18 @@ export default function DoctorProfile() {
               <div className="text-nila-light-blue text-xl md:text-2xl font-light mb-2 tracking-wide">{doctor.qualifications}</div>
               <div className="text-white/60 text-lg mb-8 max-w-2xl">{doctor.description}</div>
               
-              {!isRestrictedDoctor && (
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                    <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold gap-3 px-10 w-full sm:w-auto hover:scale-105 transition-transform shadow-lg">
-                      <MapPin className="h-5 w-5" /> Visit Our Hospital
-                    </Button>
-                  </a>
-                  <a href={PHONE} className="w-full sm:w-auto">
-                    <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 font-bold gap-3 px-10 w-full sm:w-auto backdrop-blur-sm">
-                      <Phone className="h-5 w-5 text-[hsl(var(--nila-warm))]" /> Contact Desk
-                    </Button>
-                  </a>
-                </div>
-              )}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold gap-3 px-10 w-full sm:w-auto hover:scale-105 transition-transform shadow-lg">
+                    <MapPin className="h-5 w-5" /> Visit Our Hospital
+                  </Button>
+                </a>
+                <a href={PHONE} className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10 font-bold gap-3 px-10 w-full sm:w-auto backdrop-blur-sm">
+                    <Phone className="h-5 w-5 text-[hsl(var(--nila-warm))]" /> Contact Desk
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
