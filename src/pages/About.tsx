@@ -73,23 +73,51 @@ export default function About() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-background">
+      <section className="py-24 bg-background">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">Our Story</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 nila-decoration pb-4">
-              Built on Trust, Guided by Compassion
-            </h2>
-            <div className="space-y-5 text-muted-foreground leading-relaxed text-base">
-              <p>
-                Nila Hospital was established with a singular vision — to provide high-quality, women-focused medical care in Namakkal. Recognising the need for a dedicated facility for obstetrics and gynaecology in the region, we built a space where every woman feels safe, heard, and cared for.
-              </p>
-              <p>
-                Our philosophy is simple: personal attention over volume. Unlike larger institutions, every patient at Nila Hospital is seen directly by our consultant. We believe that medical care should be built on trust, and trust begins with consistent, one-on-one attention.
-              </p>
-              <p>
-                Over the years, we have grown to serve women and families across Namakkal and the surrounding districts. From pregnancy care to complex gynaecological treatment, Nila Hospital continues to be a place where women receive respectful, evidence-based care at every stage of life.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="space-y-8">
+              <div>
+                <div className="text-[hsl(var(--nila-warm))] text-sm font-bold uppercase tracking-widest mb-3">Our Mission</div>
+                <h2 className="text-3xl md:text-5xl font-bold text-nila-navy leading-tight">
+                  Maternal Excellence in <br /><span className="text-[hsl(var(--nila-warm))]">Every Care Every Time</span>
+                </h2>
+              </div>
+              <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
+                <p>
+                  Nila Hospital was established with a singular vision — to provide high-quality, women-focused medical care in Namakkal. Recognising the need for a dedicated facility for <strong>Obstetrics & Gynaecology</strong> in the region, we built a space where every woman feels safe, heard, and cared for.
+                </p>
+                <p>
+                  Our philosophy is simple: <strong>personal attention over volume</strong>. Unlike larger corporate institutions, every patient at Nila Hospital is seen directly by our consultant. We believe that medical care should be built on trust, and trust begins with consistent, one-on-one attention from the same doctor throughout your journey.
+                </p>
+                <p>
+                  Over the years, we have grown to serve women and families across Namakkal, Tiruchengode, and Rasipuram. From complex gynaecological treatments like uterine fibroid management to the joyful moment of a first baby's arrival, we are committed to being your lifelong health partner.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-4 bg-[hsl(var(--nila-warm))]/5 rounded-[3rem] rotate-2" />
+              <div className="relative bg-card border border-border shadow-2xl rounded-[2.5rem] overflow-hidden p-8 md:p-12">
+                <div className="flex flex-col items-center text-center space-y-6">
+                  <div className="w-32 h-32 rounded-full bg-muted flex items-center justify-center overflow-hidden border-4 border-[hsl(var(--nila-warm-light))] shadow-lg">
+                    <img src="/placeholder.svg" alt="Dr. Nithya Subashini" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-nila-navy">Dr. Nithya Subashini</h3>
+                    <p className="text-[hsl(var(--nila-warm))] font-semibold">MBBS, DGO</p>
+                    <p className="text-sm text-muted-foreground uppercase tracking-widest mt-1">Consultant Obstetrician & Gynaecologist</p>
+                  </div>
+                  <div className="prose prose-sm text-muted-foreground leading-relaxed italic">
+                    "My goal at Nila Hospital is to ensure that healthcare remains human. I want every mother to walk out of our hospital feeling empowered, healthy, and respected. We don't just treat conditions; we care for people."
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-2 pt-4">
+                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">PCOS Specialist</span>
+                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">High-Risk Pregnancy</span>
+                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">Normal Delivery</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
