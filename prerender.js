@@ -23,6 +23,8 @@ const routesToPrerender = [
 ];
 
 
+const hospitalId = "https://nilahospital.com/#hospital";
+
 // Page-specific metadata for each route
 const pageMeta = {
   "/": {
@@ -31,34 +33,100 @@ const pageMeta = {
     canonical: "https://nilahospital.com/",
   },
   "/services": {
-    title: "Expert Obstetric & Gynaecology Services | Nila Hospital",
-    description: "Comprehensive women's healthcare in Namakkal: ANC checkups, normal delivery, C-section, PCOS, and fertility services. Trusted by families for maternal excellence.",
+    title: "Maternity, Pregnancy and Gynaecology Services in Namakkal | Nila Hospital",
+    description: "Explore Nila Hospital services in Namakkal: ANC checkups, normal delivery, C-section, PCOS management, preventive screening, and complete women-focused care.",
     canonical: "https://nilahospital.com/services",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      name: "Obstetrics and Gynaecology Services in Namakkal",
+      url: "https://nilahospital.com/services",
+      about: { "@id": hospitalId },
+    },
   },
   "/doctors": {
-    title: "Our Doctors | Nila Hospital Namakkal",
-    description: "Meet our team of expert doctors at Nila Hospital Namakkal.",
+    title: "Best Doctors in Namakkal | Nila Hospital",
+    description: "Meet the specialist doctors at Nila Hospital Namakkal, including expert obstetric, gynaecology, and anaesthesia consultants for safe maternity care.",
     canonical: "https://nilahospital.com/doctors",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Doctors at Nila Hospital Namakkal",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Dr. Nithya Subashini",
+          url: "https://nilahospital.com/doctors/nithya-subashini",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Dr. Arul Ramasamy",
+          url: "https://nilahospital.com/doctors/arul-ramasamy",
+        },
+      ],
+    },
   },
   "/doctors/nithya-subashini": {
-    title: "Our Doctors | Nila Hospital Namakkal",
+    title: "Dr. Nithya Subashini - Consultant Obstetrician and Gynaecologist in Namakkal | Nila Hospital",
     description: "Meet Dr. Nithya Subashini (MBBS, DGO), Consultant Obstetrician & Gynaecologist at Nila Hospital Namakkal. Specialized in high-risk pregnancy, PCOS, and delivery care.",
     canonical: "https://nilahospital.com/doctors/nithya-subashini",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "@id": "https://nilahospital.com/doctors/nithya-subashini#physician",
+      name: "Dr. Nithya Subashini",
+      url: "https://nilahospital.com/doctors/nithya-subashini",
+      jobTitle: "Consultant Obstetrician & Gynaecologist",
+      description:
+        "Senior consultant in high-risk pregnancy, delivery care, and PCOS management at Nila Hospital Namakkal.",
+      telephone: "+919655225192",
+      medicalSpecialty: "ObstetricAndGynecologic",
+      hospitalAffiliation: { "@id": hospitalId },
+    },
   },
   "/doctors/arul-ramasamy": {
-    title: "Our Doctors | Nila Hospital Namakkal",
+    title: "Dr. Arul Ramasamy - Senior Anaesthesiologist in Namakkal | Nila Hospital",
     description: "Meet Dr. Arul Ramasamy (MBBS, DA), Senior Anaesthesiologist in Nila Hospital Namakkal, specialized in providing safe anaesthesia for various surgical procedures with a focus on patient comfort.",
     canonical: "https://nilahospital.com/doctors/arul-ramasamy",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      "@id": "https://nilahospital.com/doctors/arul-ramasamy#physician",
+      name: "Dr. Arul Ramasamy",
+      url: "https://nilahospital.com/doctors/arul-ramasamy",
+      jobTitle: "Senior Anaesthesiologist",
+      description:
+        "Senior anaesthesiologist focused on safe obstetric and surgical anaesthesia at Nila Hospital Namakkal.",
+      telephone: "+919655225192",
+      medicalSpecialty: "Anesthesiologic",
+      hospitalAffiliation: { "@id": hospitalId },
+    },
   },
   "/about": {
     title: "About Nila Hospital | Women's Specialty Hospital in Namakkal",
     description: "Learn about Nila Hospital's mission, our expert team, and our commitment to compassionate maternity and gynaecology care in Namakkal, Tamil Nadu.",
     canonical: "https://nilahospital.com/about",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: "About Nila Hospital Namakkal",
+      url: "https://nilahospital.com/about",
+      about: { "@id": hospitalId },
+    },
   },
   "/contact": {
     title: "Contact Nila Hospital | Namakkal Gynaecology Hospital",
     description: "Contact Nila Hospital Namakkal. Salem Road, Swamy Nagar, Namakkal 637001. Call +91 96552 25192. Available 24/7 for emergency obstetric care.",
     canonical: "https://nilahospital.com/contact",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: "Contact Nila Hospital Namakkal",
+      url: "https://nilahospital.com/contact",
+      about: { "@id": hospitalId },
+    },
   },
 };
 
@@ -110,6 +178,20 @@ function injectMeta(html, url) {
     /(<meta\s+name="twitter:description"\s+content=")[^"]*(")/,
     `$1${meta.description}$2`
   );
+
+  // Replace route-level JSON-LD schema
+  html = html.replace(
+    /\s*<script id="route-schema-jsonld" type="application\/ld\+json">[\s\S]*?<\/script>/,
+    ""
+  );
+
+  if (meta.schema) {
+    const schemaJson = JSON.stringify(meta.schema).replace(/</g, "\\u003c");
+    html = html.replace(
+      "</head>",
+      `  <script id="route-schema-jsonld" type="application/ld+json">${schemaJson}</script>\n  </head>`
+    );
+  }
 
   return html;
 }

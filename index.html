@@ -48,7 +48,6 @@
             },
             "image": "https://nilahospital.com/images/gallery/521A6952.JPG",
             "telephone": "+919655225192",
-            "emergencyService": "true",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "743, A/1, A/2, Salem Road, Swamy Nagar",
@@ -82,6 +81,19 @@
                   "Saturday"
                 ],
                 "opens": "09:00",
+                "closes": "13:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "18:00",
                 "closes": "21:00"
               },
               {
@@ -100,9 +112,10 @@
           {
             "@type": "Physician",
             "name": "Dr. Nithya Subashini",
-            "image": "https://nilahospital.com/images/gallery/placeholder.svg",
-            "jobTitle": "Consultant Obstetrician & Gynaecologist",
-            "memberOf": { "@id": "https://nilahospital.com/#hospital" },
+            "url": "https://nilahospital.com/doctors/nithya-subashini",
+            "image": "https://nilahospital.com/placeholder.svg",
+            "jobTitle": "Senior Consultant Obstetrician & Gynaecologist",
+            "hospitalAffiliation": { "@id": "https://nilahospital.com/#hospital" },
             "medicalSpecialty": "ObstetricAndGynecologic",
             "knowsAbout": [
               "Pregnancy Care",
@@ -111,6 +124,20 @@
               "Normal Delivery"
             ],
             "credentials": "MBBS, DGO"
+          },
+          {
+            "@type": "Physician",
+            "name": "Dr. Arul Ramasamy",
+            "url": "https://nilahospital.com/doctors/arul-ramasamy",
+            "jobTitle": "Senior Anaesthesiologist",
+            "hospitalAffiliation": { "@id": "https://nilahospital.com/#hospital" },
+            "medicalSpecialty": "Anesthesiologic",
+            "knowsAbout": [
+              "Obstetric Anaesthesia",
+              "General Anaesthesia",
+              "Pain Management"
+            ],
+            "credentials": "MBBS, DA"
           },
           {
             "@type": "FAQPage",

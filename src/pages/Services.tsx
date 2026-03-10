@@ -3,6 +3,7 @@ import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield, CheckCircle, Clock, Users } from "lucide-react";
+import { servicesPageSchemas } from "@/lib/seo";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -48,11 +49,12 @@ const serviceCategories = [
   },
 ];
 
-export default function Doctors() {
+export default function Services() {
   return (
     <Layout 
-      title="Expert Obstetric & Gynaecology Services"
-      description="Comprehensive women's healthcare in Namakkal: ANC checkups, normal delivery, C-section, and fertility services. Trusted by families for maternal excellence."
+      title="Maternity, Pregnancy and Gynaecology Services in Namakkal"
+      description="Explore Nila Hospital services in Namakkal: ANC checkups, normal delivery, C-section, PCOS management, preventive screening, and complete women-focused care."
+      schema={servicesPageSchemas}
     >
       {/* Hero */}
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">

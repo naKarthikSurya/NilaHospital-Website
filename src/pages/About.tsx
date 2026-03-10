@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
 import Gallery from "@/components/Gallery";
+import { aboutPageSchema } from "@/lib/seo";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -57,6 +58,7 @@ export default function About() {
     <Layout 
       title="About Nila Hospital | Leading Maternity Care in Namakkal"
       description="Learn more about Nila Hospital's commitment to maternal excellence. 15+ beds, sterile OTs, and personalized care by Dr. Nithya Subashini in Namakkal."
+      schema={aboutPageSchema}
     >
       {/* Mission Hero */}
       <section className="nila-gradient nila-gradient-motion text-white py-20 relative overflow-hidden">

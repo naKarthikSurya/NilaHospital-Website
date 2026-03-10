@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, MapPin, Stethoscope, Clock, CheckCircle, GraduationCap, Award, HeartHandshake } from "lucide-react";
 import { doctorsList } from "@/data/doctors";
+import { breadcrumbSchema, physicianSchemaForDoctor } from "@/lib/seo";
 
 const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
 const PHONE = "tel:+919655225192";
@@ -22,8 +23,16 @@ export default function DoctorProfile() {
 
   return (
     <Layout 
-      title={`${doctor.name} | ${doctor.title} at Nila Hospital`}
-      description={`${doctor.name} (${doctor.qualifications}), ${doctor.badge} at Nila Hospital. ${doctor.description}`}
+      title={`${doctor.name} - ${doctor.title} in Namakkal`}
+      description={`${doctor.name} (${doctor.qualifications}), ${doctor.title} at Nila Hospital Namakkal. Consult for ${doctor.category === "gynaecologist" ? "pregnancy, delivery, and women's health care." : "safe anaesthesia and perioperative care."}`}
+      schema={[
+        physicianSchemaForDoctor(doctor),
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Doctors", path: "/doctors" },
+          { name: doctor.name, path: `/doctors/${doctor.id}` },
+        ]),
+      ]}
     >
       {/* Hero Profile Section */}
       <HeroGradientSection className="pb-24 pt-20 relative overflow-hidden">
