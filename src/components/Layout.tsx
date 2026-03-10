@@ -7,10 +7,17 @@ interface LayoutProps {
   children: ReactNode;
   title?: string;
   description?: string;
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>;
   hideMobileBar?: boolean;
 }
 
-export default function Layout({ children, title, description, hideMobileBar = false }: LayoutProps) {
+export default function Layout({
+  children,
+  title,
+  description,
+  schema,
+  hideMobileBar = false,
+}: LayoutProps) {
   useEffect(() => {
     if (typeof window === "undefined" || typeof document === "undefined") return;
 
@@ -58,7 +65,36 @@ export default function Layout({ children, title, description, hideMobileBar = f
     const finalPath = path === "/" ? "/" : path;
     canonical.setAttribute("href", `https://nilahospital.com${finalPath}`);
 
-  }, [title, description]);
+    const schemaScriptId = "route-schema-jsonld";
+    const existingSchemaScript = document.getElementById(schemaScriptId);
+
+    if (schema) {
+      const schemaPayload =
+        Array.isArray(schema) && schema.length > 1
+          ? {
+              "@context": "https://schema.org",
+              "@graph": schema.map((entry) => {
+                const { "@context": _context, ...withoutContext } = entry;
+                return withoutContext;
+              }),
+            }
+          : Array.isArray(schema)
+            ? schema[0]
+            : schema;
+
+      const scriptTag =
+        existingSchemaScript || document.createElement("script");
+      scriptTag.setAttribute("id", schemaScriptId);
+      scriptTag.setAttribute("type", "application/ld+json");
+      scriptTag.textContent = JSON.stringify(schemaPayload);
+
+      if (!existingSchemaScript) {
+        document.head.appendChild(scriptTag);
+      }
+    } else if (existingSchemaScript) {
+      existingSchemaScript.remove();
+    }
+  }, [title, description, schema]);
 
   return (
     <div className="min-h-screen flex flex-col">

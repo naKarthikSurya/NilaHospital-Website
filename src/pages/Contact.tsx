@@ -3,6 +3,7 @@ import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Navigation } from "lucide-react";
+import { contactPageSchema } from "@/lib/seo";
 
 const MAPS_URL =
   "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
@@ -15,6 +16,7 @@ export default function Contact() {
     <Layout 
       title="Contact Nila Hospital | Location & Directions in Namakkal"
       description="Visit Nila Hospital on Salem Road, Namakkal. Contact us at +91 96552 25192 for emergency obstetric care and pregnancy consultations."
+      schema={contactPageSchema}
     >
       {/* Hero */}
       <HeroGradientSection className="text-white pt-20 pb-20 md:pt-24 md:pb-24 relative overflow-hidden">
@@ -195,7 +197,7 @@ export default function Contact() {
                   },
                   {
                     label: "From Namakkal Bus Stand",
-                    note: "Approximately 5–10 minutes by auto or cab. Ask for Salem Road, MNR Complex.",
+                    note: "Approximately 5–10 minutes by auto or cab. Ask for Nila Hospital opposite Reynolds Car Showroom on Salem Road.",
                   },
                   {
                     label: "Parking",

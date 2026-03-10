@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Stethoscope, ArrowRight, User, GraduationCap } from "lucide-react";
 import { doctorsList } from "@/data/doctors";
 import { Link } from "react-router-dom";
+import { doctorsListingSchema } from "@/lib/seo";
 
 export default function Doctors() {
   const practitioners = doctorsList.filter(d => d.type === 'practitioner');
@@ -48,8 +49,9 @@ export default function Doctors() {
 
   return (
     <Layout 
-      title="Our Doctors | Nila Hospital Namakkal"
-      description="Meet our team of expert medical professionals at Nila Hospital. Specialized in Obstetrics, Gynaecology, Anaesthesia, and Newborn Care."
+      title="Best Doctors in Namakkal"
+      description="Meet the specialist doctors at Nila Hospital Namakkal, including expert obstetric, gynaecology, and anaesthesia consultants for safe maternity care."
+      schema={doctorsListingSchema}
     >
       <HeroGradientSection className="py-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
