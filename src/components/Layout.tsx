@@ -23,7 +23,7 @@ export default function Layout({
 
     // Update Title
     const isFullTitle = title === "Nila Hospital | Best Gynaecology Specialty in Namakkal";
-    const finalTitle = isFullTitle ? title : (title ? `${title} | Nila Hospital` : "Nila Hospital | Best Gynaecology Specialty in Namakkal");
+    const finalTitle = isFullTitle ? title : (title ? `${title} | Nila Hospital Namakkal` : "Nila Hospital | Best Gynaecology Specialty in Namakkal");
     document.title = finalTitle;
 
     // Helper to update or create meta tags
@@ -41,7 +41,7 @@ export default function Layout({
       element.setAttribute('content', value);
     };
 
-    const finalDescription = description || "Leading hospital for Obstetrics & Gynaecology in Namakkal. Expert pregnancy monitoring, infertility treatments, and safe maternity services. Care you trust.";
+    const finalDescription = description || "Nila Hospital Namakkal - Leading Women's Specialty Hospital for Obstetrics & Gynaecology, Maternity, and PCOS care. Compassionate care you can trust.";
 
     updateOrCreateMeta('meta[name="description"]', 'description', finalDescription);
     updateOrCreateMeta('meta[property="og:title"]', 'og:title', finalTitle);

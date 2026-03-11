@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Stethoscope, ArrowRight, User, GraduationCap } from "lucide-react";
 import { doctorsList } from "@/data/doctors";
 import { Link } from "react-router-dom";
+import ReviewPrompt from "@/components/ReviewPrompt";
 import { doctorsListingSchema } from "@/lib/seo";
 
 export default function Doctors() {
@@ -17,7 +18,7 @@ export default function Doctors() {
         <User className="h-20 w-20 text-nila-navy/20" />
         <div className="absolute top-4 right-4">
           <Badge className={`${doctor.type === 'practitioner' ? 'bg-primary' : 'bg-[hsl(var(--nila-warm))]'} text-white border-0`}>
-            {doctor.type === 'pg' && doctor.pursuing ? `Currently Pursuing ${doctor.pursuing}` : doctor.badge}
+            {doctor.type === 'pg' && 'pursuing' in doctor ? `Currently Pursuing ${doctor.pursuing}` : doctor.badge}
           </Badge>
         </div>
       </div>
@@ -49,8 +50,8 @@ export default function Doctors() {
 
   return (
     <Layout 
-      title="Best Doctors in Namakkal"
-      description="Meet the specialist doctors at Nila Hospital Namakkal, including expert obstetric, gynaecology, and anaesthesia consultants for safe maternity care."
+      title="Dr. Nithya Subashini — Best Gynaecologist in Namakkal | Nila Hospital"
+      description="Dr. Nithya Subashini (MBBS, DGO) — expert gynaecologist & obstetrician in Namakkal. Specialises in high-risk pregnancy, PCOS & infertility. Book appointment."
       schema={doctorsListingSchema}
     >
       <HeroGradientSection className="py-20 relative overflow-hidden">
@@ -59,7 +60,7 @@ export default function Doctors() {
           <Badge className="bg-white/10 text-white border-white/20 mb-4 backdrop-blur-sm">
             Medical Professionals
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Expert Doctors at Your Service</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Best Gynaecologist in Namakkal — Dr. Nithya Subashini</h1>
           <p className="text-nila-light-blue text-lg max-w-2xl mx-auto">
             Our multi-disciplinary team is dedicated to providing compassionate, high-quality healthcare focused on your unique needs.
           </p>
@@ -79,6 +80,12 @@ export default function Doctors() {
               <DoctorCard key={doctor.id} doctor={doctor} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-background">
+        <div className="container max-w-4xl mx-auto px-4">
+          <ReviewPrompt />
         </div>
       </section>
 

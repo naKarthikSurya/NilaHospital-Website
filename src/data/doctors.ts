@@ -8,6 +8,7 @@ export interface Doctor {
     badge: string;
     category: "gynaecologist" | "anaesthesiologist";
     type: "practitioner" | "pg";
+    pursuing?: string;
     seesOP: boolean;
     roleContext: string;
     description: string;
