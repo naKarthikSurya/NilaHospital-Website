@@ -3,6 +3,7 @@ import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Navigation } from "lucide-react";
+import ReviewPrompt from "@/components/ReviewPrompt";
 import { contactPageSchema } from "@/lib/seo";
 
 const MAPS_URL =
@@ -14,8 +15,8 @@ const MAP_EMBED_URL =
 export default function Contact() {
   return (
     <Layout 
-      title="Contact & Location in Namakkal | Nila Hospital"
-      description="Find Nila Hospital in Namakkal on Salem Road. Contact us for emergency obstetric care, pregnancy consultations, and women's health services. Easy to reach and centrally located."
+      title="Contact Nila Hospital | Namakkal | +91 96552 25192"
+      description="Visit Nila Hospital on Salem Road, Swamy Nagar, Namakkal. Open daily 9AM–1PM & 6–9PM. 24/7 emergency obstetric support. Call +91 96552 25192."
       schema={contactPageSchema}
     >
       {/* Hero */}
@@ -26,7 +27,7 @@ export default function Contact() {
             Contact & Location
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            We're Easy to Reach
+            Contact Nila Hospital, Namakkal
           </h1>
           <p className="text-white/75 max-w-xl mx-auto text-lg leading-relaxed">
             Located on Salem Road, Namakkal — call us or get directions right
@@ -219,6 +220,12 @@ export default function Contact() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-background">
+        <div className="container max-w-4xl mx-auto px-4">
+          <ReviewPrompt />
         </div>
       </section>
 

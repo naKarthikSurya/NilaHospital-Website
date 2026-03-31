@@ -41,9 +41,9 @@ const quickInfoCards = [
 
 export default function Home() {
   return (
-    <Layout 
-      title="Best Obstetrics & Gynaecology Hospital in Namakkal | Nila Hospital"
-      description="Nila Hospital Namakkal: Leading women's specialty hospital for Obstetrics & Gynaecology. Expert pregnancy care, safe deliveries, and compassionate health services."
+    <Layout
+      title="Best Maternity & Gynaecology Hospital in Namakkal | Nila Hospital"
+      description="Nila Hospital is Namakkal's trusted maternity & gynaecology hospital. Expert care for normal delivery, C-section, PCOS & high-risk pregnancy. Call 24/7."
     >
       {/* Hero */}
       <HeroGradientSection className="text-white py-24 md:py-36 relative overflow-hidden">
@@ -55,8 +55,8 @@ export default function Home() {
             Namakkal's Women's Specialty Hospital
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-[1.15]">
-           Dedicated to<br />
-            <span className="text-[hsl(var(--nila-warm))] text-3xl md:text-5xl">Maternal Excellence</span>
+            Best Maternity &amp; Gynaecology<br />
+            <span className="text-[hsl(var(--nila-warm))] text-3xl md:text-5xl">Hospital in Namakkal</span>
           </h1>
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
             Obstetrics &amp; Gynaecology Care in Namakkal — trusted by women and families across the region.
