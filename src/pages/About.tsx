@@ -56,8 +56,8 @@ const quickInfoCards = [
 export default function About() {
   return (
     <Layout 
-      title="About Nila Hospital | Leading Maternity Care in Namakkal"
-      description="Learn more about Nila Hospital's commitment to maternal excellence. 15+ beds, sterile OTs, and personalized care by Dr. Nithya Subashini in Namakkal."
+      title="Our Story & Commitment to Women's Health | Nila Hospital"
+      description="Learn about Nila Hospital's mission in Namakkal. We combine clinical excellence with compassionate care to support every woman's health journey."
       schema={aboutPageSchema}
     >
       {/* Mission Hero */}
