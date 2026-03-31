@@ -52,8 +52,8 @@ const serviceCategories = [
 export default function Services() {
   return (
     <Layout 
-      title="Maternity, Pregnancy and Gynaecology Services in Namakkal"
-      description="Explore Nila Hospital services in Namakkal: ANC checkups, normal delivery, C-section, PCOS management, preventive screening, and complete women-focused care."
+      title="Nila Hospital — Comprehensive Gynaecology & Obstetrics Services in Namakkal"
+      description="Explore comprehensive women's healthcare services at Nila Hospital in Namakkal, including pregnancy care, delivery, gynaecology, and preventive health. Expert care for every stage of life."
       schema={servicesPageSchemas}
     >
       {/* Hero */}
