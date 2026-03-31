@@ -438,24 +438,3 @@ export function breadcrumbSchema(
     })),
   };
 }
-
-export const locationPageSchema = (locationName: string, serviceName: string) => {
-  const path = `/${locationName.toLowerCase()}-${serviceName.toLowerCase().replace(/ /g, '-')}`;
-  return [
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalWebPage",
-      "@id": `${SITE_URL}${path}#webpage`,
-      "url": `${SITE_URL}${path}`,
-      "name": `${serviceName} near ${locationName} | Nila Hospital`,
-      "description": `Top-rated ${serviceName} for families in ${locationName}. Located in Namakkal (25-30 kms away), Nila Hospital offers expert maternity and gynaecology care.`,
-      "about": { "@id": HOSPITAL_ID },
-      "breadcrumb": { "@id": `${SITE_URL}${path}#breadcrumb` }
-    },
-    breadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Services", path: "/services" },
-      { name: `${serviceName} in ${locationName}`, path: path }
-    ])
-  ];
-};

@@ -18,8 +18,6 @@ import ObstetricsNamakkal from "./pages/ObstetricsNamakkal";
 import MaternityHospitalNamakkal from "./pages/MaternityHospitalNamakkal";
 import WomensHealthNamakkal from "./pages/WomensHealthNamakkal";
 import GeneralMedicineNamakkal from "./pages/GeneralMedicineNamakkal";
-import MaternityCareTiruchengode from "./pages/MaternityCareTiruchengode";
-import PregnancyCareRasipuram from "./pages/PregnancyCareRasipuram";
 
 const queryClient = new QueryClient();
 
@@ -56,14 +54,6 @@ const App = () => (
           <Route
             path="/general-medicine-namakkal"
             element={<GeneralMedicineNamakkal />}
-          />
-          <Route
-            path="/tiruchengode-maternity-care"
-            element={<MaternityCareTiruchengode />}
-          />
-          <Route
-            path="/rasipuram-pregnancy-care"
-            element={<PregnancyCareRasipuram />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
