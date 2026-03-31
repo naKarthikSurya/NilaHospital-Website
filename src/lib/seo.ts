@@ -88,14 +88,14 @@ export const whyBestHospitalPageSchemas = [
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: "Why We Are Best Hospital in Namakkal",
-    url: `${SITE_URL}/why-best-hospital-namakkal`,
+    url: `${SITE_URL}/why-we-are-best-hospital-in-namakkal`,
     about: { "@id": HOSPITAL_ID },
   },
   breadcrumbSchema([
     { name: "Home", path: "/" },
     {
       name: "Why We Are Best Hospital in Namakkal",
-      path: "/why-best-hospital-namakkal",
+      path: "/why-we-are-best-hospital-in-namakkal",
     },
   ]),
   {
@@ -135,14 +135,14 @@ export const bestWomenHospitalPageSchemas = [
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: "Best Women Hospital in Namakkal",
-    url: `${SITE_URL}/best-women-hospital-namakkal`,
+    url: `${SITE_URL}/best-women-hospital-in-namakkal`,
     about: { "@id": HOSPITAL_ID },
   },
   breadcrumbSchema([
     { name: "Home", path: "/" },
     {
       name: "Best Women Hospital in Namakkal",
-      path: "/best-women-hospital-namakkal",
+      path: "/best-women-hospital-in-namakkal",
     },
   ]),
   {
