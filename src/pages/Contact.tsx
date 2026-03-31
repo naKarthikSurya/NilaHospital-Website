@@ -14,8 +14,8 @@ const MAP_EMBED_URL =
 export default function Contact() {
   return (
     <Layout 
-      title="Contact Nila Hospital | Location & Directions in Namakkal"
-      description="Visit Nila Hospital on Salem Road, Namakkal. Contact us at +91 96552 25192 for emergency obstetric care and pregnancy consultations."
+      title="Contact & Location in Namakkal | Nila Hospital"
+      description="Find Nila Hospital in Namakkal on Salem Road. Contact us for emergency obstetric care, pregnancy consultations, and women's health services. Easy to reach and centrally located."
       schema={contactPageSchema}
     >
       {/* Hero */}
