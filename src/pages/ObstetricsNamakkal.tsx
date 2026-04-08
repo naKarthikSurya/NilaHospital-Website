@@ -20,7 +20,7 @@ export default function ObstetricsNamakkal() {
   return (
     <Layout
       title="Obstetrics & Pregnancy Specialist in Namakkal | Safe Birth"
-      description="Expert obstetrics care in Namakkal at Nila Hospital. We offer comprehensive ANC checkups, high-risk pregnancy monitoring, and safe natural delivery planning with specialist supervision."
+      description="Expert obstetrics care in Namakkal at Nila Hospital. We offer comprehensive ANC checkups, antenatal monitoring, and safe natural delivery planning with specialist supervision."
       schema={obstetricsNamakkalPageSchemas}
     >
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">
@@ -32,7 +32,7 @@ export default function ObstetricsNamakkal() {
             Safe Delivery in Namakkal Starts With Structured Obstetric Care
           </h1>
           <p className="text-white/80 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
-            Pregnancy care is not only about routine checkups. It is about identifying risk early, monitoring mother and baby consistently, and planning labour decisions with clarity. At Nila Hospital, our obstetrics care model is built to support both low-risk and high-risk pregnancies with focused supervision, practical counselling, and safety-first protocols.
+            Pregnancy care is not only about routine checkups. It is about identifying risk early, monitoring mother and baby consistently, and planning labour decisions with clarity. At Nila Hospital, our obstetrics care model is built to support all pregnancies with focused supervision, practical counselling, and safety-first protocols.
           </p>
         </div>
       </HeroGradientSection>
@@ -92,13 +92,13 @@ export default function ObstetricsNamakkal() {
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            3. High-risk pregnancy monitoring in Namakkal
+            3. Structured antenatal monitoring and pregnancy supervision
           </h2>
           <p>
-            High-risk pregnancy care requires consistent supervision and escalation readiness. Conditions such as hypertension, gestational diabetes, prior preterm delivery, or fetal growth concerns cannot be managed through irregular visits. We maintain closer review schedules, focused counselling, and clear emergency guidance so families know when immediate attention is necessary. The goal is not fear-based care, but prepared care with measurable checkpoints.
+            Structured pregnancy supervision requires consistent follow-up and escalation readiness. Conditions such as hypertension, gestational diabetes, prior preterm delivery, or fetal growth concerns cannot be managed through irregular visits. We maintain closer review schedules, focused counselling, and clear emergency guidance so families know when immediate attention is necessary. The goal is not fear-based care, but prepared care with measurable checkpoints.
           </p>
           <p>
-            During high-risk cases, communication is as important as medication. Mothers and caregivers should understand the meaning of each clinical finding and what it implies for delivery timing. This reduces panic and supports informed decisions. Our team emphasizes practical explanation so families can participate actively in care rather than feeling disconnected from medical planning.
+            In complex cases, communication is as important as medication. Mothers and caregivers should understand the meaning of each clinical finding and what it implies for delivery timing. This reduces panic and supports informed decisions. Our team emphasizes practical explanation so families can participate actively in care rather than feeling disconnected from medical planning.
           </p>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function ObstetricsNamakkal() {
             Consult for Obstetrics and Safe Delivery in Namakkal
           </h2>
           <p className="text-nila-light-blue mb-8 max-w-3xl mx-auto">
-            Book antenatal and delivery planning consultation with our team for routine pregnancy, high-risk monitoring, and postpartum guidance.
+            Book antenatal and delivery planning consultation with our team for routine pregnancy monitoring and postpartum guidance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left mb-8">
             <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">

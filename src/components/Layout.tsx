@@ -42,7 +42,7 @@ export default function Layout({
       element.setAttribute('content', value);
     };
 
-    const finalDescription = description || "Nila Hospital is Namakkal's trusted maternity & gynaecology hospital. Expert care for normal delivery, C-section, PCOS & high-risk pregnancy. Call 24/7.";
+    const finalDescription = description || "Nila Hospital is Namakkal's trusted maternity & gynaecology hospital. Expert care for normal delivery, C-section & women's health. Call 24/7.";
 
     updateOrCreateMeta('meta[name="description"]', 'description', finalDescription);
     updateOrCreateMeta('meta[property="og:title"]', 'og:title', finalTitle);
