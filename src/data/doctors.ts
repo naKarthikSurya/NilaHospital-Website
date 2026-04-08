@@ -8,6 +8,7 @@ export interface Doctor {
     badge: string;
     category: "gynaecologist" | "anaesthesiologist";
     type: "practitioner" | "pg";
+    pursuing?: string;
     seesOP: boolean;
     roleContext: string;
     description: string;
@@ -29,10 +30,10 @@ export const doctorsList: Doctor[] = [
         type: "practitioner",
         seesOP: false,
         roleContext: "OP Consultant",
-        description: "Dr. Nithya Subashini is a senior consultant at Nila Hospital with extensive experience in high-risk pregnancy and compassionate women's care.",
+        description: "Dr. Nithya Subashini is a senior consultant at Nila Hospital with extensive experience in obstetrics, gynaecology, and compassionate women's care.",
         infoCards: [
             { icon: GraduationCap, title: "Qualifications", items: ["MBBS", "DGO (Diploma in Gynaecology)", "Registered Medical Practitioner"] },
-            { icon: Stethoscope, title: "Specializations", items: ["High-Risk Pregnancy", "Normal & Surgical Delivery", "PCOS / PCOD Management", "Gynaecological Disorders"] },
+            { icon: Stethoscope, title: "Specializations", items: ["Obstetrics & Antenatal Care", "Normal & Surgical Delivery", "Gynaecological Disorders", "Women's Preventive Care"] },
             { icon: Star, title: "Experience", items: ["Extensive clinical experience", "Performed hundreds of deliveries", "Expert in laparoscopic procedures", "Trusted by families in Namakkal"] },
         ],
     },

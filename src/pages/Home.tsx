@@ -41,9 +41,9 @@ const quickInfoCards = [
 
 export default function Home() {
   return (
-    <Layout 
-      title="Best Obstetrics & Gynaecology Hospital in Namakkal | Nila Hospital"
-      description="Nila Hospital Namakkal: Leading women's specialty hospital for Obstetrics & Gynaecology. Expert pregnancy care, safe deliveries, and compassionate health services."
+    <Layout
+      title="Best Maternity & Gynaecology Hospital in Namakkal | Nila Hospital"
+      description="Nila Hospital is Namakkal's trusted maternity & gynaecology hospital. Expert care for normal delivery, C-section & complete women's health. Call 24/7."
     >
       {/* Hero */}
       <HeroGradientSection className="text-white py-24 md:py-36 relative overflow-hidden">
@@ -55,8 +55,8 @@ export default function Home() {
             Namakkal's Women's Specialty Hospital
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-5 leading-[1.15]">
-           Dedicated to<br />
-            <span className="text-[hsl(var(--nila-warm))] text-3xl md:text-5xl">Maternal Excellence</span>
+            Best Maternity &amp; Gynaecology<br />
+            <span className="text-[hsl(var(--nila-warm))] text-3xl md:text-5xl">Hospital in Namakkal</span>
           </h1>
           <p className="text-lg md:text-xl text-white/75 mb-10 max-w-2xl mx-auto leading-relaxed">
             Obstetrics &amp; Gynaecology Care in Namakkal — trusted by women and families across the region.
@@ -138,7 +138,7 @@ export default function Home() {
                 Infertility and pre-conception hurdles can be stressful for couples. We provide detailed <strong>ANC screenings</strong>, hormonal management, and genetic counselling to ensure your body is ready for the beautiful journey ahead.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Dr. Nithya Subashini specializes in <strong>High-Risk Pregnancy</strong> monitoring, ensuring that every complication is detected and managed early.
+                Dr. Nithya Subashini specializes in <strong>Antenatal Pregnancy Monitoring</strong>, ensuring that every milestone is tracked and managed with clinical precision.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 {[
@@ -176,7 +176,7 @@ export default function Home() {
             <div className="relative z-10 text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-6">Leading Women's Specialty Hospital</h3>
               <p className="text-lg text-white/80 leading-relaxed mb-0">
-                Our commitment extends beyond delivery. We offer specialized care for <strong>PCOS / PCOD management</strong>, combining clinical expertise with lifestyle modifications to help patients regain hormonal balance and confidence.
+                Our commitment extends beyond delivery. We offer specialized gynaecological care, combining clinical expertise with lifestyle guidance to help patients maintain long-term women's health and hormonal wellness.
               </p>
             </div>
           </div>
@@ -208,7 +208,7 @@ export default function Home() {
               {[
                 "Compassionate & Respectful Care",
                 "A Clean & Sterile Medical Environment",
-                "Expertise in High-Risk Pregnancies",
+                "Women-Centred Clinical Expertise",
                 "Affordable & Transparent Pricing",
                 "24/7 Emergency Obstetric Support",
                 "Patient Privacy & Dignity"

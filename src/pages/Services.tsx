@@ -24,7 +24,7 @@ const serviceCategories = [
     title: "Delivery Care",
     services: [
       { name: "Normal Delivery", for: "Low-risk pregnancies", when: "Full term (37–40 weeks)", how: "Supportive, calm, and safe natural birth with experienced care." },
-      { name: "Cesarean (C-Section)", for: "High-risk pregnancies or medical indication", when: "As determined by the doctor", how: "Sterile OT environment with skilled surgical team for safe delivery." },
+      { name: "Cesarean (C-Section)", for: "Medically indicated deliveries", when: "As determined by the doctor", how: "Sterile OT environment with skilled surgical team for safe delivery." },
       { name: "Postnatal Follow-up", for: "New mothers post delivery", when: "First 6 weeks after delivery", how: "Monitoring recovery, breastfeeding support, and newborn guidance." },
     ],
   },
@@ -32,7 +32,7 @@ const serviceCategories = [
     icon: Stethoscope,
     title: "Gynaecology Care",
     services: [
-      { name: "PCOS / PCOD", for: "Women with hormonal imbalance or irregular periods", when: "Irregular cycles, weight changes, or acne", how: "Diagnosis, medication, and lifestyle counselling to manage PCOS effectively." },
+      { name: "Hormonal Imbalance", for: "Women with irregular cycles or hormonal concerns", when: "Irregular cycles, weight changes, or acne", how: "Diagnosis and personalised treatment plan with ongoing monitoring." },
       { name: "Irregular Periods", for: "Women of reproductive age", when: "Missed, painful, or unusually heavy periods", how: "Thorough evaluation and personalised treatment plan." },
       { name: "Vaginal Infections / Discharge", for: "Women with discomfort or unusual symptoms", when: "Persistent discharge, itching, or odour", how: "Private, respectful evaluation with targeted treatment." },
       { name: "Menopause Care", for: "Women in their 40s and 50s", when: "Hot flashes, mood changes, irregular periods", how: "Supportive management to ease the menopausal transition." },
@@ -52,8 +52,8 @@ const serviceCategories = [
 export default function Services() {
   return (
     <Layout 
-      title="Nila Hospital — Comprehensive Gynaecology & Obstetrics Services in Namakkal"
-      description="Explore comprehensive women's healthcare services at Nila Hospital in Namakkal, including pregnancy care, delivery, gynaecology, and preventive health. Expert care for every stage of life."
+      title="Gynaecology & Maternity Services in Namakkal | Dr. Nithya Subashini | Nila Hospital"
+      description="Comprehensive women's healthcare in Namakkal — ANC, normal delivery, Pap smear, gynaecology & more. Consult Dr. Nithya Subashini today."
       schema={servicesPageSchemas}
     >
       {/* Hero */}
@@ -65,7 +65,7 @@ export default function Services() {
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Comprehensive Care for<br />Every Stage of Life
+            Gynaecology &amp; Maternity Services<br />in Namakkal
           </h1>
           <p className="text-white/75 max-w-xl mx-auto text-base leading-relaxed">
             From the first prenatal visit to postnatal recovery and beyond — we provide complete women's healthcare under one roof.
@@ -127,7 +127,7 @@ export default function Services() {
                   At Nila Hospital, our approach to maternity care goes beyond standard checkups. We understand that every pregnancy journey is unique, which is why we offer specialized <strong>Fetal Medicine</strong> consultations and advanced <strong>Prenatal Screenings (ANC)</strong>. 
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Dr. Nithya Subashini and our team utilize high-resolution ultrasound monitoring to track fetal development at every critical milestone. This allows for the early detection and management of <strong>high-risk pregnancy</strong> complications, ensuring the safety of both mother and baby.
+                  Dr. Nithya Subashini and our team utilize high-resolution ultrasound monitoring to track fetal development at every critical milestone. This allows for early detection and management of potential complications, ensuring the safety of both mother and baby.
                 </p>
               </div>
               <div>
@@ -142,9 +142,9 @@ export default function Services() {
             </div>
 
             <div className="mt-16 bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border/50 shadow-sm">
-              <h3 className="text-2xl font-bold text-nila-navy mb-6 text-center">Specialized PCOS & Hormonal Management</h3>
+              <h3 className="text-2xl font-bold text-nila-navy mb-6 text-center">Specialised Gynaecology & Hormonal Care</h3>
               <p className="text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
-                PCOS (Polycystic Ovary Syndrome) is one of the most common hormonal disorders affecting women today. At Nila Hospital Namakkal, we don't just treat the symptoms; we address the root cause. Our <strong>PCOS Clinic</strong> integrates clinical treatment with metabolic management and personalized lifestyle counselling. We help women manage menstrual irregularities, infertility issues, and hormonal acne through evidence-based medicine and sustainable diet advice.
+                Hormonal imbalance and menstrual disorders are among the most common women's health concerns. At Nila Hospital Namakkal, we provide structured evaluation and long-term management for irregular cycles, menstrual pain, hormonal symptoms, and related gynaecological conditions — combining clinical treatment with lifestyle guidance and periodic review.
               </p>
             </div>
 

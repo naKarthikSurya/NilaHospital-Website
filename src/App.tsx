@@ -11,6 +11,13 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import WhyBestHospitalNamakkal from "./pages/WhyBestHospitalNamakkal";
+import BestWomenHospitalNamakkal from "./pages/BestWomenHospitalNamakkal";
+import GynaecologyNamakkal from "./pages/GynaecologyNamakkal";
+import ObstetricsNamakkal from "./pages/ObstetricsNamakkal";
+import MaternityHospitalNamakkal from "./pages/MaternityHospitalNamakkal";
+import WomensHealthNamakkal from "./pages/WomensHealthNamakkal";
+import GeneralMedicineNamakkal from "./pages/GeneralMedicineNamakkal";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +36,25 @@ const App = () => (
           <Route path="/doctors/:doctorId" element={<DoctorProfile />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/why-we-are-best-hospital-in-namakkal"
+            element={<WhyBestHospitalNamakkal />}
+          />
+          <Route
+            path="/best-women-hospital-in-namakkal"
+            element={<BestWomenHospitalNamakkal />}
+          />
+          <Route path="/gynaecology-namakkal" element={<GynaecologyNamakkal />} />
+          <Route path="/obstetrics-namakkal" element={<ObstetricsNamakkal />} />
+          <Route
+            path="/maternity-hospital-namakkal"
+            element={<MaternityHospitalNamakkal />}
+          />
+          <Route path="/womens-health-namakkal" element={<WomensHealthNamakkal />} />
+          <Route
+            path="/general-medicine-namakkal"
+            element={<GeneralMedicineNamakkal />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
