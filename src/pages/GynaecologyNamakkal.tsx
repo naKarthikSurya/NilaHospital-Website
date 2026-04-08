@@ -10,7 +10,7 @@ const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
 
 const carePoints = [
   "Evaluation and treatment for irregular, painful, or heavy periods",
-  "PCOS and hormonal symptom management with structured follow-up",
+  "Hormonal symptom management and menstrual care with structured follow-up",
   "Assessment for vaginal infection, discharge, and pelvic discomfort",
   "Pre-conception and fertility-oriented counselling for couples",
   "Perimenopause and menopause symptom support for midlife women",
@@ -20,8 +20,8 @@ const carePoints = [
 export default function GynaecologyNamakkal() {
   return (
     <Layout
-      title="Gynaecology Specialist in Namakkal | Hormone & PCOS Care"
-      description="Looking for the best gynaecologist in Namakkal? Nila Hospital provides expert specialist care for PCOS, irregular periods, infections, and perimenopause support with personal attention."
+      title="Gynaecology Specialist in Namakkal | Hormonal & Menstrual Care"
+      description="Looking for the best gynaecologist in Namakkal? Nila Hospital provides expert specialist care for irregular periods, infections, hormonal concerns, and perimenopause support with personal attention."
       schema={gynaecologyNamakkalPageSchemas}
     >
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">
@@ -83,10 +83,10 @@ export default function GynaecologyNamakkal() {
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            2. PCOS, irregular periods, and hormonal health management
+            2. Irregular periods and hormonal health management
           </h2>
           <p>
-            One of the most common reasons patients search for the best gynaecologist in Namakkal is PCOS-related symptoms. Women may report delayed cycles, weight fluctuations, facial acne, hair growth changes, and difficulty conceiving. Effective PCOS care is not a one-time course of tablets; it requires phased management with hormonal evaluation, metabolic support, and regular follow-up. We guide treatment based on symptom severity, reproductive goals, and response over time, so progress can be tracked instead of guessed.
+            One of the most common reasons patients search for the best gynaecologist in Namakkal is hormonal imbalance and menstrual concerns. Women may report delayed cycles, weight fluctuations, facial acne, hair growth changes, and difficulty conceiving. Effective management is not a one-time course of tablets; it requires phased treatment with hormonal evaluation, metabolic support, and regular follow-up. We guide treatment based on symptom severity, reproductive goals, and response over time, so progress can be tracked instead of guessed.
           </p>
           <p>
             Menstrual irregularities also need careful interpretation across age groups. A teenager with painful cycles, a young adult with prolonged bleeding, and a woman in perimenopause require different care logic. Our consultation model helps women understand the likely cause, when intervention is necessary, and which warning signs need urgent review. Better understanding improves adherence, reduces anxiety, and helps families make informed health decisions.
@@ -153,7 +153,7 @@ export default function GynaecologyNamakkal() {
             Book a Gynaecology Consultation in Namakkal
           </h2>
           <p className="text-nila-light-blue mb-8 max-w-3xl mx-auto">
-            Speak with our specialist team for PCOS, menstrual disorders, infection symptoms, preventive screening, and long-term women health guidance.
+            Speak with our specialist team for menstrual disorders, hormonal concerns, infection symptoms, preventive screening, and long-term women health guidance.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left mb-8">
             <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">

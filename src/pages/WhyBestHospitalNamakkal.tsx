@@ -12,7 +12,7 @@ const trustPoints = [
   "Dedicated women-focused care pathway from first consultation to follow-up",
   "Consistent consultant-led treatment with clear communication and practical planning",
   "Clean, protocol-based OT and labour support with safety-first monitoring",
-  "Integrated services for ANC, high-risk pregnancy, PCOS, and preventive screening",
+  "Integrated services for ANC, antenatal care, gynaecology, and preventive screening",
   "Compassionate counselling for women and families during emotionally sensitive phases",
 ];
 
@@ -85,7 +85,7 @@ export default function WhyBestHospitalNamakkal() {
             2. Consultant-led continuity from first visit to follow-up
           </h2>
           <p>
-            One of the most common reasons families describe us as a top hospital in Namakkal is continuity of care. In many settings, patients meet a different doctor at each stage. That model often creates confusion and repeated explanations. At Nila Hospital, we prioritize consultant-led continuity so your case history does not get fragmented. Whether it is antenatal monitoring, high-risk pregnancy planning, delivery decisions, or post-delivery review, the same clinical direction is maintained.
+            One of the most common reasons families describe us as a top hospital in Namakkal is continuity of care. In many settings, patients meet a different doctor at each stage. That model often creates confusion and repeated explanations. At Nila Hospital, we prioritize consultant-led continuity so your case history does not get fragmented. Whether it is antenatal monitoring, pregnancy planning, delivery decisions, or post-delivery review, the same clinical direction is maintained.
           </p>
           <p>
             Continuity matters because women&apos;s health decisions are cumulative. A medicine plan from month two may affect findings in month six. A symptom discussed in one consultation may become critical later. When the same team tracks this progression, care becomes safer and more individualized. This approach reduces unnecessary anxiety for families and improves decision quality during important moments such as labour planning and emergency escalation.
@@ -130,7 +130,7 @@ export default function WhyBestHospitalNamakkal() {
             5. Long-term women&apos;s health support, not one-time treatment
           </h2>
           <p>
-            The best hospital choice is rarely about a single appointment. It is about whether the same place can support different health phases over time: cycle irregularities, PCOS, pre-conception planning, pregnancy monitoring, delivery, postnatal follow-up, and preventive screening. Women who establish continuity with us often continue for annual checkups because they prefer a care model that already understands their baseline patterns and prior responses to treatment.
+            The best hospital choice is rarely about a single appointment. It is about whether the same place can support different health phases over time: cycle irregularities, pre-conception planning, pregnancy monitoring, delivery, postnatal follow-up, and preventive screening. Women who establish continuity with us often continue for annual checkups because they prefer a care model that already understands their baseline patterns and prior responses to treatment.
           </p>
           <p>
             This long-term continuity helps with preventive care as well. Early evaluation of persistent symptoms, timely scans, and follow-up discipline can prevent many complications from growing silently. We encourage women and families to treat hospital visits as part of planned health management, not only emergency response. If you are searching for a reliable women-focused hospital in Namakkal with sustainable care pathways, this is where a focused specialty center provides clear value.
@@ -168,7 +168,7 @@ export default function WhyBestHospitalNamakkal() {
             </div>
             <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
               <Stethoscope className="h-5 w-5 text-[hsl(var(--nila-warm))] mt-1 shrink-0" />
-              <p className="text-white/90 text-sm">Specialist-led guidance for pregnancy, PCOS, and women&apos;s health concerns.</p>
+              <p className="text-white/90 text-sm">Specialist-led guidance for pregnancy, gynaecological care, and women&apos;s health concerns.</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

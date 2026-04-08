@@ -51,7 +51,7 @@ export default function Doctors() {
   return (
     <Layout 
       title="Dr. Nithya Subashini — Best Gynaecologist in Namakkal | Nila Hospital"
-      description="Dr. Nithya Subashini (MBBS, DGO) — expert gynaecologist & obstetrician in Namakkal. Specialises in high-risk pregnancy, PCOS & infertility. Book appointment."
+      description="Dr. Nithya Subashini (MBBS, DGO) — expert gynaecologist & obstetrician in Namakkal. Specialist in obstetrics, gynaecology & women's preventive care. Book appointment."
       schema={doctorsListingSchema}
     >
       <HeroGradientSection className="py-20 relative overflow-hidden">

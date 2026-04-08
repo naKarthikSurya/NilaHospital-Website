@@ -114,8 +114,8 @@ export default function About() {
                     "My goal at Nila Hospital is to ensure that healthcare remains human. I want every mother to walk out of our hospital feeling empowered, healthy, and respected. We don't just treat conditions; we care for people."
                   </div>
                   <div className="flex flex-wrap justify-center gap-2 pt-4">
-                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">PCOS Specialist</span>
-                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">High-Risk Pregnancy</span>
+                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">Obstetrics Care</span>
+                    <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">Gynaecology</span>
                     <span className="px-3 py-1 bg-muted rounded-full text-xs font-medium">Normal Delivery</span>
                   </div>
                 </div>
