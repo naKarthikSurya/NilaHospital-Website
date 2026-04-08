@@ -35,7 +35,7 @@ export default function BestWomenHospitalNamakkal() {
   return (
     <Layout
       title="Best Women's Hospital in Namakkal | Nila Hospital"
-      description="Nila Hospital is recognized for clinical excellence in women's health. We provide expert pregnancy monitoring, PCOS management, and delivery care in a sterile, personal environment in Namakkal."
+      description="Nila Hospital is recognized for clinical excellence in women's health. We provide expert pregnancy monitoring, gynaecological care, and delivery care in a sterile, personal environment in Namakkal."
       schema={bestWomenHospitalPageSchemas}
     >
       <HeroGradientSection className="text-white py-20 relative overflow-hidden">
@@ -103,7 +103,7 @@ export default function BestWomenHospitalNamakkal() {
             For many families, pregnancy is when they first evaluate hospital quality in depth. Reliable antenatal care is not only about scheduled checkups. It includes risk mapping, fetal growth tracking, blood pressure and sugar surveillance, nutrition planning, symptom counselling, and timely escalation when warning patterns appear. Our obstetric pathway is designed to keep mothers informed at every milestone, so decisions are made early and with confidence.
           </p>
           <p>
-            Delivery planning is handled with equal care. We support normal delivery whenever clinically suitable and use surgical intervention when it becomes medically necessary. Good obstetric care does not force one approach; it chooses the safest approach for the specific mother and baby. If you want to review detailed service options before booking, visit our <Link to="/services" className="text-[hsl(var(--nila-warm))] font-semibold hover:underline">services page</Link> for ANC, delivery care, PCOS management, and preventive care pathways.
+            Delivery planning is handled with equal care. We support normal delivery whenever clinically suitable and use surgical intervention when it becomes medically necessary. Good obstetric care does not force one approach; it chooses the safest approach for the specific mother and baby. If you want to review detailed service options before booking, visit our <Link to="/services" className="text-[hsl(var(--nila-warm))] font-semibold hover:underline">services page</Link> for ANC, delivery care, gynaecological support, and preventive care pathways.
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
@@ -145,10 +145,10 @@ export default function BestWomenHospitalNamakkal() {
       <section className="py-16 bg-background">
         <div className="container max-w-4xl mx-auto px-4 space-y-7 text-muted-foreground leading-8 text-[17px]">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            5. Clinical depth in PCOS, menstrual disorders, and preventive screening
+            5. Clinical depth in menstrual disorders and preventive screening
           </h2>
           <p>
-            A large percentage of women who search for the best women hospital in Namakkal are dealing with chronic concerns such as PCOS, irregular or painful periods, recurrent infections, or unexplained hormonal symptoms. These conditions need ongoing management, not episodic prescriptions. Our approach combines medical treatment, lifestyle guidance, and follow-up monitoring so that improvements are measurable and sustained. The goal is not short-term symptom masking but better hormonal and reproductive stability over time.
+            A large percentage of women who search for the best women hospital in Namakkal are dealing with chronic concerns such as irregular or painful periods, recurrent infections, or unexplained hormonal symptoms. These conditions need ongoing management, not episodic prescriptions. Our approach combines medical treatment, lifestyle guidance, and follow-up monitoring so that improvements are measurable and sustained. The goal is not short-term symptom masking but better hormonal and reproductive stability over time.
           </p>
           <p>
             Preventive screening is equally important. Women often postpone cervical screening, routine checkups, and pre-conception evaluation because symptoms feel manageable. Early checkups are the opposite of overtesting; they help detect risk before it becomes a crisis. Whether you are planning pregnancy now or later, proactive care can reduce complications and improve maternal outcomes.
@@ -182,7 +182,7 @@ export default function BestWomenHospitalNamakkal() {
             </div>
             <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
               <CalendarHeart className="h-5 w-5 text-[hsl(var(--nila-warm))] mt-1 shrink-0" />
-              <p className="text-white/90 text-sm">Structured follow-up for PCOS, cycle disorders, and menopausal health.</p>
+              <p className="text-white/90 text-sm">Structured follow-up for cycle disorders, hormonal health, and menopausal care.</p>
             </div>
             <div className="bg-white/10 rounded-xl p-4 flex items-start gap-3">
               <Sparkles className="h-5 w-5 text-[hsl(var(--nila-warm))] mt-1 shrink-0" />
