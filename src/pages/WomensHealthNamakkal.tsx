@@ -10,7 +10,7 @@ const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
 
 const womenHealthFocus = [
   "Adolescent menstrual and hormonal guidance with privacy-first consultations",
-  "PCOS and cycle health management with regular progress review",
+  "Cycle health and hormonal management with regular progress review",
   "Pre-conception planning and reproductive wellness support",
   "Pregnancy-linked women health coordination and postnatal transition care",
   "Menopause symptom management with preventive care planning",
@@ -76,7 +76,7 @@ export default function WomensHealthNamakkal() {
             1. Women&apos;s health is a long-term journey, not a one-time visit
           </h2>
           <p>
-            Most women experience changing health needs across different life stages. A teenager may need guidance for painful periods, a young adult may seek support for PCOS or cycle irregularity, a married woman may need fertility planning, and a mother may need postpartum recovery support. Later, perimenopause and menopause introduce a new set of hormonal and metabolic changes. Effective women&apos;s health care in Namakkal should connect these phases instead of treating each concern in isolation.
+            Most women experience changing health needs across different life stages. A teenager may need guidance for painful periods, a young adult may seek support for hormonal concerns or cycle irregularity, a married woman may need fertility planning, and a mother may need postpartum recovery support. Later, perimenopause and menopause introduce a new set of hormonal and metabolic changes. Effective women&apos;s health care in Namakkal should connect these phases instead of treating each concern in isolation.
           </p>
           <p>
             At Nila Hospital, we follow this continuity model. We look at symptom patterns across time, reproductive goals, and overall wellness indicators so treatment decisions remain relevant and sustainable. This approach improves confidence because women understand what is changing in their body and what practical steps can help.
@@ -89,7 +89,7 @@ export default function WomensHealthNamakkal() {
             Menstrual changes are often dismissed as normal stress, but persistent irregularity, heavy bleeding, severe pain, or prolonged absence of cycles should be evaluated early. Hormonal imbalance may affect fertility, sleep, mood, weight, skin, and overall quality of life. When diagnosis is delayed, women often spend months in trial-and-error treatment. Structured specialist assessment shortens this cycle and helps women move toward measurable improvement.
           </p>
           <p>
-            PCOS care is a common part of women&apos;s health services in Namakkal. Management works best when medical therapy, lifestyle support, and periodic review are combined. We focus on symptom control as well as long-term metabolic and reproductive stability. If you are seeking dedicated reproductive care, our <Link to="/gynaecology-namakkal" className="text-[hsl(var(--nila-warm))] font-semibold hover:underline">gynaecology page</Link> explains service details.
+            Hormonal care is a common part of women&apos;s health services in Namakkal. Management works best when medical therapy, lifestyle support, and periodic review are combined. We focus on symptom control as well as long-term metabolic and reproductive stability. If you are seeking dedicated reproductive care, our <Link to="/gynaecology-namakkal" className="text-[hsl(var(--nila-warm))] font-semibold hover:underline">gynaecology page</Link> explains service details.
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">

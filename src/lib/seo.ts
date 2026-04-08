@@ -77,7 +77,7 @@ export const servicesPageSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "PCOS and Gynaecology Care",
+    name: "Gynaecology and Women's Health Care",
     provider: { "@id": HOSPITAL_ID },
     areaServed: "Namakkal",
   },
@@ -88,14 +88,14 @@ export const whyBestHospitalPageSchemas = [
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: "Why We Are Best Hospital in Namakkal",
-    url: `${SITE_URL}/why-best-hospital-namakkal`,
+    url: `${SITE_URL}/why-we-are-best-hospital-in-namakkal`,
     about: { "@id": HOSPITAL_ID },
   },
   breadcrumbSchema([
     { name: "Home", path: "/" },
     {
       name: "Why We Are Best Hospital in Namakkal",
-      path: "/why-best-hospital-namakkal",
+      path: "/why-we-are-best-hospital-in-namakkal",
     },
   ]),
   {
@@ -112,10 +112,10 @@ export const whyBestHospitalPageSchemas = [
       },
       {
         "@type": "Question",
-        name: "Does Nila Hospital provide high-risk pregnancy monitoring?",
+        name: "Does Nila Hospital provide antenatal and delivery planning?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Nila Hospital provides antenatal monitoring, risk-based evaluation, and delivery planning for both routine and high-risk pregnancy cases.",
+          text: "Yes. Nila Hospital provides structured antenatal monitoring, risk-based evaluation, and delivery planning with specialist supervision.",
         },
       },
       {
@@ -135,14 +135,14 @@ export const bestWomenHospitalPageSchemas = [
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: "Best Women Hospital in Namakkal",
-    url: `${SITE_URL}/best-women-hospital-namakkal`,
+    url: `${SITE_URL}/best-women-hospital-in-namakkal`,
     about: { "@id": HOSPITAL_ID },
   },
   breadcrumbSchema([
     { name: "Home", path: "/" },
     {
       name: "Best Women Hospital in Namakkal",
-      path: "/best-women-hospital-namakkal",
+      path: "/best-women-hospital-in-namakkal",
     },
   ]),
   {
@@ -154,15 +154,15 @@ export const bestWomenHospitalPageSchemas = [
         name: "What services should a women hospital in Namakkal offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A strong women hospital should provide pregnancy care, delivery support, PCOS and menstrual disorder treatment, preventive screening, and postnatal follow-up.",
+          text: "A strong women hospital should provide pregnancy care, delivery support, menstrual disorder treatment, preventive screening, and postnatal follow-up.",
         },
       },
       {
         "@type": "Question",
-        name: "Can I consult for PCOS and irregular periods at Nila Hospital?",
+        name: "Can I consult for irregular periods and hormonal concerns at Nila Hospital?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Nila Hospital provides clinical evaluation and long-term management plans for PCOS, irregular cycles, and related hormonal symptoms.",
+          text: "Yes. Nila Hospital provides clinical evaluation and long-term management plans for menstrual irregularities, hormonal imbalances, and related gynaecological symptoms.",
         },
       },
       {
@@ -198,15 +198,15 @@ export const gynaecologyNamakkalPageSchemas = [
         name: "When should I see a gynaecologist in Namakkal?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Consult a gynaecologist for irregular periods, severe menstrual pain, PCOS symptoms, infection concerns, pelvic pain, or pre-conception planning.",
+          text: "Consult a gynaecologist for irregular periods, severe menstrual pain, infection concerns, pelvic pain, or pre-conception planning.",
         },
       },
       {
         "@type": "Question",
-        name: "Does Nila Hospital treat PCOS and hormonal imbalance?",
+        name: "Does Nila Hospital treat hormonal imbalance and menstrual disorders?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Nila Hospital provides specialist evaluation and long-term management for PCOS, menstrual irregularity, and related hormonal symptoms.",
+          text: "Yes. Nila Hospital provides specialist evaluation and long-term management for menstrual irregularity, hormonal imbalances, and related gynaecological symptoms.",
         },
       },
       {
@@ -255,10 +255,10 @@ export const obstetricsNamakkalPageSchemas = [
       },
       {
         "@type": "Question",
-        name: "Can high-risk pregnancy cases be monitored?",
+        name: "Does Nila Hospital provide structured antenatal monitoring?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. High-risk pregnancies are monitored with structured follow-up, symptom surveillance, and timely escalation planning.",
+          text: "Yes. Antenatal care at Nila Hospital includes structured follow-up, symptom surveillance, and timely clinical guidance throughout pregnancy.",
         },
       },
     ],
@@ -333,7 +333,7 @@ export const womensHealthNamakkalPageSchemas = [
         name: "What women's health services are available at Nila Hospital?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Services include menstrual and hormonal care, PCOS management, reproductive counselling, pregnancy-linked wellness, and menopause support.",
+          text: "Services include menstrual and hormonal care, reproductive counselling, pregnancy-linked wellness, and menopause support.",
         },
       },
       {
@@ -438,24 +438,3 @@ export function breadcrumbSchema(
     })),
   };
 }
-
-export const locationPageSchema = (locationName: string, serviceName: string) => {
-  const path = `/${locationName.toLowerCase()}-${serviceName.toLowerCase().replace(/ /g, '-')}`;
-  return [
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalWebPage",
-      "@id": `${SITE_URL}${path}#webpage`,
-      "url": `${SITE_URL}${path}`,
-      "name": `${serviceName} near ${locationName} | Nila Hospital`,
-      "description": `Top-rated ${serviceName} for families in ${locationName}. Located in Namakkal (25-30 kms away), Nila Hospital offers expert maternity and gynaecology care.`,
-      "about": { "@id": HOSPITAL_ID },
-      "breadcrumb": { "@id": `${SITE_URL}${path}#breadcrumb` }
-    },
-    breadcrumbSchema([
-      { name: "Home", path: "/" },
-      { name: "Services", path: "/services" },
-      { name: `${serviceName} in ${locationName}`, path: path }
-    ])
-  ];
-};
