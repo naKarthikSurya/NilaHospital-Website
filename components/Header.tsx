@@ -1,0 +1,130 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Phone, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Services", path: "/services" },
+  { label: "Doctors", path: "/doctors" },
+  { label: "About Us", path: "/about" },
+  { label: "Contact", path: "/contact" },
+];
+
+export default function Header() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-nila-navy/95 backdrop-blur-md shadow-lg">
+      <div className="container max-w-6xl mx-auto px-4 py-1 md:py-0 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-0 group">
+          <img
+            src="/assets/NHLogo_NB.svg"
+            alt="Nila Hospital Logo"
+            style={{ height: "120px" }}
+            className="h-20 md:h-[90px] w-auto transition-transform group-hover:scale-105"
+          />
+          <div className="-ml-4">
+            <div
+              className="text-white font-bold text-lg leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif", fontSize: "18px" }}
+            >
+              Nila Hospital
+            </div>
+            <div
+              className="text-nila-light-blue text-xs leading-tight tracking-wide"
+              style={{ fontSize: "14px" }}
+            >
+              Obstetrics & Gynaecology
+            </div>
+          </div>
+        </Link>
+
+        {/* Desktop Nav & Call Button Group */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={`text-sm font-medium px-3 py-2 rounded-lg transition-all ${
+                  pathname === link.path
+                    ? "text-white bg-white/15"
+                    : "text-nila-light-blue hover:text-white hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center">
+            <a href="tel:+919655225192">
+              <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white gap-2 font-semibold shadow-md">
+                <Phone className="h-4 w-4" />
+                Call Now
+              </Button>
+            </a>
+          </div>
+        </div>
+
+        {/* Mobile: Menu */}
+        <div className="flex md:hidden items-center gap-2">
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <button className="text-white p-2">
+                <Menu className="h-6 w-6" />
+              </button>
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="bg-nila-navy border-nila-blue w-72"
+            >
+              <div className="flex justify-between items-center mb-8">
+                <span
+                  className="text-white font-bold text-lg"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Menu
+                </span>
+                <button onClick={() => setOpen(false)} className="text-white">
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <nav className="flex flex-col gap-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    href={link.path}
+                    onClick={() => setOpen(false)}
+                    className={`text-base font-medium py-3 px-4 rounded-lg transition-all ${
+                      pathname === link.path
+                        ? "text-white bg-white/15"
+                        : "text-nila-light-blue hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <a
+                  href="tel:+919655225192"
+                  className="mt-4 flex items-center justify-center gap-2 bg-[hsl(var(--nila-warm))] text-white rounded-lg py-3 font-semibold"
+                  onClick={() => setOpen(false)}
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
+}
