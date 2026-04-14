@@ -27,3 +27,10 @@ dist-ssr
 .bot.lock
 antigravity.db
 CLAUDE.md
+
+# Next.js
+.next
+out
+build
+.vercel
+*.pem
