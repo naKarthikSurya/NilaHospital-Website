@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 
 import type { Metadata } from 'next';
+import { DM_Sans, Playfair_Display } from 'next/font/google';
 import { defaultSchema } from '@/lib/seo';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,6 +10,18 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { Toaster } from '@/components/ui/sonner';
 
 import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nilahospital.com'),
@@ -46,7 +59,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(defaultSchema) }}
         />
       </head>
-      <body>
+      <body className={`${dmSans.variable} ${playfair.variable}`}>
         <div className="min-h-screen flex flex-col pt-20 md:pt-24 selection:bg-[hsl(var(--nila-warm))]/20 selection:text-nila-navy antialiased">
           <Header />
           <main className="flex-grow flex flex-col relative w-full overflow-hidden">
