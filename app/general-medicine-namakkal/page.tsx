@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Phone, MapPin, CheckCircle, Stethoscope, Activity, HeartPulse } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { generalMedicineNamakkalPageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "General Medicine in Namakkal | Wellness & Primary Care",
+  title: "General Medicine Doctor in Namakkal",
   description: "Nila Hospital provides expert general medicine consultations in Namakkal. First-level clinical assessment, adult medicine, and wellness monitoring for families.",
   alternates: {
     canonical: "/general-medicine-namakkal",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 export default function Page() {
   return (
@@ -40,53 +39,48 @@ export default function Page() {
         </div>
       </HeroGradientSection>
 
-      {/* Services Breakdown */}
+      {/* Services Grid */}
       <section className="py-24 bg-background">
         <div className="container max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-nila-navy">Your First Line of Medical Support</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Nila Hospital's general medicine department provides first-level clinical evaluations for various adult health symptoms. Our goal is to provide accurate diagnosis and clear treatment pathways for common medical conditions.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 pt-4">
-                {[
-                  "Adult Illness Management",
-                  "Chronic Disease Screening",
-                  "Lifestyle Medicine",
-                  "Wellness Physicals",
-                  "Geriatric Support",
-                  "Coordinated Referrals"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
-                    <span className="font-semibold text-nila-navy text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 gap-4">
-              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm flex gap-4">
-                <Stethoscope className="h-8 w-8 text-[hsl(var(--nila-warm))] shrink-0" />
-                <div>
-                  <h4 className="font-bold text-nila-navy mb-1">Clinical Evaluation</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Thorough symptom assessment and history review for accurate diagnostics.</p>
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-nila-navy mb-6">First-Line Medical Support</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              We provide essential primary care consultations and checkups to ensure early detection of health concerns and keep your family healthy and active.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {[
+              { icon: Stethoscope, title: "Clinical Checkups", desc: "First-level screening of common physical symptoms, adult ailments, and health conditions." },
+              { icon: Activity, title: "Wellness Tracking", desc: "Coordinated blood work monitoring, hypertension reviews, and diabetic tracking." },
+              { icon: HeartPulse, title: "Family Medicine", desc: "Comprehensive clinical evaluation and referrals to specialized centers where advanced support is indicated." }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-card p-8 rounded-3xl border border-border shadow-sm text-center">
+                <div className="bg-[hsl(var(--nila-warm-light))] p-3 rounded-2xl w-fit mx-auto mb-6">
+                  <item.icon className="h-6 w-6 text-[hsl(var(--nila-warm))]" />
                 </div>
+                <h3 className="text-xl font-bold text-nila-navy mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
               </div>
-              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm flex gap-4">
-                <Activity className="h-8 w-8 text-[hsl(var(--nila-warm))] shrink-0" />
-                <div>
-                  <h4 className="font-bold text-nila-navy mb-1">Wellness Monitoring</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Periodic health checkups and physiological monitoring for long-term health.</p>
+            ))}
+          </div>
+
+          <div className="max-w-3xl mx-auto bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border">
+            <h3 className="text-2xl font-bold text-nila-navy mb-6 text-center">Primary Care Milestones</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                "Routine Vital Screenings",
+                "Adult Fever & Ailment Audits",
+                "Chronic Wellness Monitoring",
+                "Diagnostic Laboratory Coordination",
+                "Specialist Referral Support",
+                "Preventive Family Healthcare"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
+                  <span className="font-semibold text-nila-navy text-sm">{item}</span>
                 </div>
-              </div>
-              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm flex gap-4">
-                <HeartPulse className="h-8 w-8 text-[hsl(var(--nila-warm))] shrink-0" />
-                <div>
-                  <h4 className="font-bold text-nila-navy mb-1">Preventive Health</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Vaccinations and risk-factor screening for heart, lung, and metabolic health.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -107,16 +101,26 @@ export default function Page() {
             Consult a General Medicine Specialist in Namakkal
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "general_medicine_cta_call", service_name: "general_medicine", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
-                <Phone className="h-5 w-5" /> Call +91 96552 25192
+                <Phone className="h-5 w-5" /> Call {hospital.phoneDisplay}
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "general_medicine_cta_directions", service_name: "general_medicine", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
                 <MapPin className="h-5 w-5" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </section>

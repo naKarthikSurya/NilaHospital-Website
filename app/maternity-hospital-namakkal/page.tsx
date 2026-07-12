@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Phone, MapPin, CheckCircle, Baby, HeartPulse, ShieldCheck, Clock } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { maternityHospitalNamakkalPageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Premium Maternity Hospital in Namakkal | 24/7 Delivery Support",
+  title: "Maternity Hospital in Namakkal",
   description: "Nila Hospital is the most trusted maternity hospital in Namakkal. Led by Dr. Nithya Subashini, we offer senior consultant-led delivery care & post-natal support.",
   alternates: {
     canonical: "/maternity-hospital-namakkal",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 export default function Page() {
   return (
@@ -71,7 +70,7 @@ export default function Page() {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-foreground">From ANC to Happy Home-Coming</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Our maternity journey begins with your first **Antenatal Visit (ANC)**. We guide you through كل milestone with personalized nutrition plans, scan reviews, and delivery planning. After birth, our team supports you with breastfeeding guidance and postnatal recovery care.
+                Our maternity journey begins with your first <strong>Antenatal Visit (ANC)</strong>. We guide you through every milestone with personalized nutrition plans, scan reviews, and delivery planning. After birth, our team supports you with breastfeeding guidance and postnatal recovery care.
               </p>
               <ul className="space-y-4">
                 {[
@@ -92,16 +91,28 @@ export default function Page() {
               <h4 className="text-xl font-bold text-nila-navy mb-4">Book Your Maternity Tour</h4>
               <p className="text-muted-foreground text-sm mb-8 leading-relaxed">Visit Nila Hospital Namakkal today to see our modern facilities and meet our compassionate team of specialists.</p>
               <div className="space-y-4">
-                <a href={PHONE} className="block w-full">
+                <ClientCTA
+                  event="phone_click"
+                  params={{ cta_location: "maternity_tour_call", service_name: "maternity", link_url: hospital.phoneHref }}
+                  href={hospital.phoneHref}
+                  className="block w-full"
+                >
                   <Button className="w-full bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold h-12 shadow-lg">
-                    Call +91 96552 25192
+                    Call {hospital.phoneDisplay}
                   </Button>
-                </a>
-                <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="block w-full">
+                </ClientCTA>
+                <ClientCTA
+                  event="directions_click"
+                  params={{ cta_location: "maternity_tour_directions", service_name: "maternity", link_url: hospital.mapsUrl }}
+                  href={hospital.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full"
+                >
                   <Button variant="outline" className="w-full bg-white text-nila-navy h-12">
                      Get Directions
                   </Button>
-                </a>
+                </ClientCTA>
               </div>
             </div>
           </div>

@@ -6,6 +6,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, MapPin, Phone, Mail, Award, Clock, CalendarHeart, HeartPulse, GraduationCap, Link as LinkIcon, User } from 'lucide-react';
 import Link from 'next/link';
+import { physicianSchemaForDoctor } from '@/lib/seo';
+import { hospital } from '@/data/hospital';
+import DoctorProfileTracker from '@/components/DoctorProfileTracker';
+import DoctorContactButton from '@/components/DoctorContactButton';
 
 type Props = {
   params: Promise<{ doctorId: string }>;
@@ -19,12 +23,14 @@ export async function generateMetadata(
   
   if (!doctor) {
     return {
-      title: 'Doctor Not Found - Nila Hospital'
+      title: 'Doctor Not Found'
     };
   }
 
+  const specialty = doctor.category === 'gynaecologist' ? 'Gynaecologist' : 'Anaesthesiologist';
+
   return {
-    title: `${doctor.name} - ${doctor.category.replace(/-/g, ' ')} | Nila Hospital`,
+    title: `${doctor.name}, ${specialty} in Namakkal`,
     description: doctor.description,
     alternates: {
       canonical: `/doctors/${doctor.id}`,
@@ -46,32 +52,6 @@ export default async function DoctorProfile({ params }: Props) {
     notFound();
   }
 
-  // Common JSON-LD structure using actual doctor data
-  const profileSchema = {
-    "@context": "https://schema.org",
-    "@type": "Physician",
-    name: doctor.name,
-    description: doctor.description,
-    medicalSpecialty: doctor.category.replace(/-/g, ' '),
-    image: "https://nilahospital.com/assets/NHLogo_NB.svg", // Fallback image since no real photos
-    url: `https://nilahospital.com/doctors/${doctor.id}`,
-    telephone: "+919655225192",
-    availableService: "Obstetrics and Gynaecology",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "743, A/1, A/2, Salem Road, Swamy Nagar",
-      addressLocality: "Namakkal",
-      addressRegion: "Tamil Nadu",
-      postalCode: "637001",
-      addressCountry: "IN"
-    },
-    hospitalAffiliation: {
-      "@type": "Hospital",
-      name: "Nila Hospital",
-      url: "https://nilahospital.com"
-    }
-  };
-
   const isDrd = doctor.id === 'dr-deepika';
   const isDrr = doctor.id === 'dr-rajesh';
 
@@ -79,8 +59,9 @@ export default async function DoctorProfile({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(physicianSchemaForDoctor(doctor)) }}
       />
+      <DoctorProfileTracker doctorName={doctor.name} />
       
       {/* Hero section */}
       <div className="bg-gradient-to-b from-nila-navy/5 to-background py-8 md:py-16">
@@ -116,13 +97,13 @@ export default async function DoctorProfile({ params }: Props) {
                 {/* Conditionally Render Contact Area based on requirements */}
                 {(!isDrd && !isDrr) && (
                   <div className="flex flex-row md:flex-col gap-3">
-                    <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white gap-2 shadow-md" asChild>
-                      <a href="tel:+919655225192">
-                        <Phone className="h-4 w-4" /> Contact Desk
-                      </a>
-                    </Button>
+                    <DoctorContactButton 
+                      doctorName={doctor.name} 
+                      phoneHref={hospital.phoneHref} 
+                      phoneDisplay="Contact Desk" 
+                    />
                     <Button variant="outline" className="gap-2 bg-white hidden" asChild>
-                      <a href="https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8" target="_blank" rel="noopener noreferrer">
+                      <a href={hospital.mapsUrl} target="_blank" rel="noopener noreferrer">
                         <MapPin className="h-4 w-4" /> View Direction
                       </a>
                     </Button>

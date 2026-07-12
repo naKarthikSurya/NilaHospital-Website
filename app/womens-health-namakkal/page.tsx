@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Phone, MapPin, CheckCircle, Heart, Shield, Activity, Users } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { womensHealthNamakkalPageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Complete Women's Health in Namakkal | Preventive Care & Wellness",
+  title: "Women's Preventive Healthcare in Namakkal",
   description: "Consult Nila Hospital for expert women's health in Namakkal. Specialized in preventive screenings, hormonal wellness, and life-stage health management for women.",
   alternates: {
     canonical: "/womens-health-namakkal",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 export default function Page() {
   return (
@@ -40,59 +39,58 @@ export default function Page() {
         </div>
       </HeroGradientSection>
 
-      {/* Narrative Section */}
+      {/* Main Content */}
       <section className="py-24 bg-background">
-        <div className="container max-w-5xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-nila-navy leading-tight">Proactive Care for a Healthier You</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Health concerns for women often change throughout life. At Nila Hospital Namakkal, we provide tailored medical evaluations that address physical, hormonal, and emotional well-being.
-              </p>
-              <div className="grid grid-cols-1 gap-4">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-7 space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold text-nila-navy">Wellness &amp; Prevention Across Life Stages</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Our department provides custom wellness surveillance to address unique health requirements across key phases of a woman's life: from adolescent puberty transitions, through active maternal periods, and into post-menopausal health management.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {[
                   { icon: Shield, title: "Screening", text: "Regular Pap smears and cervical cancer prevention." },
                   { icon: Heart, title: "Wellness", text: "Nutrition and lifestyle guidance for hormonal health." },
                   { icon: Activity, title: "Management", text: "Long-term care for menstrual and uterine health." }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4 p-5 bg-muted/40 rounded-2xl border border-border/50">
-                    <item.icon className="h-6 w-6 text-[hsl(var(--nila-warm))] shrink-0" />
-                    <div>
-                      <h4 className="font-bold text-foreground text-sm">{item.title}</h4>
-                      <p className="text-muted-foreground text-xs leading-relaxed">{item.text}</p>
-                    </div>
+                  <div key={idx} className="bg-card p-5 rounded-2xl border border-border shadow-sm">
+                    <item.icon className="h-5 w-5 text-[hsl(var(--nila-warm))] mb-3" />
+                    <h4 className="font-bold text-nila-navy mb-1">{item.title}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
             </div>
-            
-            <div className="bg-card border border-border shadow-xl rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden">
-               <div className="absolute -top-4 -right-4 w-24 h-24 bg-[hsl(var(--nila-warm))]/5 rounded-full" />
-               <h3 className="text-2xl font-bold text-nila-navy mb-8">Clinical Focus Areas</h3>
-               <ul className="space-y-5">
-                 {[
-                   "Dysfunctional Uterine Bleeding (DUB)",
-                   "Endometriosis & Pelvic Pain Care",
-                   "Vaginal Health & Infection Control",
-                   "Pre-conception Nutritional Health",
-                   "Menopause/HRT Consultation Support",
-                   "Obesity & Gynae-Health Coordination"
-                 ].map((item, idx) => (
-                   <li key={idx} className="flex items-center gap-3">
-                     <CheckCircle className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
-                     <span className="font-medium text-foreground text-sm">{item}</span>
-                   </li>
-                 ))}
-               </ul>
+
+            <div className="lg:col-span-5 bg-muted/30 p-8 md:p-10 rounded-[2.5rem] border border-border">
+              <h3 className="text-2xl font-bold text-nila-navy mb-6">Key Wellness Milestones</h3>
+              <ul className="space-y-4">
+                {[
+                  "Personalized Pre-conception Consults",
+                  "PCOS/PCOD Clinical Pathways",
+                  "Menstrual Health Monitoring",
+                  "Cervical Screening & HPV Care",
+                  "Breast Exam Guidance & Audits",
+                  "Adolescent Puberty Support"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
+                    <span className="font-medium text-foreground text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Authority Section */}
-      <section className="py-20 bg-muted/20">
+      {/* Trust Block */}
+      <section className="py-20 bg-background border-t border-border/50">
         <div className="container max-w-4xl mx-auto px-4 text-center">
-          <Users className="h-12 w-12 text-[hsl(var(--nila-warm))] mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-nila-navy mb-6">Built on Foundation of Trust</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Nila Hospital Namakkal provides specialized care with direct access to senior woman consultants. This ensures that every clinical decision is made with high expertise and a deep understanding of patient comforts.
@@ -109,16 +107,26 @@ export default function Page() {
             Take Charge of Your Health Today
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "womens_health_cta_call", service_name: "womens_health", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
-                <Phone className="h-5 w-5" /> Call +91 96552 25192
+                <Phone className="h-5 w-5" /> Call {hospital.phoneDisplay}
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "womens_health_cta_directions", service_name: "womens_health", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
                 <MapPin className="h-5 w-5" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </section>

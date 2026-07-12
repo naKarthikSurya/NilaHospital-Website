@@ -17,6 +17,10 @@ export interface Doctor {
         title: string;
         items: string[];
     }[];
+    knowsAbout?: string[];
+    sameAs?: string[];
+    registrationNumber?: string;
+    lastModified?: string;
 }
 
 export const doctorsList: Doctor[] = [
@@ -36,6 +40,10 @@ export const doctorsList: Doctor[] = [
             { icon: Stethoscope, title: "Specializations", items: ["Obstetrics & Antenatal Care", "Normal & Surgical Delivery", "Gynaecological Disorders", "Women's Preventive Care"] },
             { icon: Star, title: "Experience", items: ["Extensive clinical experience", "Performed hundreds of deliveries", "Expert in laparoscopic procedures", "Trusted by families in Namakkal"] },
         ],
+        knowsAbout: ["Obstetrics", "Gynaecology", "Maternity Care", "Antenatal Care", "Normal Delivery", "Cesarean Section", "Women's Health"],
+        sameAs: [],
+        registrationNumber: "", // Will be filled later by the user
+        lastModified: "2026-07-12",
     },
     {
         id: "arul-ramasamy",
@@ -53,5 +61,9 @@ export const doctorsList: Doctor[] = [
             { icon: Stethoscope, title: "Specializations", items: ["Obstetric Anaesthesia", "General Anaesthesia", "Pain Management"] },
             { icon: Star, title: "Experience", items: ["Senior clinical lead", "Extensive operative experience", "Emergency trauma care Expert"] },
         ],
+        knowsAbout: ["Anaesthesiology", "Obstetric Anaesthesia", "General Anaesthesia", "Pain Management", "Emergency Care"],
+        sameAs: [],
+        registrationNumber: "", // Will be filled later by the user
+        lastModified: "2026-07-12",
     },
 ];

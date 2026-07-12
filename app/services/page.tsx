@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield, CheckCircle, Clock, Users } from "lucide-react";
 import { servicesPageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Gynaecology & Maternity Services in Namakkal | Dr. Nithya Subashini | Nila Hospital",
+  title: "Obstetrics & Gynaecology Services in Namakkal",
   description: "Comprehensive women's healthcare in Namakkal — ANC, normal delivery, Pap smear, gynaecology & more. Consult Dr. Nithya Subashini today.",
   alternates: {
     canonical: "/services",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 const serviceCategories = [
   {
@@ -188,16 +187,26 @@ export default function Page() {
             Clinical information based on <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">WHO</a> & <a href="https://www.nih.gov" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">NIH</a> standards
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "services_cta_call", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
                 <Phone className="h-5 w-5" /> Call Now
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "services_cta_directions", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 w-full sm:w-auto gap-2 text-base">
                 <MapPin className="h-5 w-5" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </section>
