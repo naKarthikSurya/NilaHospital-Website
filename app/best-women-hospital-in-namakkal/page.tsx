@@ -5,17 +5,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, CheckCircle, Heart, Shield, Baby } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { bestWomenHospitalPageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Best Women Hospital in Namakkal | Dedicated Maternity & Gynaec Care",
+  title: "Best Women's Clinic in Namakkal",
   description: "Nila Hospital is Namakkal's best women hospital offering expert maternity care, gynaecology services, and hormone wellness. Book your consultation today.",
   alternates: {
     canonical: "/best-women-hospital-in-namakkal",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 export default function Page() {
   return (
@@ -104,16 +103,26 @@ export default function Page() {
             Consult the Best Women Specialists in Namakkal
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "best_women_cta_call", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
-                <Phone className="h-5 w-5" /> Call +91 96552 25192
+                <Phone className="h-5 w-5" /> Call {hospital.phoneDisplay}
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "best_women_cta_directions", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
                 <MapPin className="h-5 w-5" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </section>

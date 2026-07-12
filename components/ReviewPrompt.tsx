@@ -4,6 +4,7 @@ import { GOOGLE_REVIEW_URL } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, MessageSquare } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ReviewPrompt() {
   const REVIEW_URL = GOOGLE_REVIEW_URL;
@@ -22,7 +23,12 @@ export default function ReviewPrompt() {
           </p>
         </div>
         <div className="shrink-0 w-full md:w-auto">
-          <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer">
+          <a 
+            href={REVIEW_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={() => trackEvent("review_click", { cta_location: "review_prompt_card", link_url: REVIEW_URL })}
+          >
             <Button size="lg" className="w-full bg-nila-navy hover:bg-nila-navy/90 text-white font-bold gap-2 rounded-2xl px-8 shadow-xl">
               <MessageSquare className="h-4 w-4" /> Write a Review
             </Button>

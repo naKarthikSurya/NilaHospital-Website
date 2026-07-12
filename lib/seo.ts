@@ -1,19 +1,20 @@
+import { hospital } from "@/data/hospital";
 import type { Doctor } from "@/data/doctors";
 
 export const SITE_URL = "https://nilahospital.com";
-export const HOSPITAL_NAME = "Nila Hospital Namakkal";
+export const HOSPITAL_NAME = hospital.fullName;
 export const HOSPITAL_ID = `${SITE_URL}/#hospital`;
-export const MAIN_PHONE = "+919655225192";
-export const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-export const GOOGLE_REVIEW_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8"; // Direct to Maps Page
+export const MAIN_PHONE = hospital.phoneHref.replace("tel:", "");
+export const MAPS_URL = hospital.mapsUrl;
+export const GOOGLE_REVIEW_URL = hospital.mapsUrl; // Direct to Maps Page
 
 export const HOSPITAL_ADDRESS = {
   "@type": "PostalAddress",
-  streetAddress: "743, A/1, A/2, Salem Road, Swamy Nagar",
-  addressLocality: "Namakkal",
-  postalCode: "637001",
-  addressRegion: "Tamil Nadu",
-  addressCountry: "IN",
+  streetAddress: hospital.address.streetAddress,
+  addressLocality: hospital.address.addressLocality,
+  postalCode: hospital.address.postalCode,
+  addressRegion: hospital.address.addressRegion,
+  addressCountry: hospital.address.addressCountry,
 } as const;
 
 export const defaultSchema = {
@@ -23,35 +24,45 @@ export const defaultSchema = {
   name: HOSPITAL_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/assets/NHLogo_NB.svg`,
-  image: `${SITE_URL}/assets/NHLogo_NB.svg`,
-  description: "Nila Hospital is Namakkal's leading center for obstetrics, gynaecology, and maternity care.",
-  telephone: MAIN_PHONE,
+  image: `${SITE_URL}/images/gallery/521A6952.JPG`, // Genuine exterior image
+  description: "Nila Hospital Namakkal is a premier center for specialist maternity, obstetrics, gynaecology, and general medicine.",
+  telephone: hospital.phoneDisplay,
+  email: hospital.email || undefined,
   address: HOSPITAL_ADDRESS,
+  hasMap: hospital.mapsUrl,
+  priceRange: "$$",
+  medicalSpecialty: ["ObstetricAndGynecologic", "Anesthesia", "GeneralMedicine"],
+  availableService: [
+    "Pregnancy Care (ANC)",
+    "Normal and Caesarean Delivery Care",
+    "Gynaecology and Women's Health Care",
+    "Women's Preventive Care & Screening",
+    "General Medicine & Primary Care"
+  ],
+  amenityFeature: [
+    {
+      "@type": "LocationFeatureSpecification",
+      name: "Inpatient Beds",
+      value: "15+ Beds"
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      name: "Operation Theatres",
+      value: "2 sterile OT units"
+    }
+  ],
+  sameAs: hospital.socialProfiles.map(p => p.url),
   geo: {
     "@type": "GeoCoordinates",
     latitude: 11.24534185036797,
     longitude: 78.16326507578772,
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "13:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "18:00",
-      closes: "21:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "09:00",
-      closes: "13:00",
-    },
-  ],
+  openingHoursSpecification: hospital.schemaHours.map(sh => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: sh.dayOfWeek,
+    opens: sh.opens,
+    closes: sh.closes
+  }))
 };
 
 export const homePageSchemas = [
@@ -452,8 +463,10 @@ function getMedicalSpecialty(doctor: Doctor): string {
   if (doctor.category === "gynaecologist") {
     return "ObstetricAndGynecologic";
   }
-
-  return "Anesthesiologic";
+  if (doctor.category === "anaesthesiologist") {
+    return "Anesthesia";
+  }
+  return "GeneralMedicine";
 }
 
 export function physicianSchemaForDoctor(doctor: Doctor) {
@@ -463,12 +476,17 @@ export function physicianSchemaForDoctor(doctor: Doctor) {
     "@id": `${SITE_URL}/doctors/${doctor.id}#physician`,
     name: doctor.name,
     url: `${SITE_URL}/doctors/${doctor.id}`,
+    image: `${SITE_URL}/assets/NHLogo_NB.svg`, // Fallback logo since no photos
     jobTitle: doctor.title,
     description: doctor.description,
-    telephone: MAIN_PHONE,
+    telephone: hospital.phoneDisplay,
     address: HOSPITAL_ADDRESS,
     hospitalAffiliation: { "@id": HOSPITAL_ID },
     medicalSpecialty: getMedicalSpecialty(doctor),
+    knowsAbout: doctor.knowsAbout || [],
+    sameAs: doctor.sameAs || [],
+    medicalRegistrationNumber: doctor.registrationNumber || undefined,
+    qualifications: doctor.qualifications
   };
 }
 

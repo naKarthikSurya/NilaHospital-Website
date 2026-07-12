@@ -26,23 +26,32 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL('https://nilahospital.com'),
   title: {
-    default: 'Nila Hospital Namakkal | Expert Maternity & Health Care',
+    default: 'Nila Hospital Namakkal | Maternity & Women’s Care',
     template: '%s | Nila Hospital',
   },
-  description: 'Nila Hospital Namakkal provides expert obstetrics, gynaecology, and maternity care. Book an appointment today for trusted healthcare.',
-  keywords: ['hospital', 'maternity', 'gynaecology', 'namakkal', 'pregnancy'],
+  description: 'Consult Nila Hospital Namakkal for expert maternity, pregnancy, gynaecology, and women’s care. Call +91 96552 25192 to schedule a consultation.',
+  keywords: ['hospital', 'maternity', 'gynaecology', 'namakkal', 'pregnancy', 'obstetrician', 'gynaecologist', 'women care'],
   openGraph: {
-    title: 'Nila Hospital Namakkal | Expert Maternity & Health Care',
-    description: 'Nila Hospital Namakkal provides expert obstetrics, gynaecology, and maternity care. Book an appointment today for trusted healthcare.',
+    title: 'Nila Hospital Namakkal | Maternity & Women’s Care',
+    description: 'Consult Nila Hospital Namakkal for expert maternity, pregnancy, gynaecology, and women’s care. Call +91 96552 25192 to schedule a consultation.',
     url: 'https://nilahospital.com',
     siteName: 'Nila Hospital',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: '/images/gallery/521A6952.JPG',
+        width: 1200,
+        height: 630,
+        alt: 'Nila Hospital Namakkal - Maternity & Women’s Care',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nila Hospital Namakkal',
-    description: 'Nila Hospital Namakkal provides expert obstetrics, gynaecology, and maternity care.',
+    title: 'Nila Hospital Namakkal | Maternity & Women’s Care',
+    description: 'Consult Nila Hospital Namakkal for expert maternity, pregnancy, gynaecology, and women’s care.',
+    images: ['/images/gallery/521A6952.JPG'],
   },
 };
 

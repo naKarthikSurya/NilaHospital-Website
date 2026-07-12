@@ -13,7 +13,11 @@ function GoogleAnalyticsInner() {
   useEffect(() => {
     if (!GA_ID) return;
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-    (window as any).gtag?.("config", GA_ID, { page_path: url });
+    (window as any).gtag?.("event", "page_view", {
+      page_location: window.location.href,
+      page_path: url,
+      page_title: document.title
+    });
   }, [pathname, searchParams]);
 
   return null;
@@ -36,7 +40,7 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+            gtag('config', '${GA_ID}', { send_page_view: false });
           `,
         }}
       />

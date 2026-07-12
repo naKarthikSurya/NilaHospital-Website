@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { hospital } from "@/data/hospital";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -65,7 +67,10 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center">
-            <a href="tel:+919655225192">
+            <a 
+              href={hospital.phoneHref}
+              onClick={() => trackEvent("phone_click", { cta_location: "header_desktop", link_url: hospital.phoneHref })}
+            >
               <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white gap-2 font-semibold shadow-md">
                 <Phone className="h-4 w-4" />
                 Call Now
@@ -113,9 +118,12 @@ export default function Header() {
                   </Link>
                 ))}
                 <a
-                  href="tel:+919655225192"
+                  href={hospital.phoneHref}
                   className="mt-4 flex items-center justify-center gap-2 bg-[hsl(var(--nila-warm))] text-white rounded-lg py-3 font-semibold"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    trackEvent("phone_click", { cta_location: "header_mobile", link_url: hospital.phoneHref });
+                  }}
                 >
                   <Phone className="h-4 w-4" />
                   Call Now

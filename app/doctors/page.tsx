@@ -10,8 +10,8 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { doctorsListingSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Dr. Nithya Subashini — Best Gynaecologist in Namakkal | Nila Hospital",
-  description: "Dr. Nithya Subashini (MBBS, DGO) — expert gynaecologist & obstetrician in Namakkal. Specialist in obstetrics, gynaecology & women's preventive care. Book appointment.",
+  title: "Doctors at Nila Hospital Namakkal",
+  description: "Meet our specialist medical team at Nila Hospital Namakkal. Led by experienced obstetricians, gynaecologists, and anaesthesiologists providing trusted care.",
   alternates: {
     canonical: "/doctors",
   },

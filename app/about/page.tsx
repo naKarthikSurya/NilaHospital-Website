@@ -4,17 +4,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
 import Gallery from "@/components/Gallery";
 import { aboutPageSchema } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "About Nila Hospital — Women's Specialist Hospital in Namakkal",
+  title: "About Nila Hospital Namakkal",
   description: "The story of Nila Hospital — committed to providing sterile, safe, and women-focused maternity healthcare in Namakkal. Dedicated to clinical excellence and personal attention since inception.",
   alternates: {
     canonical: "/about",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 const highlights = [
   { icon: Bed, label: "15+ Beds", desc: "Well-equipped inpatient care" },
@@ -38,16 +37,16 @@ const quickInfoCards = [
   {
     icon: Phone,
     title: "Our Contact",
-    value: "+91 96552 25192",
+    value: hospital.phoneDisplay,
     sub: "Available 24/7",
-    href: PHONE,
+    href: hospital.phoneHref,
   },
   {
     icon: MapPin,
     title: "Our Location",
-    value: "Salem Rd, Swamy Nagar",
-    sub: "Namakkal, Tamil Nadu 637001",
-    href: MAPS_URL,
+    value: `${hospital.address.streetAddress.split(',').slice(-2).join(',').trim()}`,
+    sub: `${hospital.address.addressLocality}, ${hospital.address.addressRegion} ${hospital.address.postalCode}`,
+    href: hospital.mapsUrl,
   },
   {
     icon: Clock,
@@ -192,11 +191,15 @@ export default function Page() {
                 15+ beds · 2 OTs · Private consultations · Clean environment
               </p>
               <div className="mt-6 relative z-10">
-                <a href={PHONE}>
+                <ClientCTA
+                  event="phone_click"
+                  params={{ cta_location: "about_middle_call", link_url: hospital.phoneHref }}
+                  href={hospital.phoneHref}
+                >
                   <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold gap-2 shadow-lg">
                     <Phone className="h-4 w-4" /> Call Us Today
                   </Button>
-                </a>
+                </ClientCTA>
               </div>
             </div>
           </div>
@@ -265,14 +268,19 @@ export default function Page() {
                       {card.title}
                     </div>
                     {card.href ? (
-                      <a
+                      <ClientCTA
+                        event={card.href.startsWith("tel:") ? "phone_click" : "directions_click"}
+                        params={{
+                          cta_location: card.href.startsWith("tel:") ? "about_footer_phone" : "about_footer_location",
+                          link_url: card.href
+                        }}
                         href={card.href}
                         target={card.href.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
                         className="font-semibold text-foreground hover:text-primary transition-colors text-sm block truncate"
                       >
                         {card.value}
-                      </a>
+                      </ClientCTA>
                     ) : (
                       <div className="font-semibold text-foreground text-sm">{card.value}</div>
                     )}
@@ -283,16 +291,26 @@ export default function Page() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "about_bottom_call", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
                 <Phone className="h-5 w-5" /> Call Now
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "about_bottom_directions", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
                 <MapPin className="h-5 w-5" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </section>

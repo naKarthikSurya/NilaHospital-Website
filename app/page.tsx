@@ -11,38 +11,36 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { homePageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Nila Hospital Namakkal | Expert Maternity & General Health Care",
   description: "Nila Hospital is Namakkal's leading center for obstetrics, gynaecology, and general medicine. Expert surgical capabilities and dedicated patient care.",
   alternates: {
     canonical: "/",
   },
 };
 
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
-
 const quickInfoCards = [
   {
     icon: Phone,
     title: "Our Contact",
-    value: "+91 96552 25192",
+    value: hospital.phoneDisplay,
     sub: "Available 24/7",
-    href: PHONE,
+    href: hospital.phoneHref,
   },
   {
     icon: MapPin,
     title: "Our Location",
-    value: "Salem Rd, Swamy Nagar",
-    sub: "Namakkal, Tamil Nadu 637001",
-    href: MAPS_URL,
+    value: `${hospital.address.streetAddress.split(',').slice(-2).join(',').trim()}`,
+    sub: `${hospital.address.addressLocality}, ${hospital.address.addressRegion} ${hospital.address.postalCode}`,
+    href: hospital.mapsUrl,
   },
   {
     icon: Clock,
     title: "Clinic Hours",
     value: "9 AM - 1 PM & 6 PM - 9 PM",
-    sub: "Everyday",
+    sub: "Mon – Fri (Sat/Sun 9 AM - 1 PM)",
     href: null,
   }, 
 ];
@@ -84,14 +82,19 @@ export default function Page() {
                       {card.title}
                     </div>
                     {card.href ? (
-                      <a
+                      <ClientCTA
+                        event={card.href.startsWith("tel:") ? "phone_click" : "directions_click"}
+                        params={{
+                          cta_location: card.href.startsWith("tel:") ? "quick_info_phone" : "quick_info_location",
+                          link_url: card.href
+                        }}
                         href={card.href}
                         target={card.href.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
                         className="font-semibold text-foreground hover:text-primary transition-colors text-[1rem] leading-tight block"
                       >
                         {card.value}
-                      </a>
+                      </ClientCTA>
                     ) : (
                       <div className="font-semibold text-foreground text-[1rem] leading-tight">{card.value}</div>
                     )}
@@ -108,16 +111,28 @@ export default function Page() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href={PHONE} className="w-full sm:w-auto">
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "hero_call_now", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+              className="w-full sm:w-auto"
+            >
               <Button className="h-9 min-h-9 bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-6 gap-2 w-full sm:w-auto shadow-lg shadow-[hsl(var(--nila-warm))]/20 text-sm leading-none">
                 <Phone className="h-4 w-4" /> Call Now
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "hero_get_directions", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
               <Button className="h-9 min-h-9 bg-white text-nila-navy hover:bg-white/90 font-bold px-6 gap-2 w-full sm:w-auto text-sm leading-none">
                 <MapPin className="h-4 w-4" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </HeroGradientSection>
@@ -258,16 +273,24 @@ export default function Page() {
             Reach out to us today. We are here to guide you through every step of your journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "homepage_bottom_cta", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
                 <Phone className="h-5 w-5" /> Call Now
               </Button>
-            </a>
-            <Link href="/services">
+            </ClientCTA>
+            <ClientCTA
+              event="service_cta_click"
+              params={{ cta_location: "homepage_bottom_cta", service_name: "all" }}
+              href="/services"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 w-full sm:w-auto text-base gap-2">
                 Our Services <ArrowRight className="h-4 w-4" />
               </Button>
-            </Link>
+            </ClientCTA>
           </div>
         </div>
       </section>

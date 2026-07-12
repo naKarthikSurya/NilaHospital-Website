@@ -4,17 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Phone, MapPin, CheckCircle, Baby, HeartPulse, ShieldCheck } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { obstetricsNamakkalPageSchemas } from "@/lib/seo";
+import { hospital } from "@/data/hospital";
+import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Specialist Obstetrics in Namakkal | Expert Pregnancy Care",
+  title: "Obstetrician & Pregnancy Care in Namakkal",
   description: "Nila Hospital provides Namakkal's leading obstetrics care — from ANC monitoring to normal delivery and surgical support. Consult Dr. Nithya Subashini for a safe pregnancy.",
   alternates: {
     canonical: "/obstetrics-namakkal",
   },
 };
-
-const MAPS_URL = "https://maps.app.goo.gl/rYRuDj8rfa5Niuzi8";
-const PHONE = "tel:+919655225192";
 
 export default function Page() {
   return (
@@ -47,7 +46,7 @@ export default function Page() {
             <div className="text-center">
               <h2 className="text-3xl font-bold text-nila-navy mb-4">Science-Driven Pregnancy Monitoring</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At Nila Hospital, we follow rigid international clinical guidelines for **Antenatal Care (ANC)**. Our specialist-led approach ensures that every symptom is monitored, and every milestone is protected.
+                At Nila Hospital, we follow rigid international clinical guidelines for <strong>Antenatal Care (ANC)</strong>. Our specialist-led approach ensures that every symptom is monitored, and every milestone is protected.
               </p>
             </div>
 
@@ -101,16 +100,26 @@ export default function Page() {
             Consult the Best Obstetrics Specialists in Namakkal
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={PHONE}>
+            <ClientCTA
+              event="phone_click"
+              params={{ cta_location: "obstetrics_cta_call", service_name: "obstetrics", link_url: hospital.phoneHref }}
+              href={hospital.phoneHref}
+            >
               <Button size="lg" className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white font-bold px-8 gap-2 w-full sm:w-auto shadow-lg text-base">
-                <Phone className="h-5 w-5" /> Call +91 96552 25192
+                <Phone className="h-5 w-5" /> Call {hospital.phoneDisplay}
               </Button>
-            </a>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer">
+            </ClientCTA>
+            <ClientCTA
+              event="directions_click"
+              params={{ cta_location: "obstetrics_cta_directions", service_name: "obstetrics", link_url: hospital.mapsUrl }}
+              href={hospital.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" className="bg-white text-nila-navy hover:bg-white/90 font-bold px-8 gap-2 w-full sm:w-auto text-base">
                 <MapPin className="h-5 w-5" /> Get Directions
               </Button>
-            </a>
+            </ClientCTA>
           </div>
         </div>
       </section>
