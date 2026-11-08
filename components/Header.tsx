@@ -27,8 +27,10 @@ const specialtyLinks = [
   { label: "Maternity Care (Namakkal)", path: "/maternity-hospital-namakkal" },
   { label: "Gynaecology Care", path: "/gynaecology-namakkal" },
   { label: "Obstetrics & Antenatal", path: "/obstetrics-namakkal" },
+  { label: "Women's Specialty Hospital", path: "/womens-hospital-namakkal" },
   { label: "Women's Health & Wellness", path: "/womens-health-namakkal" },
   { label: "General Medicine", path: "/general-medicine-namakkal" },
+  { label: "Why Choose Nila Hospital", path: "/why-choose-nila-hospital-namakkal" },
 ];
 
 export default function Header() {

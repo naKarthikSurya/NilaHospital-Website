@@ -10,6 +10,26 @@ const nextConfig = {
     return [
       { source: "/home", destination: "/", permanent: true },
       { source: "/home/", destination: "/", permanent: true },
+      {
+        source: "/why-we-are-best-hospital-in-namakkal",
+        destination: "/why-choose-nila-hospital-namakkal",
+        permanent: true,
+      },
+      {
+        source: "/why-we-are-best-hospital-in-namakkal/",
+        destination: "/why-choose-nila-hospital-namakkal",
+        permanent: true,
+      },
+      {
+        source: "/best-women-hospital-in-namakkal",
+        destination: "/womens-hospital-namakkal",
+        permanent: true,
+      },
+      {
+        source: "/best-women-hospital-in-namakkal/",
+        destination: "/womens-hospital-namakkal",
+        permanent: true,
+      },
     ];
   },
 

@@ -16,8 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
     { route: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
     { route: '/general-medicine-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
-    { route: '/why-we-are-best-hospital-in-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
-    { route: '/best-women-hospital-in-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/why-choose-nila-hospital-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/womens-hospital-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
     lastModified: lastUpdated,

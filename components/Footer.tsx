@@ -11,8 +11,8 @@ const specialtyLinks = [
   { label: "Obstetrics & Antenatal", path: "/obstetrics-namakkal" },
   { label: "Women's Health Care", path: "/womens-health-namakkal" },
   { label: "General Medicine", path: "/general-medicine-namakkal" },
-  { label: "Why Choose Nila Hospital", path: "/why-we-are-best-hospital-in-namakkal" },
-  { label: "Best Women Hospital Guide", path: "/best-women-hospital-in-namakkal" },
+  { label: "Why Choose Nila Hospital", path: "/why-choose-nila-hospital-namakkal" },
+  { label: "Women's Specialty Hospital", path: "/womens-hospital-namakkal" },
 ];
 
 export default function Footer() {

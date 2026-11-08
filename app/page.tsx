@@ -94,7 +94,7 @@ const coreSpecialties = [
   {
     title: "Why Families Choose Nila Hospital",
     desc: "Discover why hundreds of families across Namakkal trust Dr. Nithya Subashini and our dedicated team.",
-    href: "/why-we-are-best-hospital-in-namakkal",
+    href: "/why-choose-nila-hospital-namakkal",
     badge: "Patient Trust",
     icon: ShieldCheck,
   },
@@ -294,7 +294,7 @@ export default function Page() {
               </p>
               <div className="flex justify-center gap-4">
                 <Link
-                  href="/why-we-are-best-hospital-in-namakkal"
+                  href="/why-choose-nila-hospital-namakkal"
                   className="inline-flex items-center gap-2 bg-[hsl(var(--nila-warm))] text-white font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-[hsl(var(--nila-warm))]/90 transition-colors shadow-md"
                 >
                   Why We Are Trusted in Namakkal <ArrowRight className="h-4 w-4" />

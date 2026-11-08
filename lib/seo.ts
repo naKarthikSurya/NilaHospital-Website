@@ -188,19 +188,19 @@ export const servicesPageSchemas = [
   },
 ];
 
-export const whyBestHospitalPageSchemas = [
+export const whyChooseNilaHospitalPageSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    name: "Why We Are Best Hospital in Namakkal",
-    url: `${SITE_URL}/why-we-are-best-hospital-in-namakkal`,
+    name: "Why Choose Nila Hospital in Namakkal",
+    url: `${SITE_URL}/why-choose-nila-hospital-namakkal`,
     about: { "@id": HOSPITAL_ID },
   },
   breadcrumbSchema([
     { name: "Home", path: "/" },
     {
-      name: "Why We Are Best Hospital in Namakkal",
-      path: "/why-we-are-best-hospital-in-namakkal",
+      name: "Why Choose Nila Hospital",
+      path: "/why-choose-nila-hospital-namakkal",
     },
   ]),
   {
@@ -212,7 +212,7 @@ export const whyBestHospitalPageSchemas = [
         name: "Why do families choose Nila Hospital in Namakkal?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Families choose Nila Hospital for specialist-led women and maternity care, continuity with the same consultant team, and practical safety-focused treatment pathways.",
+          text: "Families choose Nila Hospital for specialist-led women and maternity care, direct continuity with Dr. Nithya Subashini, and practical safety-focused treatment pathways.",
         },
       },
       {
@@ -228,26 +228,27 @@ export const whyBestHospitalPageSchemas = [
         name: "Where is Nila Hospital located in Namakkal?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Nila Hospital is located at Salem Road, Swamy Nagar, Namakkal, Tamil Nadu 637001.",
+          text: "Nila Hospital is located at Salem Road, Swamy Nagar, Namakkal, Tamil Nadu 637001 (opposite Reynolds Car Showroom).",
         },
       },
     ],
   },
 ];
+export const whyBestHospitalPageSchemas = whyChooseNilaHospitalPageSchemas;
 
-export const bestWomenHospitalPageSchemas = [
+export const womensHospitalPageSchemas = [
   {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    name: "Best Women Hospital in Namakkal",
-    url: `${SITE_URL}/best-women-hospital-in-namakkal`,
+    name: "Women's Specialty Hospital in Namakkal",
+    url: `${SITE_URL}/womens-hospital-namakkal`,
     about: { "@id": HOSPITAL_ID },
   },
   breadcrumbSchema([
     { name: "Home", path: "/" },
     {
-      name: "Best Women Hospital in Namakkal",
-      path: "/best-women-hospital-in-namakkal",
+      name: "Women's Specialty Hospital in Namakkal",
+      path: "/womens-hospital-namakkal",
     },
   ]),
   {
@@ -256,10 +257,10 @@ export const bestWomenHospitalPageSchemas = [
     mainEntity: [
       {
         "@type": "Question",
-        name: "What services should a women hospital in Namakkal offer?",
+        name: "What services should a dedicated women's hospital offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A strong women hospital should provide pregnancy care, delivery support, menstrual disorder treatment, preventive screening, and postnatal follow-up.",
+          text: "A dedicated women's hospital should provide pregnancy care, normal delivery support, menstrual disorder treatment, preventive screening, and postnatal follow-up.",
         },
       },
       {
@@ -267,7 +268,7 @@ export const bestWomenHospitalPageSchemas = [
         name: "Can I consult for irregular periods and hormonal concerns at Nila Hospital?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Nila Hospital provides clinical evaluation and long-term management plans for menstrual irregularities, hormonal imbalances, and related gynaecological symptoms.",
+          text: "Yes. Nila Hospital provides clinical evaluation and long-term management plans for menstrual irregularities, hormonal imbalances (PCOS/PCOD), and related gynaecological symptoms.",
         },
       },
       {
@@ -281,6 +282,7 @@ export const bestWomenHospitalPageSchemas = [
     ],
   },
 ];
+export const bestWomenHospitalPageSchemas = womensHospitalPageSchemas;
 
 export const gynaecologyNamakkalPageSchemas = [
   {
