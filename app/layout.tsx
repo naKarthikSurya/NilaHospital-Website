@@ -31,6 +31,19 @@ export const metadata: Metadata = {
   },
   description: 'Consult Nila Hospital Namakkal for expert maternity, pregnancy, gynaecology, and women’s care. Call +91 96552 25192 to schedule a consultation.',
   keywords: ['hospital', 'maternity', 'gynaecology', 'namakkal', 'pregnancy', 'obstetrician', 'gynaecologist', 'women care'],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon-96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: 'Nila Hospital Namakkal | Maternity & Women’s Care',
     description: 'Consult Nila Hospital Namakkal for expert maternity, pregnancy, gynaecology, and women’s care. Call +91 96552 25192 to schedule a consultation.',
