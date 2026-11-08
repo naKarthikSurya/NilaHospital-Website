@@ -4,6 +4,12 @@ import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Phone,
   MapPin,
   CheckCircle,
@@ -14,6 +20,7 @@ import {
   ArrowRight,
   HeartHandshake,
   Stethoscope,
+  HelpCircle,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { whyChooseNilaHospitalPageSchemas } from "@/lib/seo";
@@ -21,12 +28,31 @@ import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
-  title: "Why Choose Nila Hospital Namakkal | Trusted Maternity & Women's Care",
+  title: "Why Choose Nila Hospital Namakkal | Trusted Care",
   description: "Discover why families consider Nila Hospital one of the best and most trusted hospitals in Namakkal for obstetrics, gynaecology, and consultant-led patient care.",
   alternates: {
     canonical: "/why-choose-nila-hospital-namakkal",
   },
 };
+
+const trustFaqs = [
+  {
+    question: "Why do families choose Nila Hospital in Namakkal?",
+    answer: "Families choose Nila Hospital for specialist-led women and maternity care, direct continuity with Dr. Nithya Subashini without junior doctor handoffs, unhurried consultations, and transparent, ethical healthcare pathways.",
+  },
+  {
+    question: "Does Nila Hospital provide antenatal and delivery planning?",
+    answer: "Yes. We provide structured antenatal monitoring (ANC), trimester risk evaluation, ultrasound tracking, and comprehensive normal and surgical delivery planning under senior specialist supervision.",
+  },
+  {
+    question: "Where is Nila Hospital located and how do I reach it?",
+    answer: "Nila Hospital is conveniently located at 743, Salem Road, Swamy Nagar, Namakkal, Tamil Nadu 637001 (opposite Reynolds Car Showroom). Direct phone support is available at +91 96552 25192.",
+  },
+  {
+    question: "Is emergency maternity care available 24/7?",
+    answer: "Yes, our emergency obstetric support, sterile labor rooms, and surgical operation theatre teams are on call 24 hours a day, 7 days a week.",
+  },
+];
 
 export default function Page() {
   return (
@@ -147,8 +173,34 @@ export default function Page() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 bg-muted/20 border-t border-border/40">
+        <div className="container max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-1.5 text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[hsl(var(--nila-warm-light))] mb-3">
+              <HelpCircle className="h-3.5 w-3.5" /> Trust &amp; Care FAQs
+            </div>
+            <h2 className="text-3xl font-bold text-nila-navy">Common Questions About Nila Hospital</h2>
+            <p className="text-muted-foreground text-sm mt-2">Learn more about our doctor access, facilities, and patient care standards.</p>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-3">
+            {trustFaqs.map((faq, idx) => (
+              <AccordionItem key={idx} value={`item-${idx}`} className="border border-border/60 rounded-xl px-5 bg-card">
+                <AccordionTrigger className="text-left font-bold text-nila-navy text-base hover:no-underline hover:text-[hsl(var(--nila-warm))] py-4">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       {/* Review Section */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 bg-background">
         <div className="container max-w-4xl mx-auto px-4">
           <ReviewPrompt />
         </div>

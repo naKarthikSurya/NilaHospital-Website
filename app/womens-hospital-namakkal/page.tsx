@@ -3,7 +3,25 @@ import Link from "next/link";
 import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, MapPin, CheckCircle, Heart, Shield, Baby, ArrowRight } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Phone,
+  MapPin,
+  CheckCircle,
+  Heart,
+  Shield,
+  Baby,
+  ArrowRight,
+  HelpCircle,
+  Sparkles,
+  Stethoscope,
+  Clock,
+} from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { womensHospitalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
@@ -16,6 +34,21 @@ export const metadata: Metadata = {
     canonical: "/womens-hospital-namakkal",
   },
 };
+
+const womensFaqs = [
+  {
+    question: "What services should a dedicated women's hospital offer?",
+    answer: "A dedicated women's hospital should provide pregnancy care, normal delivery support, menstrual disorder treatment, preventive screening, and postnatal follow-up.",
+  },
+  {
+    question: "Can I consult for irregular periods and hormonal concerns at Nila Hospital?",
+    answer: "Yes. Nila Hospital provides clinical evaluation and long-term management plans for menstrual irregularities, hormonal imbalances (PCOS/PCOD), and related gynaecological symptoms.",
+  },
+  {
+    question: "How can I book an appointment with Nila Hospital?",
+    answer: "You can call +91 96552 25192 for consultation and appointment support.",
+  },
+];
 
 export default function Page() {
   return (
@@ -116,6 +149,91 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Life Stage Care */}
+      <section className="py-20 bg-muted/20 border-t border-border/40">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold text-nila-navy mb-4">Complete Health Support Across Every Decade</h2>
+            <p className="text-muted-foreground text-lg">
+              A woman's health requirements evolve over time. We provide continuous clinical guidance tailored to each biological phase.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-[hsl(var(--nila-warm-light))] flex items-center justify-center text-[hsl(var(--nila-warm))] font-bold text-sm">
+                01
+              </div>
+              <h3 className="text-xl font-bold text-nila-navy">Adolescent Health</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Gentle, empathetic care for teenage girls experiencing their first periods, cycle irregularities, acne or weight changes linked to PCOS, and menstrual pain.
+              </p>
+              <ul className="text-xs text-muted-foreground space-y-1.5 pt-2 border-t border-border">
+                <li>• Period pain & heavy flow guidance</li>
+                <li>• Early PCOS metabolic screening</li>
+                <li>• Nutritional counseling for young women</li>
+              </ul>
+            </div>
+
+            <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-[hsl(var(--nila-warm-light))] flex items-center justify-center text-[hsl(var(--nila-warm))] font-bold text-sm">
+                02
+              </div>
+              <h3 className="text-xl font-bold text-nila-navy">Reproductive & Maternity</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Evidence-based care for family planning, pre-conception optimization, trimester-by-trimester antenatal scans, supportive normal labor, and emergency obstetric procedures.
+              </p>
+              <ul className="text-xs text-muted-foreground space-y-1.5 pt-2 border-t border-border">
+                <li>• Pre-pregnancy blood work & ultrasound</li>
+                <li>• Comprehensive ANC packages</li>
+                <li>• Postpartum recovery & lactation support</li>
+              </ul>
+            </div>
+
+            <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-[hsl(var(--nila-warm-light))] flex items-center justify-center text-[hsl(var(--nila-warm))] font-bold text-sm">
+                03
+              </div>
+              <h3 className="text-xl font-bold text-nila-navy">Mature & Menopausal Care</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Proactive screening and symptom management for women in their 40s, 50s, and beyond, addressing hot flashes, mood fluctuations, bone density loss, and uterine fibroids.
+              </p>
+              <ul className="text-xs text-muted-foreground space-y-1.5 pt-2 border-t border-border">
+                <li>• Routine Pap smears & cervical exams</li>
+                <li>• Perimenopause symptom management</li>
+                <li>• Minimally invasive surgical consultations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-background border-t border-border/40">
+        <div className="container max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-1.5 text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[hsl(var(--nila-warm-light))] mb-3">
+              <HelpCircle className="h-3.5 w-3.5" /> Frequently Asked Questions
+            </div>
+            <h2 className="text-3xl font-bold text-nila-navy">Questions About Women's Care in Namakkal</h2>
+            <p className="text-muted-foreground text-sm mt-2">Answers regarding specialist appointments, conditions treated, and care standards.</p>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-3">
+            {womensFaqs.map((faq, idx) => (
+              <AccordionItem key={idx} value={`item-${idx}`} className="border border-border/60 rounded-xl px-5 bg-card">
+                <AccordionTrigger className="text-left font-bold text-nila-navy text-base hover:no-underline hover:text-[hsl(var(--nila-warm))] py-4">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-4">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
