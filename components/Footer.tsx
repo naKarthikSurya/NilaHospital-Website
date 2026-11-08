@@ -1,9 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Phone, MapPin, Clock, Facebook, Instagram, ShieldCheck } from "lucide-react";
 import { hospital } from "@/data/hospital";
 import { trackEvent } from "@/lib/analytics";
+
+const specialtyLinks = [
+  { label: "Maternity Hospital Namakkal", path: "/maternity-hospital-namakkal" },
+  { label: "Gynaecology Care", path: "/gynaecology-namakkal" },
+  { label: "Obstetrics & Antenatal", path: "/obstetrics-namakkal" },
+  { label: "Women's Health Care", path: "/womens-health-namakkal" },
+  { label: "General Medicine", path: "/general-medicine-namakkal" },
+  { label: "Why Choose Nila Hospital", path: "/why-we-are-best-hospital-in-namakkal" },
+  { label: "Best Women Hospital Guide", path: "/best-women-hospital-in-namakkal" },
+];
 
 export default function Footer() {
   return (
@@ -11,9 +21,9 @@ export default function Footer() {
       {/* Decorative */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-[hsl(var(--nila-warm))]/5 rounded-full blur-3xl" />
       <div className="container max-w-6xl mx-auto px-4 py-14 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo & Tagline */}
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Col 1: Logo & Tagline */}
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-0 mb-4">
               <img src="/assets/NHLogo_NB.svg" alt="Nila Hospital" className="h-32 w-auto" />
               <div className="-ml-4">
@@ -22,7 +32,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-nila-light-blue text-sm mt-3 leading-relaxed">
-              Dedicated to maternal excellence and women's health care in Namakkal.
+              Dedicated to maternal excellence and specialist women's healthcare in Namakkal.
             </p>
             <div className="flex items-center gap-4 mt-6">
               {hospital.socialProfiles.map((profile) => (
@@ -43,7 +53,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Col 2: Quick Links */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Quick Links</h4>
             <ul className="space-y-2.5">
@@ -63,7 +73,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Col 3: Specialties & Treatments (High-intent SEO internal links) */}
+          <div>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Specialties &amp; Care</h4>
+            <ul className="space-y-2.5">
+              {specialtyLinks.map((link) => (
+                <li key={link.path}>
+                  <Link href={link.path} className="text-nila-light-blue hover:text-white text-sm transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4: Contact Info */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Contact</h4>
             <ul className="space-y-4">
@@ -85,16 +109,17 @@ export default function Footer() {
                   <a 
                     href={hospital.phoneHref}
                     onClick={() => trackEvent("phone_click", { cta_location: "footer_contact", link_url: hospital.phoneHref })}
-                    className="text-nila-light-blue hover:text-white text-sm transition-colors"
+                    className="text-nila-light-blue hover:text-white text-sm transition-colors font-medium"
                   >
                     {hospital.phoneDisplay}
                   </a>
+                  <span className="text-[11px] text-nila-light-blue/70">24/7 Emergency Support</span>
                 </div>
               </li>
             </ul>
           </div>
 
-          {/* Working Hours */}
+          {/* Col 5: Working Hours */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Working Hours</h4>
             <ul className="space-y-3">
@@ -107,6 +132,10 @@ export default function Footer() {
                   </div>
                 </li>
               ))}
+              <li className="mt-3 pt-3 border-t border-white/10 flex items-center gap-2 text-xs text-nila-light-blue/80">
+                <ShieldCheck className="h-4 w-4 text-[hsl(var(--nila-warm))]" />
+                Emergency maternity care 24/7
+              </li>
             </ul>
           </div>
         </div>
