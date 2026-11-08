@@ -53,6 +53,20 @@ export const metadata: Metadata = {
     description: 'Consult Nila Hospital Namakkal for expert maternity, pregnancy, gynaecology, and women’s care.',
     images: ['/images/gallery/521A6952.JPG'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+  },
 };
 
 export default function RootLayout({
