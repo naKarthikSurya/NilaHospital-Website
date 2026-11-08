@@ -28,6 +28,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { generalMedicineNamakkalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "General Medicine & Outpatient Clinic in Namakkal | Nila Hospital",
@@ -149,7 +150,7 @@ export default function Page() {
               <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-3">
                 <h4 className="font-bold text-nila-navy text-lg">Typhoid &amp; Enteric Fevers</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Evaluation of step-ladder fevers, abdominal discomfort, and coated tongue. Targeted testing and precise, culture-directed antimicrobial treatment to guarantee complete bacterial clearance.
+                  Evaluation of persistent fevers, abdominal discomfort, and associated symptoms. Targeted diagnostic evaluation and clinical care directed toward prompt symptom resolution and recovery.
                 </p>
               </div>
 
@@ -186,7 +187,7 @@ export default function Page() {
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Hypertension &amp; Cardiovascular Care
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Precise sphygmomanometer blood pressure tracking, dietary sodium restriction advice, cardiovascular risk profiling, and anti-hypertensive dose optimization.
+                    Precise sphygmomanometer blood pressure tracking, dietary sodium restriction advice, cardiovascular risk profiling, and physician-supervised clinical blood pressure management.
                   </p>
                 </div>
 
@@ -195,7 +196,7 @@ export default function Page() {
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Thyroid Disorders
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Periodic TSH, Free T3, and Free T4 testing for hypothyroidism and hyperthyroidism, titrating thyroxine replacement to alleviate fatigue, weight gain, and sluggish metabolism.
+                    Periodic TSH, Free T3, and Free T4 testing for hypothyroidism and hyperthyroidism, with individualized clinical management to support balanced thyroid function and energy levels.
                   </p>
                 </div>
 
@@ -204,7 +205,7 @@ export default function Page() {
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Lipid &amp; Cholesterol Review
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Fasting lipid profiles evaluating LDL ("bad cholesterol"), HDL, and triglycerides, with medical statin therapy and dietary counseling for heart health protection.
+                    Fasting lipid profiles evaluating LDL ("bad cholesterol"), HDL, and triglycerides, paired with dietary counseling, lifestyle modification, and clinical cardiovascular risk assessment.
                   </p>
                 </div>
               </div>
@@ -292,6 +293,8 @@ export default function Page() {
               </Link>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 

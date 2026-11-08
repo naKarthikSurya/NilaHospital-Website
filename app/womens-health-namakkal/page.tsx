@@ -28,6 +28,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { womensHealthNamakkalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "Women's Preventive Healthcare in Namakkal | Nila Hospital",
@@ -280,6 +281,8 @@ export default function Page() {
               </Link>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 

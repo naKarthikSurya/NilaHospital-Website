@@ -30,6 +30,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { maternityHospitalNamakkalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "Maternity Hospital in Namakkal | Normal Delivery & Care",
@@ -270,7 +271,7 @@ export default function Page() {
                 Childbirth requires an environment of uncompromising hygiene. Nila Hospital strictly adheres to surgical sterilization protocols across our delivery suites and dual operation theatres.
               </p>
               <p className="text-muted-foreground text-base leading-relaxed">
-                Every instrument is processed through multi-stage autoclave sterilization. Our labor rooms are sanitized before and after each admission, ensuring zero compromise on the well-being of the mother and newborn baby.
+                Every instrument is processed through multi-stage autoclave sterilization. Our labor rooms are sanitized before and after each admission, maintaining stringent hygiene protocols for the safety of mother and newborn.
               </p>
               <div className="pt-2">
                 <Link
@@ -348,6 +349,8 @@ export default function Page() {
               </ClientCTA>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 

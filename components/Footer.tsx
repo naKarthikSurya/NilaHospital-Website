@@ -140,8 +140,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-6 text-center">
-          <p className="text-nila-light-blue/70 text-sm">
+        <div className="border-t border-white/10 mt-12 pt-6 text-center space-y-3">
+          <p className="text-nila-light-blue/70 text-xs max-w-4xl mx-auto leading-relaxed">
+            <strong>Medical Disclaimer:</strong> The information provided on this website is intended solely for general educational and informational purposes. It is not a substitute for formal medical advice, personal clinical consultation, diagnosis, or treatment by a registered medical practitioner. Always consult a qualified healthcare professional regarding any medical symptoms or conditions.
+          </p>
+          <p className="text-nila-light-blue/60 text-xs">
             © 2026 {hospital.name}. All rights reserved. | Namakkal, Tamil Nadu
           </p>
         </div>

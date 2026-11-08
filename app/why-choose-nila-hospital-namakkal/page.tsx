@@ -29,6 +29,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { whyChooseNilaHospitalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "Why Choose Nila Hospital Namakkal | Trusted Care",
@@ -96,7 +97,7 @@ export default function Page() {
               <Award className="h-12 w-12 text-[hsl(var(--nila-warm))] mx-auto" />
               <h3 className="text-xl font-bold text-nila-navy">Senior Consultant-Led</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Every consultation, ANC review, and delivery is managed directly by <Link href="/doctors/nithya-subashini" className="text-primary font-medium hover:underline">Dr. Nithya Subashini</Link>, ensuring 100% continuity without junior doctor handoffs.
+                Every consultation, ANC review, and delivery is managed directly by <Link href="/doctors/nithya-subashini" className="text-primary font-medium hover:underline">Dr. Nithya Subashini</Link>, ensuring consistent consultant continuity without junior doctor handoffs.
               </p>
             </div>
             <div className="space-y-4 text-center p-6 bg-card rounded-2xl border border-border shadow-sm">
@@ -163,7 +164,7 @@ export default function Page() {
             {[
               {
                 q: "1. Who will handle my antenatal visits and delivery?",
-                a: "At large corporate hospitals, you may see different duty doctors at each visit. At Nila Hospital, you are cared for 100% by senior consultant Dr. Nithya Subashini from your very first scan through delivery and postnatal recovery."
+                a: "At large corporate hospitals, you may see different duty doctors at each visit. At Nila Hospital, you are cared for directly by senior consultant Dr. Nithya Subashini from your very first scan through delivery and postnatal recovery."
               },
               {
                 q: "2. What is the hospital's approach to natural normal delivery?",
@@ -218,6 +219,8 @@ export default function Page() {
               </Link>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 

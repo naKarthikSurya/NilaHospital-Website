@@ -27,6 +27,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { gynaecologyNamakkalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "Gynaecologist in Namakkal | Fibroid & PCOS Care",
@@ -50,12 +51,12 @@ const gynaecologyFaqs = [
     answer: "You can contact Nila Hospital at +91 96552 25192 for appointments and consultation support.",
   },
   {
-    question: "Can uterine fibroids be treated without surgery?",
-    answer: "Yes, many fibroids can be managed medically using hormonal medications and lifestyle support if they are small or asymptomatic. Dr. Nithya evaluates size, location, and symptoms to recommend the least invasive and most effective path.",
+    question: "Can uterine fibroids be managed without surgery?",
+    answer: "Fibroid care depends on size, location, and symptoms. Many small or asymptomatic fibroids can be managed conservatively with regular ultrasound monitoring and physician-guided medical care, while surgical options are evaluated only when medically necessary.",
   },
   {
-    question: "How does Nila Hospital treat PCOS and irregular periods?",
-    answer: "We take a comprehensive approach to PCOS/PCOD, addressing insulin resistance, hormonal balance, ovulation stimulation (for couples planning pregnancy), and menstrual cycle regulation through personalized medical protocols.",
+    question: "How does Nila Hospital approach PCOS and irregular periods?",
+    answer: "We take a comprehensive clinical approach to PCOS/PCOD, focusing on metabolic evaluation, hormonal assessment, cycle regularity, and individualized clinical guidance under senior specialist supervision.",
   },
   {
     question: "When should I consult a gynaecologist for heavy bleeding?",
@@ -186,7 +187,7 @@ export default function Page() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
                 <div className="space-y-1">
                   <strong className="text-foreground">Conservative Medical Therapy:</strong>
-                  <p>Tranexamic acid, non-steroidal anti-inflammatory agents, and targeted progesterone regimens to control menstrual bleeding without immediate surgery.</p>
+                  <p>Comprehensive clinical assessment followed by individualized medical symptom management and hormonal balancing protocols under direct doctor supervision.</p>
                 </div>
                 <div className="space-y-1">
                   <strong className="text-foreground">Surgical Myomectomy (Uterus-Sparing):</strong>
@@ -216,21 +217,21 @@ export default function Page() {
                 <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
                   <h4 className="font-bold text-nila-navy text-base">Cycle Regularization</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Preventing endometrial hyperplasia (thickening of uterine lining) through cyclic natural progestin therapy and lifestyle modifications.
+                    Supporting healthy menstrual rhythm and safeguarding endometrial health through physician-guided hormonal evaluation and lifestyle modifications.
                   </p>
                 </div>
 
                 <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
-                  <h4 className="font-bold text-nila-navy text-base">Weight &amp; Insulin Resistance</h4>
+                  <h4 className="font-bold text-nila-navy text-base">Metabolic &amp; Lifestyle Support</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Guidance on low-glycemic dietary planning, regular exercise protocols, and insulin-sensitizing agents (Inositol / Metformin when indicated).
+                    Structured guidance on balanced nutrition, regular physical activity, and evidence-based metabolic health management tailored to individual profiles.
                   </p>
                 </div>
 
                 <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
-                  <h4 className="font-bold text-nila-navy text-base">Ovulation Induction for Conception</h4>
+                  <h4 className="font-bold text-nila-navy text-base">Fertility &amp; Conception Guidance</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    For married couples experiencing difficulty conceiving, monitored ovulation stimulation using Letrozole with follicular ultrasound scans.
+                    For couples planning pregnancy, personalized follicular ultrasound tracking and supportive clinical guidance to optimize natural conception chances.
                   </p>
                 </div>
               </div>
@@ -324,6 +325,8 @@ export default function Page() {
               </Link>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 

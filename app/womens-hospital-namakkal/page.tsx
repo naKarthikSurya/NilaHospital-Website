@@ -26,6 +26,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { womensHospitalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "Women's Specialty Hospital in Namakkal | Nila Hospital",
@@ -126,7 +127,7 @@ export default function Page() {
               <h3 className="text-2xl font-bold text-nila-navy mb-6">Why Women Choose Nila Hospital</h3>
               <ul className="space-y-4">
                 {[
-                  "100% Direct Senior Woman Consultant Consultations",
+                  "Direct Senior Woman Consultant Consultations",
                   "Private, Confidential Examination & Labor Suites",
                   "Supportive Pre-Conception & Infertility Guidance",
                   "Modern Diagnostic Ultrasound & Laboratory Testing",
@@ -208,6 +209,8 @@ export default function Page() {
               </ul>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 

@@ -29,6 +29,7 @@ import ReviewPrompt from "@/components/ReviewPrompt";
 import { obstetricsNamakkalPageSchemas } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
+import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
 export const metadata: Metadata = {
   title: "Obstetrician & Pregnancy Care in Namakkal | Nila Hospital",
@@ -247,7 +248,7 @@ export default function Page() {
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Gestational Diabetes (GDM)
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Personalized nutritional therapy, self-monitoring of blood glucose charts, and medical insulin titration to avoid macrosomia (excessive birth weight) and delivery complications.
+                    Personalized nutritional counseling, structured blood glucose monitoring, and close maternal-fetal surveillance to support healthy fetal growth and prevent complications.
                   </p>
                 </div>
 
@@ -256,7 +257,7 @@ export default function Page() {
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Pregnancy-Induced Hypertension
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Close monitoring of blood pressure, urine albumin checks, uterine artery Doppler, and medication to prevent pre-eclampsia and premature placental detachment.
+                    Close monitoring of blood pressure, urine albumin checks, uterine artery Doppler, and clinical management to prevent pre-eclampsia and premature placental detachment.
                   </p>
                 </div>
 
@@ -265,7 +266,7 @@ export default function Page() {
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Thyroid Disorders in Pregnancy
                   </h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    Regular TSH calibration across all three trimesters to guarantee optimum thyroid hormone levels for the baby’s brain and nervous system maturation.
+                    Periodic TSH screening across all three trimesters to help maintain balanced maternal thyroid levels for healthy fetal development.
                   </p>
                 </div>
 
@@ -346,6 +347,8 @@ export default function Page() {
               </Link>
             </div>
           </div>
+
+          <MedicalDisclaimer />
         </div>
       </section>
 
