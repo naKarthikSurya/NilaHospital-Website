@@ -72,6 +72,52 @@ export const homePageSchemas = [
     "@type": "WebSite",
     name: HOSPITAL_NAME,
     url: SITE_URL,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What services does Nila Hospital in Namakkal specialize in?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Nila Hospital specializes in Obstetrics, Gynaecology, Maternal Care, Normal and Caesarean Delivery, Antenatal Monitoring, Infertility and Pre-conception Counselling, and General Medicine."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Who is the senior doctor at Nila Hospital?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The hospital is led by Dr. Nithya Subashini, MBBS, DGO, a senior consultant obstetrician and gynaecologist who personally consults with every patient."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What are the clinic hours and is emergency support available?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "OP clinic hours are Monday to Friday from 9:00 AM – 1:00 PM and 6:00 PM – 9:00 PM, and Saturday & Sunday from 9:00 AM – 1:00 PM. Emergency obstetric and maternity care is accessible 24/7."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Does Nila Hospital prioritize normal deliveries?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We prioritize natural normal delivery whenever clinically safe for mother and baby, with modern sterile operation theatres available if a surgical delivery is medically indicated."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Where is Nila Hospital located in Namakkal?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Nila Hospital is conveniently located at 743, Salem Road, Swamy Nagar, Namakkal, Tamil Nadu 637001 (opposite Reynolds Car Showroom). Call +91 96552 25192 for appointments."
+        }
+      }
+    ]
   }
 ];
 
