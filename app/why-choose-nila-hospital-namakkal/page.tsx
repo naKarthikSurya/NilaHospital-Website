@@ -21,6 +21,9 @@ import {
   HeartHandshake,
   Stethoscope,
   HelpCircle,
+  Sparkles,
+  ShieldCheck,
+  FileCheck,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { whyChooseNilaHospitalPageSchemas } from "@/lib/seo";
@@ -100,7 +103,7 @@ export default function Page() {
               <Shield className="h-12 w-12 text-[hsl(var(--nila-warm))] mx-auto" />
               <h3 className="text-xl font-bold text-nila-navy">Patient Safety First</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Rigid sterile protocols, state-of-the-art operation theatre support led by senior anaesthesiologist Dr. Arul Ramasamy, and evidence-based treatments.
+                Rigid sterile protocols, state-of-the-art dual operation theatre suites led by senior anaesthesiologist Dr. Arul Ramasamy, and evidence-based treatments.
               </p>
             </div>
             <div className="space-y-4 text-center p-6 bg-card rounded-2xl border border-border shadow-sm">
@@ -143,8 +146,53 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Checklist Guide for Patients */}
+      <section className="py-20 bg-background border-t border-border/40">
+        <div className="container max-w-5xl mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="inline-flex items-center gap-1.5 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-primary/10 mb-3">
+              <FileCheck className="h-4 w-4" /> Patient Decision Guide
+            </div>
+            <h2 className="text-3xl font-bold text-nila-navy mb-4">5 Questions to Ask When Choosing a Maternity Hospital</h2>
+            <p className="text-muted-foreground text-base leading-relaxed">
+              Selecting the right hospital for your pregnancy and delivery is one of the most important decisions your family will make. Here is how Nila Hospital answers the key questions:
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "1. Who will handle my antenatal visits and delivery?",
+                a: "At large corporate hospitals, you may see different duty doctors at each visit. At Nila Hospital, you are cared for 100% by senior consultant Dr. Nithya Subashini from your very first scan through delivery and postnatal recovery."
+              },
+              {
+                q: "2. What is the hospital's approach to natural normal delivery?",
+                a: "We believe natural birth is a physiological milestone that requires patient monitoring, encouragement, and calm labor rooms. We never rush to perform unnecessary surgical interventions unless maternal or fetal health demands it."
+              },
+              {
+                q: "3. What happens if an emergency occurs in the middle of the night?",
+                a: "Nila Hospital provides 24/7 emergency obstetric readiness. Our dual sterile Operation Theatres, senior anaesthesiologist Dr. Arul Ramasamy, and trained neonatal emergency nurses are on call round the clock."
+              },
+              {
+                q: "4. Are labor rooms and post-delivery wards private and hygienic?",
+                a: "Yes. We maintain private labor and inpatient rooms designed to give mothers the peace of mind, family presence, and dignity they deserve during childbirth."
+              },
+              {
+                q: "5. Is the billing transparent and honest?",
+                a: "We provide clear, upfront cost estimates for both normal and C-section deliveries, avoiding hidden room surcharges or unexpected add-on fees."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-2">
+                <h4 className="font-bold text-nila-navy text-lg">{item.q}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Related Specialties */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/20 border-t border-border/40">
         <div className="container max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-nila-navy mb-8">Explore Our Specialized Care Pathways</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
@@ -174,7 +222,7 @@ export default function Page() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-muted/20 border-t border-border/40">
+      <section className="py-20 bg-background border-t border-border/40">
         <div className="container max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-1.5 text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[hsl(var(--nila-warm-light))] mb-3">
@@ -200,7 +248,7 @@ export default function Page() {
       </section>
 
       {/* Review Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-muted/20">
         <div className="container max-w-4xl mx-auto px-4">
           <ReviewPrompt />
         </div>

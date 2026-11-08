@@ -19,7 +19,9 @@ import {
   ArrowRight,
   ShieldCheck,
   HelpCircle,
-  Sparkles,
+  AlertCircle,
+  FileCheck,
+  CalendarHeart,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { gynaecologyNamakkalPageSchemas } from "@/lib/seo";
@@ -35,6 +37,18 @@ export const metadata: Metadata = {
 };
 
 const gynaecologyFaqs = [
+  {
+    question: "When should I see a gynaecologist in Namakkal?",
+    answer: "You should consult a gynaecologist for irregular or painful periods, heavy bleeding, pelvic pain, suspected PCOS symptoms, unusual vaginal discharge, or pre-conception planning.",
+  },
+  {
+    question: "Does Nila Hospital treat hormonal imbalance and menstrual disorders?",
+    answer: "Yes. Nila Hospital provides specialist evaluation and long-term management for menstrual irregularity, hormonal imbalances (PCOS/PCOD), and related gynaecological symptoms.",
+  },
+  {
+    question: "How can I book gynaecology consultation in Namakkal?",
+    answer: "You can contact Nila Hospital at +91 96552 25192 for appointments and consultation support.",
+  },
   {
     question: "Can uterine fibroids be treated without surgery?",
     answer: "Yes, many fibroids can be managed medically using hormonal medications and lifestyle support if they are small or asymptomatic. Dr. Nithya evaluates size, location, and symptoms to recommend the least invasive and most effective path.",
@@ -83,12 +97,12 @@ export default function Page() {
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-nila-navy mb-4">Personalized Clinical Gynaecology</h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Every woman deserves compassionate, confidential medical care without judgment. Led by <Link href="/doctors/nithya-subashini" className="text-primary font-semibold hover:underline">Dr. Nithya Subashini, MBBS, DGO</Link>, Nila Hospital provides thorough clinical diagnosis and clear long-term treatment strategies.
+              Every woman deserves compassionate, confidential medical care without judgment. Led by <Link href="/doctors/nithya-subashini" className="text-primary font-semibold hover:underline">Dr. Nithya Subashini, MBBS, DGO</Link>, Nila Hospital provides thorough clinical diagnosis, gentle pelvic evaluations, and transparent, evidence-based long-term treatment strategies.
             </p>
           </div>
 
           {/* Condition Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             <Card className="border border-border/70 rounded-2xl bg-card shadow-sm">
               <CardContent className="p-6">
                 <div className="bg-[hsl(var(--nila-warm-light))] p-3 rounded-2xl w-fit mb-4">
@@ -98,7 +112,7 @@ export default function Page() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Accurate ultrasound grading, medical therapies for bleeding control, and fertility-preserving surgical myomectomy when needed.
                 </p>
-                <div className="text-xs text-primary font-semibold">Pelvic Pain &amp; Heavy Bleeding Relief</div>
+                <div className="text-xs text-primary font-semibold border-t border-border pt-3">Pelvic Pain &amp; Heavy Bleeding Relief</div>
               </CardContent>
             </Card>
 
@@ -111,7 +125,7 @@ export default function Page() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Holistic management of polycystic ovary syndrome, cycle regularization, acne/weight management, and ovulation guidance.
                 </p>
-                <div className="text-xs text-primary font-semibold">Metabolic &amp; Cycle Harmony</div>
+                <div className="text-xs text-primary font-semibold border-t border-border pt-3">Metabolic &amp; Cycle Harmony</div>
               </CardContent>
             </Card>
 
@@ -124,14 +138,151 @@ export default function Page() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   Careful monitoring of follicular, corpus luteum, and dermoid cysts, with surgical cystectomy performed with tissue preservation.
                 </p>
-                <div className="text-xs text-primary font-semibold">Fertility Preservation First</div>
+                <div className="text-xs text-primary font-semibold border-t border-border pt-3">Fertility Preservation First</div>
               </CardContent>
             </Card>
           </div>
 
+          {/* Deep Clinical Guide 1: Uterine Fibroids Comprehensive Breakdown */}
+          <div className="bg-muted/20 p-8 md:p-12 rounded-[2.5rem] border border-border/80 mb-20">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <div className="inline-flex items-center gap-1.5 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-primary/10 mb-3">
+                <Stethoscope className="h-4 w-4" /> Clinical Speciality
+              </div>
+              <h3 className="text-3xl font-bold text-nila-navy mb-4">In-Depth Guide: Uterine Fibroid Diagnosis &amp; Management</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Uterine fibroids (leiomyomas) are non-cancerous muscular growths in the uterus affecting up to 70% of women during their reproductive years. At Nila Hospital, we tailor treatment based on whether your priority is fertility preservation or complete symptom relief.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[hsl(var(--nila-warm))]">Type 01</div>
+                <h4 className="font-bold text-nila-navy text-lg">Submucosal Fibroids</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  These develop inside the uterine cavity. Even when small, they are the most common cause of severe menorrhagia (flooding menstrual periods), anemia, and recurrent miscarriages.
+                </p>
+              </div>
+
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[hsl(var(--nila-warm))]">Type 02</div>
+                <h4 className="font-bold text-nila-navy text-lg">Intramural Fibroids</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  These grow embedded within the thick muscular uterine wall. They can cause uterine enlargement, prolonged menstrual cramps, and a sensation of lower abdominal heaviness.
+                </p>
+              </div>
+
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-2">
+                <div className="text-xs font-bold uppercase tracking-wider text-[hsl(var(--nila-warm))]">Type 03</div>
+                <h4 className="font-bold text-nila-navy text-lg">Subserosal Fibroids</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  These project outward from the external surface of the uterus into the pelvic cavity. Large subserosal fibroids frequently press against the bladder, causing frequent urination.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-4">
+              <h4 className="font-bold text-nila-navy text-lg">Treatment Strategies at Nila Hospital:</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+                <div className="space-y-1">
+                  <strong className="text-foreground">Conservative Medical Therapy:</strong>
+                  <p>Tranexamic acid, non-steroidal anti-inflammatory agents, and targeted progesterone regimens to control menstrual bleeding without immediate surgery.</p>
+                </div>
+                <div className="space-y-1">
+                  <strong className="text-foreground">Surgical Myomectomy (Uterus-Sparing):</strong>
+                  <p>Precise surgical removal of fibroids while carefully reconstructing the uterine wall, protecting fertility for women desiring future pregnancies.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Deep Clinical Guide 2: PCOS / PCOD Metabolic & Hormonal Management */}
+          <div className="bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border shadow-sm mb-20">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest mb-2">Hormonal Health</div>
+              <h3 className="text-2xl md:text-3xl font-bold text-nila-navy mb-4">PCOS &amp; Irregular Periods: Root-Cause Management</h3>
+              <p className="text-muted-foreground text-base leading-relaxed mb-6">
+                Polycystic Ovary Syndrome (PCOS/PCOD) is a metabolic and endocrine disorder rather than simply an ovarian issue. Instead of offering temporary fixes, Dr. Nithya Subashini develops holistic treatment plans focusing on cycle regularity, fertility goals, and long-term metabolic health:
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base">Comprehensive Diagnostics</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Ultrasound tracking of follicle counts, fasting insulin/glucose ratios, LH:FSH hormonal ratios, thyroid panels, and serum androgen levels.
+                  </p>
+                </div>
+
+                <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base">Cycle Regularization</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Preventing endometrial hyperplasia (thickening of uterine lining) through cyclic natural progestin therapy and lifestyle modifications.
+                  </p>
+                </div>
+
+                <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base">Weight &amp; Insulin Resistance</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Guidance on low-glycemic dietary planning, regular exercise protocols, and insulin-sensitizing agents (Inositol / Metformin when indicated).
+                  </p>
+                </div>
+
+                <div className="bg-card p-5 rounded-2xl border border-border space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base">Ovulation Induction for Conception</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    For married couples experiencing difficulty conceiving, monitored ovulation stimulation using Letrozole with follicular ultrasound scans.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Clinical Guide 3: Red Flag Gynaecological Symptoms */}
+          <div className="p-8 md:p-10 rounded-[2rem] bg-destructive/5 border border-destructive/20 mb-20">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="bg-destructive/10 p-3.5 rounded-2xl shrink-0">
+                <AlertCircle className="h-8 w-8 text-destructive" />
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-2xl font-bold text-nila-navy">When to Seek Prompt Gynaecological Care</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Do not ignore chronic pelvic symptoms. Schedule an unhurried consultation with Dr. Nithya if you experience any of the following:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Heavy bleeding requiring pad changes every 1–2 hours
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Severe pelvic cramps unresponsive to basic analgesics
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Any spotting or vaginal bleeding after menopause
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Pain or heavy discomfort during marital intercourse
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Persistent foul-smelling discharge or pelvic burning
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Palpable lump or firmness in the lower abdomen
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <a
+                    href={hospital.phoneHref}
+                    className="inline-flex items-center gap-2 text-destructive font-bold text-sm hover:underline"
+                  >
+                    Direct Clinical Desk: +91 96552 25192 <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Deep Clinical Procedures List */}
           <div className="bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border shadow-sm mb-16">
-            <h3 className="text-2xl font-bold text-nila-navy mb-6 text-center">Comprehensive Gynaecological Services</h3>
+            <h3 className="text-2xl font-bold text-nila-navy mb-6 text-center">Comprehensive Gynaecological Services at Nila Hospital</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 "Uterine Fibroid Evaluation & Conservative Care",
@@ -151,18 +302,27 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Cross Link to Women's Health */}
-          <div className="text-center p-8 bg-card rounded-2xl border border-border">
-            <h4 className="text-xl font-bold text-nila-navy mb-2">Looking for Preventive Care &amp; Pap Smears?</h4>
+          {/* Cross Link to Women's Health & Maternity */}
+          <div className="text-center p-8 bg-card rounded-2xl border border-border shadow-sm">
+            <h4 className="text-xl font-bold text-nila-navy mb-2">Explore Related Healthcare Services</h4>
             <p className="text-muted-foreground text-sm max-w-xl mx-auto mb-4">
-              Explore our comprehensive women's wellness screenings and routine health checkup programs.
+              From preventive well-woman screenings to pregnancy care, explore how our dedicated center supports women across Namakkal.
             </p>
-            <Link
-              href="/womens-health-namakkal"
-              className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[hsl(var(--nila-warm))] transition-colors"
-            >
-              Explore Women's Health &amp; Wellness <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/womens-health-namakkal"
+                className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[hsl(var(--nila-warm))] transition-colors"
+              >
+                Women's Preventive Care <ArrowRight className="h-4 w-4" />
+              </Link>
+              <span className="text-muted-foreground hidden sm:inline">•</span>
+              <Link
+                href="/maternity-hospital-namakkal"
+                className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[hsl(var(--nila-warm))] transition-colors"
+              >
+                Maternity &amp; Birth <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

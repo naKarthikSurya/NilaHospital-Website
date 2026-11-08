@@ -20,6 +20,10 @@ import {
   Activity,
   ArrowRight,
   HelpCircle,
+  Stethoscope,
+  AlertCircle,
+  FileCheck,
+  Sparkles,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { obstetricsNamakkalPageSchemas } from "@/lib/seo";
@@ -36,16 +40,24 @@ export const metadata: Metadata = {
 
 const obstetricsFaqs = [
   {
+    question: "What does obstetrics care include at Nila Hospital?",
+    answer: "Obstetrics care includes comprehensive antenatal monitoring (ANC), high-risk pregnancy management, ultrasound scan reviews, nutritional counseling, delivery planning, and postnatal maternal recovery.",
+  },
+  {
+    question: "Does Nila Hospital provide safe delivery support in Namakkal?",
+    answer: "Yes. Nila Hospital supports both normal delivery and medically indicated C-section with senior specialist supervision, dual sterile operation theatres, and round-the-clock safety-focused protocols.",
+  },
+  {
+    question: "Does Nila Hospital provide structured antenatal monitoring?",
+    answer: "Yes. Antenatal care at Nila Hospital includes structured month-by-month follow-up, symptom surveillance, fetal growth scans, and timely clinical guidance throughout every trimester.",
+  },
+  {
     question: "When should I begin my antenatal checkups (ANC)?",
     answer: "We recommend scheduling your first consultation as soon as you receive a positive pregnancy test. Early checkups confirm intrauterine pregnancy, estimate your due date, and initiate essential folic acid and micronutrient supplementation.",
   },
   {
     question: "How does Dr. Nithya manage high-risk pregnancies?",
     answer: "High-risk cases (such as gestational diabetes, thyroid disorders, high blood pressure, or twin pregnancies) receive close monitoring, tailored medication regimens, and specialized growth ultrasound scans to safeguard both mother and child.",
-  },
-  {
-    question: "How frequently will I need visits throughout pregnancy?",
-    answer: "Typically, visits are scheduled monthly up to 28 weeks, every two weeks until 36 weeks, and weekly thereafter until delivery. High-risk mothers may require personalized, closer visit intervals.",
   },
   {
     question: "Can I discuss normal delivery planning during my ANC visits?",
@@ -88,97 +100,251 @@ export default function Page() {
           </div>
 
           {/* Trimester Breakdown */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <Card className="border border-border/70 rounded-2xl bg-card">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            <Card className="border border-border/70 rounded-2xl bg-card shadow-sm">
               <CardContent className="p-6">
                 <div className="inline-block bg-[hsl(var(--nila-warm-light))] text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                   1st Trimester (Weeks 1-12)
                 </div>
                 <h3 className="font-bold text-lg text-nila-navy mb-2">Foundation &amp; Early Screening</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Confirmation dating scan, vital blood work, early genetic risk evaluation, and morning sickness relief management.
+                  Confirming intrauterine pregnancy, establishing accurate gestational age, blood group and Rh factor screening, thyroid evaluation, and initiating neural-tube protecting folic acid.
                 </p>
-                <ul className="text-xs space-y-1.5 text-muted-foreground">
-                  <li className="flex items-center gap-1.5">✓ Dating &amp; Viability Scan</li>
-                  <li className="flex items-center gap-1.5">✓ Nutritional Supplementation</li>
-                  <li className="flex items-center gap-1.5">✓ Early Screening Guidance</li>
+                <ul className="text-xs space-y-2 text-muted-foreground border-t border-border pt-3">
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Dating &amp; Viability Scan</li>
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> NT Scan &amp; Double Marker</li>
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Nausea &amp; Micronutrient Support</li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="border border-border/70 rounded-2xl bg-card">
+            <Card className="border border-border/70 rounded-2xl bg-card shadow-sm">
               <CardContent className="p-6">
                 <div className="inline-block bg-[hsl(var(--nila-warm-light))] text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                   2nd Trimester (Weeks 13-27)
                 </div>
                 <h3 className="font-bold text-lg text-nila-navy mb-2">Growth &amp; Anomaly Assessment</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Detailed fetal organ anomaly scans, gestational diabetes screening, blood pressure monitoring, and fetal movement tracking.
+                  Detailed anatomical survey of all fetal organ systems, cervical length tracking to prevent preterm labor, glucose challenge test (GCT) for gestational diabetes, and iron/calcium therapy.
                 </p>
-                <ul className="text-xs space-y-1.5 text-muted-foreground">
-                  <li className="flex items-center gap-1.5">✓ Anomaly &amp; Cervical Scans</li>
-                  <li className="flex items-center gap-1.5">✓ Gestational Sugar Screening</li>
-                  <li className="flex items-center gap-1.5">✓ Maternal Health Reviews</li>
+                <ul className="text-xs space-y-2 text-muted-foreground border-t border-border pt-3">
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Detailed TIFFA Anomaly Scan</li>
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Gestational Sugar Screening (GCT)</li>
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Blood Pressure &amp; Urine Albumin</li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="border border-border/70 rounded-2xl bg-card">
+            <Card className="border border-border/70 rounded-2xl bg-card shadow-sm">
               <CardContent className="p-6">
                 <div className="inline-block bg-[hsl(var(--nila-warm-light))] text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                   3rd Trimester (Weeks 28-Birth)
                 </div>
                 <h3 className="font-bold text-lg text-nila-navy mb-2">Delivery Readiness &amp; Planning</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Growth and Doppler scans, amniotic fluid checks, pelvic assessment, birth plan discussion, and labor sign education.
+                  Biophysical profile scans, fetal weight estimation, umbilical artery Doppler flow studies, pelvic capacity evaluation (pelvimetry), labor sign education, and natural birth planning.
                 </p>
-                <ul className="text-xs space-y-1.5 text-muted-foreground">
-                  <li className="flex items-center gap-1.5">✓ Foetal Growth &amp; Doppler</li>
-                  <li className="flex items-center gap-1.5">✓ Normal Delivery Preparation</li>
-                  <li className="flex items-center gap-1.5">✓ 24/7 Labor Support Access</li>
+                <ul className="text-xs space-y-2 text-muted-foreground border-t border-border pt-3">
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Fetal Growth &amp; Doppler Scans</li>
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Daily Fetal Movement (DFMC)</li>
+                  <li className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Normal Delivery Preparedness</li>
                 </ul>
               </CardContent>
             </Card>
           </div>
 
-          {/* High-Risk Pregnancy Management */}
-          <div className="bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border shadow-sm mb-16">
+          {/* Clinical Guide Section 1: Detailed Antenatal Diagnostic Protocols */}
+          <div className="bg-muted/20 p-8 md:p-12 rounded-[2.5rem] border border-border/80 mb-20">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <div className="inline-flex items-center gap-1.5 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-primary/10 mb-3">
+                <FileCheck className="h-4 w-4" /> Diagnostic Protocols
+              </div>
+              <h3 className="text-3xl font-bold text-nila-navy mb-4">Essential Pregnancy Tests &amp; Ultrasound Scans</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Antenatal monitoring at Nila Hospital is structured around evidence-based clinical milestones to protect maternal health and monitor fetal growth.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-4">
+                <h4 className="font-bold text-nila-navy text-lg flex items-center gap-2">
+                  <Activity className="h-5 w-5 text-primary" /> Core Laboratory Bloodwork
+                </h4>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Complete Blood Count (CBC) &amp; Ferritin:</strong> Regular screening to detect and treat iron deficiency anemia early.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Blood Group &amp; Rh Antibody Screening:</strong> Critical for Rh-negative mothers to administer timely Anti-D immunoglobulin.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Thyroid Stimulating Hormone (TSH):</strong> Essential for healthy fetal brain development throughout gestation.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Oral Glucose Tolerance Test (OGTT / GCT):</strong> Screening for gestational diabetes mellitus between weeks 24 and 28.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-4">
+                <h4 className="font-bold text-nila-navy text-lg flex items-center gap-2">
+                  <Baby className="h-5 w-5 text-[hsl(var(--nila-warm))]" /> Key Ultrasound Milestones
+                </h4>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[hsl(var(--nila-warm))] font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Dating &amp; Viability Scan (6–9 Weeks):</strong> Confirms heartbeat, single vs twin gestation, and accurate expected delivery date.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[hsl(var(--nila-warm))] font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Nuchal Translucency (NT) Scan (11–13 Weeks):</strong> Early chromosomal risk evaluation combined with maternal serum markers.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[hsl(var(--nila-warm))] font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">TIFFA / Targeted Anomaly Scan (18–22 Weeks):</strong> Detailed head-to-toe organ screening of the baby's heart, spine, brain, and limbs.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[hsl(var(--nila-warm))] font-bold">•</span>
+                    <div>
+                      <strong className="text-foreground">Fetal Growth &amp; Doppler Scans (32–36 Weeks):</strong> Measures amniotic fluid (AFI), estimated fetal weight, and placental blood flow.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Clinical Guide Section 2: High-Risk Pregnancy Protocols */}
+          <div className="bg-muted/30 p-8 md:p-12 rounded-[2rem] border border-border shadow-sm mb-20">
             <div className="max-w-3xl mx-auto">
               <div className="text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest mb-2">Specialized Expertise</div>
-              <h3 className="text-2xl font-bold text-nila-navy mb-4">High-Risk Pregnancy Surveillance</h3>
-              <p className="text-muted-foreground text-base leading-relaxed mb-6">
-                Not every pregnancy is routine. Dr. Nithya Subashini has extensive clinical experience identifying and managing complex obstetric conditions with calm precision:
+              <h3 className="text-2xl md:text-3xl font-bold text-nila-navy mb-4">High-Risk Pregnancy Surveillance &amp; Protocols</h3>
+              <p className="text-muted-foreground text-base leading-relaxed mb-8">
+                Not every pregnancy follows a predictable course. Dr. Nithya Subashini has extensive clinical experience identifying and managing complex obstetric conditions with calm precision, clear patient communication, and continuous maternal-fetal surveillance:
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  "Gestational Diabetes Management",
-                  "Pregnancy-Induced Hypertension (Preeclampsia)",
-                  "Thyroid & Hormonal Imbalances",
-                  "Multiple Gestations (Twin Pregnancies)",
-                  "Previous Caesarean Birth (TOLAC/VBAC Consultation)",
-                  "Fetal Growth Restriction (IUGR) Monitoring"
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-sm text-foreground bg-card p-3 rounded-xl border border-border">
-                    <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))] shrink-0" />
-                    <span>{item}</span>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="bg-card p-5 rounded-2xl border border-border shadow-sm space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Gestational Diabetes (GDM)
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Personalized nutritional therapy, self-monitoring of blood glucose charts, and medical insulin titration to avoid macrosomia (excessive birth weight) and delivery complications.
+                  </p>
+                </div>
+
+                <div className="bg-card p-5 rounded-2xl border border-border shadow-sm space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Pregnancy-Induced Hypertension
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Close monitoring of blood pressure, urine albumin checks, uterine artery Doppler, and medication to prevent pre-eclampsia and premature placental detachment.
+                  </p>
+                </div>
+
+                <div className="bg-card p-5 rounded-2xl border border-border shadow-sm space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Thyroid Disorders in Pregnancy
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Regular TSH calibration across all three trimesters to guarantee optimum thyroid hormone levels for the baby’s brain and nervous system maturation.
+                  </p>
+                </div>
+
+                <div className="bg-card p-5 rounded-2xl border border-border shadow-sm space-y-2">
+                  <h4 className="font-bold text-nila-navy text-base flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))]" /> Previous C-Section (VBAC / TOLAC)
+                  </h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Careful ultrasound assessment of lower uterine segment scar thickness, inter-pregnancy interval, and clinical suitability for safe Trial of Labor after Caesarean.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Clinical Guide Section 3: Warning Signs Requiring Immediate Emergency Attention */}
+          <div className="p-8 md:p-10 rounded-[2rem] bg-destructive/5 border border-destructive/20 mb-20">
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="bg-destructive/10 p-3.5 rounded-2xl shrink-0">
+                <AlertCircle className="h-8 w-8 text-destructive" />
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-2xl font-bold text-nila-navy">Obstetric Red Flag Symptoms (Call Immediately)</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  If you experience any of the following symptoms at any stage of pregnancy, do not wait for your scheduled appointment. Proceed directly to Nila Hospital or contact our 24/7 obstetric hotline:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Sudden vaginal bleeding or fluid leakage
                   </div>
-                ))}
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Noticeable reduction in baby's kicks/movement
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Severe persistent headache or blurred vision
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Persistent severe pain in upper right abdomen
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> High fever with chills or painful urination
+                  </div>
+                  <div className="flex items-center gap-2 text-foreground font-medium">
+                    <span className="text-destructive font-bold">•</span> Sudden swelling of the face, hands, or feet
+                  </div>
+                </div>
+                <div className="pt-2">
+                  <a
+                    href={hospital.phoneHref}
+                    className="inline-flex items-center gap-2 text-destructive font-bold text-sm hover:underline"
+                  >
+                    Emergency Maternity Line: +91 96552 25192 <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Interlink to Maternity */}
-          <div className="text-center p-8 bg-card rounded-2xl border border-border">
+          <div className="text-center p-8 bg-card rounded-2xl border border-border shadow-sm">
             <h4 className="text-xl font-bold text-nila-navy mb-2">Preparing for Labor and Delivery?</h4>
             <p className="text-muted-foreground text-sm max-w-xl mx-auto mb-4">
-              Explore our supportive labor rooms and dedicated normal delivery care in Namakkal.
+              Explore our supportive labor suites, natural normal delivery commitment, and 24/7 surgical theatre facilities at Nila Hospital Namakkal.
             </p>
-            <Link
-              href="/maternity-hospital-namakkal"
-              className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[hsl(var(--nila-warm))] transition-colors"
-            >
-              Explore Maternity &amp; Delivery Care <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/maternity-hospital-namakkal"
+                className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[hsl(var(--nila-warm))] transition-colors"
+              >
+                Explore Maternity &amp; Delivery Care <ArrowRight className="h-4 w-4" />
+              </Link>
+              <span className="text-muted-foreground hidden sm:inline">•</span>
+              <Link
+                href="/why-choose-nila-hospital-namakkal"
+                className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[hsl(var(--nila-warm))] transition-colors"
+              >
+                Why Families Trust Us <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

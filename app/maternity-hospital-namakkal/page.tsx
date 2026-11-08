@@ -21,6 +21,10 @@ import {
   Sparkles,
   HelpCircle,
   Stethoscope,
+  Activity,
+  AlertCircle,
+  FileText,
+  HeartHandshake,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
 import { maternityHospitalNamakkalPageSchemas } from "@/lib/seo";
@@ -37,20 +41,24 @@ export const metadata: Metadata = {
 
 const maternityFaqs = [
   {
-    question: "Does Nila Hospital prioritize normal delivery?",
-    answer: "Yes, absolutely. Our clinical philosophy strongly favors natural, normal delivery whenever medically safe for mother and child. We provide calm labor environments, gentle encouragement, and unhurried monitoring.",
+    question: "Why choose Nila Hospital as a maternity hospital in Namakkal?",
+    answer: "Nila Hospital provides complete maternity care from ANC to delivery and postnatal follow-up with specialist-led continuity. Every patient is directly attended by Dr. Nithya Subashini without junior doctor handoffs.",
   },
   {
-    question: "Who will oversee my delivery and care?",
-    answer: "Every delivery and antenatal consultation is personally overseen by Dr. Nithya Subashini, MBBS, DGO, ensuring you are cared for by an experienced senior consultant from start to finish.",
+    question: "Is normal delivery available at Nila Hospital?",
+    answer: "Yes, absolutely. Our clinical philosophy strongly favors natural, normal delivery whenever medically safe for mother and child. We provide calm labor environments, gentle encouragement, and continuous fetal monitoring.",
+  },
+  {
+    question: "How can I contact Nila Hospital for delivery planning?",
+    answer: "Call +91 96552 25192 to discuss pregnancy monitoring, delivery planning, and maternity consultation with our team.",
   },
   {
     question: "What if a Caesarean Section (C-Section) becomes medically necessary?",
-    answer: "We have two fully equipped, sterile Operation Theatres available 24/7. In emergency situations or when medically indicated, our surgical team and senior anaesthesiologist Dr. Arul Ramasamy provide prompt, gold-standard surgical care.",
+    answer: "We maintain two fully equipped, sterile Operation Theatres available 24/7. When medically indicated for mother or baby safety, our surgical team and senior anaesthesiologist Dr. Arul Ramasamy provide prompt, gold-standard surgical care.",
   },
   {
     question: "Are labor suites and patient rooms private?",
-    answer: "Yes. We offer private, hygienic labor and post-delivery rooms designed to give families comfort, peace of mind, and dignity during this memorable milestone.",
+    answer: "Yes. We offer private, hygienic labor and post-delivery rooms designed to give families comfort, peace of mind, and dignity during childbirth.",
   },
   {
     question: "Do you offer post-natal lactation and baby care support?",
@@ -77,7 +85,7 @@ export default function Page() {
             <span className="text-[hsl(var(--nila-warm))]">in Namakkal</span>
           </h1>
           <p className="text-white/75 max-w-2xl mx-auto text-lg leading-relaxed">
-            One of the most trusted maternity centers in Namakkal, combining maternal excellence, natural delivery advocacy, and 24/7 emergency support.
+            One of the most trusted maternity centers in Namakkal, combining maternal clinical excellence, natural delivery advocacy, and round-the-clock emergency surgical readiness.
           </p>
         </div>
       </HeroGradientSection>
@@ -88,16 +96,16 @@ export default function Page() {
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-nila-navy mb-4">A Trusted Foundation for New Life</h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Naming our hospital after the "Nila" (Moon) symbolizes the gentle, nurturing care we provide to every mother and newborn. We prioritize patient comfort and safety above all else.
+              Named after "Nila" (the Moon) to represent nurturing and calm care, our center on Salem Road, Namakkal, is designed around the safety, dignity, and personal comfort of every expectant mother.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {[
-              { icon: Baby, title: "Senior Consultant Led", desc: "Every patient is personally attended by Dr. Nithya Subashini, MBBS, DGO." },
-              { icon: ShieldCheck, title: "Sterile Clinical Safety", desc: "Two sterile OTs and strict infection prevention standards." },
-              { icon: Clock, title: "24/7 Obstetric Cover", desc: "Round-the-clock emergency support for sudden labor onset." },
-              { icon: HeartPulse, title: "Mother & Baby Wellness", desc: "Comprehensive antenatal, delivery, and post-partum recovery." }
+              { icon: Baby, title: "Senior Consultant Led", desc: "Every patient is personally attended by Dr. Nithya Subashini, MBBS, DGO without junior doctor handoffs." },
+              { icon: ShieldCheck, title: "Sterile Clinical Safety", desc: "Two sterile OTs, strict infection controls, and modern neonatal resuscitation facilities." },
+              { icon: Clock, title: "24/7 Obstetric Cover", desc: "Round-the-clock emergency support for sudden labor onset, pain relief, and immediate admission." },
+              { icon: HeartPulse, title: "Mother & Baby Wellness", desc: "Holistic care covering antenatal scans, supportive birth, and complete postnatal lactation care." }
             ].map((item, idx) => (
               <div key={idx} className="bg-card p-6 rounded-2xl border border-border shadow-sm text-center">
                 <div className="bg-[hsl(var(--nila-warm-light))] p-3 rounded-2xl w-fit mx-auto mb-4">
@@ -109,27 +117,27 @@ export default function Page() {
             ))}
           </div>
 
-          {/* Deep Clinical Sections */}
-          <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Clinical Guide 1: Natural Normal Delivery vs C-Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-24">
             <div className="space-y-6">
               <div className="text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block bg-[hsl(var(--nila-warm-light))]">
-                Clinical Approach
+                Our Birth Philosophy
               </div>
-              <h3 className="text-3xl font-bold text-nila-navy">Natural Normal Delivery Priority</h3>
+              <h3 className="text-3xl font-bold text-nila-navy">Natural Normal Delivery as Priority</h3>
               <p className="text-muted-foreground text-base leading-relaxed">
-                At Nila Hospital, normal delivery is our first commitment. We believe pregnancy is a natural physiological process that requires patient patience, encouragement, and vigilant medical oversight.
+                At Nila Hospital, normal delivery is not just an option—it is our primary clinical commitment. We believe pregnancy is a natural physiological process that demands time, patient reassurance, and attentive monitoring rather than unnecessary interventions.
               </p>
               <p className="text-muted-foreground text-base leading-relaxed">
-                Our labor rooms are designed for family privacy and calm. Rather than rushing interventions, our experienced clinical nursing staff works under <Link href="/doctors/nithya-subashini" className="text-primary font-semibold hover:underline">Dr. Nithya Subashini's</Link> direct supervision to guide expectant mothers through labor using comfortable positioning and continuous fetal monitoring.
+                Led by <Link href="/doctors/nithya-subashini" className="text-primary font-semibold hover:underline">Dr. Nithya Subashini</Link>, our clinical team allows labor to progress naturally whenever mother and child remain stable. We support mothers with non-pharmacological comfort measures, breathing coaching, upright labor postures, and intermittent or continuous Cardiotocography (CTG) fetal monitoring.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {[
-                  "Continuous Foetal Heart Telemetry",
-                  "Supportive Labor Companionship",
-                  "Calm, Private Delivery Rooms",
-                  "Clear, Honest Delivery Guidance",
-                  "Pain-Relief Comfort Techniques",
-                  "Immediate Skin-to-Skin Bonding"
+                  "Continuous Cardiotocography (CTG)",
+                  "Comfort-Focused Labor Postures",
+                  "Supportive Family Companionship",
+                  "Dedicated 1-on-1 Nursing Oversight",
+                  "Gentle Perineal Protection Techniques",
+                  "Immediate Skin-to-Skin Newborn Bonding"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-sm text-foreground">
                     <CheckCircle className="h-4 w-4 text-[hsl(var(--nila-warm))] shrink-0" />
@@ -140,28 +148,182 @@ export default function Page() {
             </div>
 
             <div className="space-y-6 bg-muted/30 p-8 md:p-10 rounded-[2rem] border border-border shadow-sm">
-              <h3 className="text-2xl font-bold text-nila-navy">Emergency Surgical Readiness (C-Section)</h3>
+              <div className="text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block bg-primary/10">
+                Surgical Excellence
+              </div>
+              <h3 className="text-2xl font-bold text-nila-navy">Emergency & Planned C-Section Protocols</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                While natural birth is prioritized, maternal and newborn safety is always absolute. When medical indications arise — such as fetal distress, cord complications, or obstructed labor — our hospital is prepared with immediate emergency response.
+                While natural childbirth is our priority, maternal and newborn safety is paramount. If medical complications arise—such as persistent fetal distress, breech presentation, severe pre-eclampsia, or obstructed labor progression—our team executes an immediate, smooth transition to surgical delivery.
               </p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                With two sterile Operation Theatres on site, senior anaesthesiologist Dr. Arul Ramasamy, and trained neonatal nursing staff, emergency Caesarean deliveries are performed swiftly with minimal stress to the family.
+                Our twin Operation Theatres are staffed 24/7 with senior anaesthesiologist <Link href="/doctors/arul-ramasamy" className="text-primary font-semibold hover:underline">Dr. Arul Ramasamy</Link>, ensuring optimal regional spinal anaesthesia, rapid pain control, minimal maternal blood loss, and rapid post-operative recovery.
               </p>
               <div className="p-4 bg-background rounded-xl border border-border">
                 <div className="font-semibold text-nila-navy text-sm mb-1">Looking for Antenatal Monitoring?</div>
-                <p className="text-xs text-muted-foreground mb-3">Learn about our month-by-month pregnancy scans and risk assessments.</p>
+                <p className="text-xs text-muted-foreground mb-3">Learn about our trimester-by-trimester scans, blood work, and high-risk pregnancy protocols.</p>
                 <Link href="/obstetrics-namakkal" className="text-primary text-xs font-bold inline-flex items-center gap-1 hover:text-[hsl(var(--nila-warm))]">
-                  Explore Obstetrics Care <ArrowRight className="h-3.5 w-3.5" />
+                  Explore Obstetrics &amp; ANC Care <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Book Tour Card */}
-          <div className="mt-20 bg-muted/40 p-8 md:p-12 rounded-[2.5rem] border border-border/70 text-center max-w-4xl mx-auto">
-            <h4 className="text-2xl font-bold text-nila-navy mb-4">Visit Nila Hospital for a Pre-Delivery Consultation</h4>
+          {/* Clinical Guide 2: When to Come to the Hospital (Symptoms & Warning Signs) */}
+          <div className="bg-muted/20 p-8 md:p-12 rounded-[2.5rem] border border-border/80 mb-24">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <div className="inline-flex items-center gap-1.5 text-primary text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-primary/10 mb-3">
+                <AlertCircle className="h-4 w-4" /> Patient Guidance
+              </div>
+              <h3 className="text-3xl font-bold text-nila-navy mb-4">When Should You Come to the Hospital?</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Knowing when labor has truly begun helps families prepare calmly. Here is clinical guidance from Dr. Nithya Subashini on true labor signs versus early warning symptoms that require immediate evaluation.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[hsl(var(--nila-warm-light))] flex items-center justify-center text-[hsl(var(--nila-warm))] font-bold text-sm">
+                  01
+                </div>
+                <h4 className="font-bold text-nila-navy text-lg">Active Labor Contractions</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Regular uterine tightening that occurs every 4 to 5 minutes, lasting 45–60 seconds, and progressively increasing in intensity regardless of resting or walking.
+                </p>
+                <div className="text-xs text-primary font-medium bg-primary/5 p-3 rounded-xl border border-primary/10">
+                  Tip: Time the start of one contraction to the start of the next.
+                </div>
+              </div>
+
+              <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-[hsl(var(--nila-warm-light))] flex items-center justify-center text-[hsl(var(--nila-warm))] font-bold text-sm">
+                  02
+                </div>
+                <h4 className="font-bold text-nila-navy text-lg">Rupture of Membranes (Water Breaking)</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Any sudden gush or steady trickling of clear or straw-colored amniotic fluid. You should proceed to Nila Hospital promptly, even if contractions have not yet started.
+                </p>
+                <div className="text-xs text-primary font-medium bg-primary/5 p-3 rounded-xl border border-primary/10">
+                  Note fluid color: Greenish or brownish tint indicates meconium and needs immediate evaluation.
+                </div>
+              </div>
+
+              <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center text-destructive font-bold text-sm">
+                  03
+                </div>
+                <h4 className="font-bold text-nila-navy text-lg">Red Flag Symptoms (24/7 ER)</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Bright red vaginal bleeding, sudden decrease in baby movements, severe persistent abdominal headache with blurred vision (pre-eclampsia signs), or high fever.
+                </p>
+                <div className="text-xs text-destructive font-medium bg-destructive/5 p-3 rounded-xl border border-destructive/10">
+                  Direct 24/7 Obstetric Hotline: +91 96552 25192
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Clinical Guide 3: Diagnostic & Monitoring Protocols */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+            <div className="order-2 lg:order-1 bg-card p-8 md:p-10 rounded-[2rem] border border-border shadow-sm space-y-6">
+              <h3 className="text-2xl font-bold text-nila-navy">On-Arrival Diagnostic Protocols</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                When an expectant mother arrives at Nila Hospital, she is admitted directly to our sterile evaluation area where Dr. Nithya Subashini and our senior nursing team conduct immediate vital assessments:
+              </p>
+              <ul className="space-y-3.5 text-sm">
+                <li className="flex items-start gap-3">
+                  <Activity className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-nila-navy">Cardiotocography (CTG / NST):</strong>
+                    <span className="text-muted-foreground"> Measures fetal heart rate variability in response to contractions, providing real-time data on fetal oxygenation.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Stethoscope className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-nila-navy">Cervical Assessment & Pelvic Examination:</strong>
+                    <span className="text-muted-foreground"> Gentle check of cervical effacement, dilation, station, and membrane integrity.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ShieldCheck className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-nila-navy">Maternal Vitals & Biochemistry:</strong>
+                    <span className="text-muted-foreground"> Blood pressure screening, urine protein check, and blood grouping to prevent intrapartum complications.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Baby className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-nila-navy">Bedside Ultrasound Verification:</strong>
+                    <span className="text-muted-foreground"> Quick scan confirms cephalic presentation, placental location, and adequate amniotic fluid levels.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div className="order-1 lg:order-2 space-y-6">
+              <div className="text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block bg-[hsl(var(--nila-warm-light))]">
+                Clinical Rigour
+              </div>
+              <h3 className="text-3xl font-bold text-nila-navy">Maternal Safety &amp; Infection Prevention</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Childbirth requires an environment of uncompromising hygiene. Nila Hospital strictly adheres to surgical sterilization protocols across our delivery suites and dual operation theatres.
+              </p>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Every instrument is processed through multi-stage autoclave sterilization. Our labor rooms are sanitized before and after each admission, ensuring zero compromise on the well-being of the mother and newborn baby.
+              </p>
+              <div className="pt-2">
+                <Link
+                  href="/why-choose-nila-hospital-namakkal"
+                  className="inline-flex items-center gap-2 text-primary font-bold hover:text-[hsl(var(--nila-warm))] transition-colors"
+                >
+                  Learn more about our clinical safety protocols <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Clinical Guide 4: Postnatal Recovery & Newborn Care */}
+          <div className="mb-24">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <div className="inline-flex items-center gap-1.5 text-[hsl(var(--nila-warm))] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[hsl(var(--nila-warm-light))] mb-3">
+                <HeartHandshake className="h-4 w-4" /> Postnatal Guidance
+              </div>
+              <h3 className="text-3xl font-bold text-nila-navy mb-4">Post-Delivery Recovery &amp; Newborn Support</h3>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Our care extends far beyond the delivery room. The first days after birth are vital for establishing maternal recovery, successful breastfeeding, and healthy neonatal adaptation.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-3">
+                <h4 className="font-bold text-nila-navy text-lg">The First Golden Hour</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Immediate skin-to-skin contact between mother and baby, delayed umbilical cord clamping where clinically indicated, and initiation of early colostrum feeding to build the baby's immune foundation.
+                </p>
+              </div>
+
+              <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-3">
+                <h4 className="font-bold text-nila-navy text-lg">Lactation &amp; Feeding Support</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Dedicated, compassionate nursing support to guide new mothers on correct latching techniques, posture, preventing sore nipples, and managing breast engorgement with calm reassurance.
+                </p>
+              </div>
+
+              <div className="p-6 bg-card rounded-2xl border border-border shadow-sm space-y-3">
+                <h4 className="font-bold text-nila-navy text-lg">Maternal Recovery &amp; Healing</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Detailed monitoring of postpartum bleeding (lochia), gentle perineal care after normal delivery, sterile wound care after C-section, and personalized nutritional guidance for new mothers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Book Pre-Delivery Tour Card */}
+          <div className="bg-muted/40 p-8 md:p-12 rounded-[2.5rem] border border-border/70 text-center max-w-4xl mx-auto">
+            <h4 className="text-2xl font-bold text-nila-navy mb-4">Schedule Your Maternity Consultation</h4>
             <p className="text-muted-foreground text-base mb-8 max-w-2xl mx-auto leading-relaxed">
-              Experience the warmth of our maternity facilities firsthand. Meet Dr. Nithya Subashini and discuss your personalized birth plan.
+              Experience the gentle warmth of our maternity facility on Salem Road, Namakkal. Meet Dr. Nithya Subashini to discuss your birth preferences, antenatal schedule, and hospital admission details.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ClientCTA
