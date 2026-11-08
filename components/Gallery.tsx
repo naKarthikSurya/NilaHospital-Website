@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
 
 import 'lightgallery/css/lightgallery.css';
@@ -19,38 +20,45 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
-interface Image {
+interface GalleryImage {
   src: string;
   alt: string;
   thumb?: string;
 }
 
 interface GalleryProps {
-  images: Image[];
+  images: GalleryImage[];
   layout?: 'carousel' | 'grid';
 }
 
 const Gallery: React.FC<GalleryProps> = ({ images, layout = 'carousel' }) => {
-  const renderItem = (image: Image, index: number) => (
+  const renderItem = (image: GalleryImage, index: number) => (
     <div
       key={index}
       data-src={image.src}
+      data-thumb={image.thumb || image.src}
+      data-sub-html={`<div class="lightGallery-caption"><h4 class="text-white text-base font-medium">${image.alt}</h4></div>`}
       className="gallery-trigger block group relative overflow-hidden rounded-2xl cursor-zoom-in"
       title={image.alt}
     >
-      <Card className="border-0 shadow-md overflow-hidden bg-muted aspect-video">
-        <CardContent className="p-0 h-full w-full relative">
-          <img
+      <Card className="border-0 shadow-md overflow-hidden bg-muted">
+        <CardContent className="p-0 relative w-full aspect-video overflow-hidden">
+          <Image
             src={image.thumb || image.src}
             alt={image.alt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4">
-            <span className="text-white bg-black/40 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm mb-2">View Photo</span>
-            <p className="text-white text-[10px] text-center font-medium line-clamp-1">{image.alt}</p>
+          <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 pointer-events-none z-10">
+            <span className="text-white bg-black/50 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm mb-2 shadow-sm">
+              View Photo
+            </span>
+            <p className="text-white text-xs text-center font-medium line-clamp-1 drop-shadow-sm">
+              {image.alt}
+            </p>
           </div>
         </CardContent>
       </Card>

@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import { doctorsList } from '@/data/doctors';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, MapPin, Phone, Mail, Award, Clock, CalendarHeart, HeartPulse, GraduationCap, Link as LinkIcon, User } from 'lucide-react';
+import { ArrowLeft, MapPin, Phone, Mail, Award, Clock, CalendarHeart, HeartPulse, GraduationCap, Link as LinkIcon, User, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { physicianSchemaForDoctor } from '@/lib/seo';
 import { hospital } from '@/data/hospital';
@@ -74,9 +75,20 @@ export default async function DoctorProfile({ params }: Props) {
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="w-full md:w-1/3 xl:w-1/4 shrink-0 mt-2">
               <Card className="overflow-hidden border-border/50 shadow-lg bg-card inline-block w-full max-w-sm mx-auto">
-                <div className="w-full aspect-square bg-nila-navy/5 flex items-center justify-center relative inner-shadow">
-                  <User className="h-32 w-32 text-nila-navy/20" />
-                  <div className="absolute top-4 left-4">
+                <div className="w-full aspect-square bg-nila-navy/5 flex items-center justify-center relative inner-shadow overflow-hidden">
+                  {doctor.image ? (
+                    <Image
+                      src={doctor.image}
+                      alt={doctor.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      priority
+                      className="object-cover"
+                    />
+                  ) : (
+                    <User className="h-32 w-32 text-nila-navy/20" />
+                  )}
+                  <div className="absolute top-4 left-4 z-10">
                     <Badge className={`${doctor.type === 'practitioner' ? 'bg-primary' : 'bg-[hsl(var(--nila-warm))]'} text-white border-0 shadow-sm`}>
                       {doctor.type === 'pg' && 'pursuing' in doctor ? `Currently Pursuing ${doctor.pursuing}` : doctor.badge}
                     </Badge>
@@ -92,6 +104,12 @@ export default async function DoctorProfile({ params }: Props) {
                   <p className="text-primary font-semibold text-lg uppercase tracking-wide flex items-center gap-2">
                     <Award className="h-5 w-5" /> {doctor.category.replace(/-/g, ' ')}
                   </p>
+                  {doctor.registrationNumber && (
+                    <div className="inline-flex items-center gap-2 mt-3 px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-full text-xs font-medium">
+                      <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
+                      <span>TNMC Registration No: <strong className="font-semibold">{doctor.registrationNumber}</strong></span>
+                    </div>
+                  )}
                 </div>
                 
                 {/* Conditionally Render Contact Area based on requirements */}

@@ -20,6 +20,7 @@ export interface Doctor {
     knowsAbout?: string[];
     sameAs?: string[];
     registrationNumber?: string;
+    image?: string;
     lastModified?: string;
 }
 
@@ -42,7 +43,8 @@ export const doctorsList: Doctor[] = [
         ],
         knowsAbout: ["Obstetrics", "Gynaecology", "Maternity Care", "Antenatal Care", "Normal Delivery", "Cesarean Section", "Women's Health"],
         sameAs: [],
-        registrationNumber: "", // Will be filled later by the user
+        registrationNumber: "", // Fill with Tamil Nadu Medical Council (TNMC) Reg No when available
+        image: "", // Set to "/images/doctors/dr-nithya.jpg" once photo is placed in public/images/doctors
         lastModified: "2026-07-12",
     },
     {
@@ -63,7 +65,8 @@ export const doctorsList: Doctor[] = [
         ],
         knowsAbout: ["Anaesthesiology", "Obstetric Anaesthesia", "General Anaesthesia", "Pain Management", "Emergency Care"],
         sameAs: [],
-        registrationNumber: "", // Will be filled later by the user
+        registrationNumber: "", // Fill with Tamil Nadu Medical Council (TNMC) Reg No when available
+        image: "", // Set to "/images/doctors/dr-arul.jpg" once photo is placed in public/images/doctors
         lastModified: "2026-07-12",
     },
 ];
