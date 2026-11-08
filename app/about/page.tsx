@@ -1,10 +1,12 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
 import Gallery from "@/components/Gallery";
 import { aboutPageSchema } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
+import { doctorsList } from "@/data/doctors";
 import ClientCTA from "@/components/ClientCTA";
 
 export const metadata: Metadata = {
@@ -58,6 +60,8 @@ const quickInfoCards = [
 ];
 
 export default function Page() {
+  const drNithya = doctorsList.find(d => d.id === "nithya-subashini");
+
   return (
     <>
       <script
@@ -106,13 +110,28 @@ export default function Page() {
               <div className="absolute -inset-4 bg-[hsl(var(--nila-warm))]/5 rounded-[3rem] rotate-2" />
               <div className="relative bg-card border border-border shadow-2xl rounded-[2.5rem] overflow-hidden p-8 md:p-12">
                 <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="w-32 h-32 rounded-full bg-muted flex items-center justify-center overflow-hidden border-4 border-[hsl(var(--nila-warm-light))] shadow-lg">
-                    <img src="/assets/NHLogo_NB.svg" alt="Dr. Nithya Subashini" className="w-full h-full object-cover" />
+                  <div className="w-32 h-32 rounded-full bg-muted flex items-center justify-center overflow-hidden border-4 border-[hsl(var(--nila-warm-light))] shadow-lg relative">
+                    {drNithya?.image ? (
+                      <Image
+                        src={drNithya.image}
+                        alt="Dr. Nithya Subashini"
+                        fill
+                        sizes="128px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <img src="/assets/NHLogo_NB.svg" alt="Dr. Nithya Subashini" className="w-full h-full object-cover" />
+                    )}
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-nila-navy">Dr. Nithya Subashini</h3>
                     <p className="text-[hsl(var(--nila-warm))] font-semibold">MBBS, DGO</p>
                     <p className="text-sm text-muted-foreground uppercase tracking-widest mt-1">Consultant Obstetrician & Gynaecologist</p>
+                    {drNithya?.registrationNumber && (
+                      <p className="text-xs text-muted-foreground font-mono mt-1">
+                        TNMC Reg. No: <strong className="text-foreground">{drNithya.registrationNumber}</strong>
+                      </p>
+                    )}
                   </div>
                   <div className="prose prose-sm text-muted-foreground leading-relaxed italic">
                     "My goal at Nila Hospital is to ensure that healthcare remains human. I want every mother to walk out of our hospital feeling empowered, healthy, and respected. We don't just treat conditions; we care for people."
@@ -215,13 +234,13 @@ export default function Page() {
           </div>
           <Gallery
             images={[
-              { src: "/images/gallery/521A6952.JPG", alt: "Hospital Exterior" },
-              { src: "/images/gallery/521A6945.JPG", alt: "Reception Area" },
-              { src: "/images/gallery/521A6872.JPG", alt: "Consultation Room" },
-              { src: "/images/gallery/521A6864.JPG", alt: "Patient Ward" },
-              { src: "/images/gallery/521A6892.JPG", alt: "Operation Theatre" },
-              { src: "/images/gallery/521A6862.JPG", alt: "Treatment Area" },
-              { src: "/images/gallery/521A6833.JPG", alt: "Diagnostic Equipment" },
+              { src: "/images/gallery/521A6952.JPG", alt: "Nila Hospital Building Exterior on Salem Road Namakkal" },
+              { src: "/images/gallery/521A6945.JPG", alt: "Nila Hospital Reception and Patient Waiting Lounge" },
+              { src: "/images/gallery/521A6872.JPG", alt: "Specialist Doctor Consultation Room at Nila Hospital" },
+              { src: "/images/gallery/521A6864.JPG", alt: "Clean and Hygienic Inpatient Ward Room at Nila Hospital" },
+              { src: "/images/gallery/521A6892.JPG", alt: "Modern Sterile Operation Theatre for Maternity and Surgeries" },
+              { src: "/images/gallery/521A6862.JPG", alt: "Post-Operative Recovery and Patient Treatment Area" },
+              { src: "/images/gallery/521A6833.JPG", alt: "Advanced Ultrasound and CTG Fetal Diagnostic Equipment" },
             ]}
           />
         </div>

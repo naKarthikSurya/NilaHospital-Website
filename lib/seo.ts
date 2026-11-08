@@ -524,7 +524,7 @@ export function physicianSchemaForDoctor(doctor: Doctor) {
     "@id": `${SITE_URL}/doctors/${doctor.id}#physician`,
     name: doctor.name,
     url: `${SITE_URL}/doctors/${doctor.id}`,
-    image: `${SITE_URL}/assets/NHLogo_NB.svg`, // Fallback logo since no photos
+    image: doctor.image ? `${SITE_URL}${doctor.image}` : `${SITE_URL}/assets/NHLogo_NB.svg`,
     jobTitle: doctor.title,
     description: doctor.description,
     telephone: hospital.phoneDisplay,

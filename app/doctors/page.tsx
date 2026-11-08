@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,8 +24,18 @@ export default function Page() {
   const DoctorCard = ({ doctor }: { doctor: typeof doctorsList[0] }) => (
     <Card className="border border-border nila-card-hover group overflow-hidden bg-card h-full flex flex-col items-center text-center">
       <div className="w-full h-48 bg-nila-navy/5 flex items-center justify-center relative overflow-hidden group-hover:bg-nila-navy/10 transition-colors">
-        <User className="h-20 w-20 text-nila-navy/20" />
-        <div className="absolute top-4 right-4">
+        {doctor.image ? (
+          <Image
+            src={doctor.image}
+            alt={doctor.name}
+            fill
+            sizes="(max-width: 768px) 100vw, 350px"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <User className="h-20 w-20 text-nila-navy/20" />
+        )}
+        <div className="absolute top-4 right-4 z-10">
           <Badge className={`${doctor.type === 'practitioner' ? 'bg-primary' : 'bg-[hsl(var(--nila-warm))]'} text-white border-0`}>
             {doctor.type === 'pg' && 'pursuing' in doctor ? `Currently Pursuing ${doctor.pursuing}` : doctor.badge}
           </Badge>
@@ -38,6 +49,11 @@ export default function Page() {
             <GraduationCap className="h-3.5 w-3.5" />
             {doctor.qualifications}
           </div>
+          {doctor.registrationNumber && (
+            <div className="text-[11px] text-muted-foreground mt-1 font-mono">
+              TNMC Reg: <span className="font-semibold text-foreground">{doctor.registrationNumber}</span>
+            </div>
+          )}
         </div>
         
         <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-1">
