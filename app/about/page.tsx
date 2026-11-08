@@ -94,7 +94,7 @@ export default function Page() {
                   Nila Hospital was established with a singular vision — to provide high-quality, women-focused medical care in Namakkal. Recognising the need for a dedicated facility for <strong>Obstetrics & Gynaecology</strong> in the region, we built a space where every woman feels safe, heard, and cared for.
                 </p>
                 <p>
-                  Our philosophy is simple: <strong>personal attention over volume</strong>. Unlike larger corporate institutions, every patient at Nila Hospital is seen directly by our consultant. We believe that medical care should be built on trust, and trust begins with consistent, one-on-one attention from the same doctor throughout your journey.
+                  Our philosophy is simple: <strong>personal attention over volume</strong>. Every patient at Nila Hospital is seen directly by our consultant, ensuring consistent, one-on-one attention from the same doctor throughout your journey. We believe that medical care should be built on trust, warmth, and dedicated personal care.
                 </p>
                 <p>
                   Over the years, we have grown to serve women and families across Namakkal, Tiruchengode, and Rasipuram. From complex gynaecological treatments like uterine fibroid management to the joyful moment of a first baby's arrival, we are committed to being your lifelong health partner.

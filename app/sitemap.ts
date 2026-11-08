@@ -3,32 +3,33 @@ import { doctorsList } from '@/data/doctors';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nilahospital.com';
+  const lastUpdated = new Date();
 
   const staticRoutes = [
-    { route: '', lastModified: '2026-07-12', priority: 1.0 },
-    { route: '/services', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/doctors', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/about', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/contact', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/why-we-are-best-hospital-in-namakkal', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/best-women-hospital-in-namakkal', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/gynaecology-namakkal', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/obstetrics-namakkal', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/maternity-hospital-namakkal', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/womens-health-namakkal', lastModified: '2026-07-12', priority: 0.8 },
-    { route: '/general-medicine-namakkal', lastModified: '2026-07-12', priority: 0.8 },
+    { route: '', priority: 1.0, changeFrequency: 'weekly' as const },
+    { route: '/maternity-hospital-namakkal', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/gynaecology-namakkal', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/obstetrics-namakkal', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/womens-health-namakkal', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/services', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/doctors', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/general-medicine-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/why-choose-nila-hospital-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
+    { route: '/womens-hospital-namakkal', priority: 0.8, changeFrequency: 'monthly' as const },
   ].map((item) => ({
     url: `${baseUrl}${item.route}`,
-    lastModified: new Date(item.lastModified),
-    changeFrequency: 'monthly' as const,
+    lastModified: lastUpdated,
+    changeFrequency: item.changeFrequency,
     priority: item.priority,
   }));
 
   const doctorRoutes = doctorsList.map((doctor) => ({
     url: `${baseUrl}/doctors/${doctor.id}`,
-    lastModified: new Date(doctor.lastModified || '2026-07-12'),
+    lastModified: lastUpdated,
     changeFrequency: 'monthly' as const,
-    priority: 0.7,
+    priority: 0.8,
   }));
 
   return [...staticRoutes, ...doctorRoutes];

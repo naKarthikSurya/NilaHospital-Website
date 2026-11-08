@@ -8,7 +8,7 @@ A modern, high-performance healthcare platform for **Nila Hospital**, specializi
 
 ## 🏥 Hospital Overview
 
-Located in Namakkal, Nila Hospital is a premier destination for specialized women's healthcare, led by **Dr. Nithya Subashini (MBBS, DGO)**.
+Located in Namakkal, Nila Hospital is a premier destination for specialized women's healthcare, led by **Dr. Nithya Subashini, MBBS, DGO**.
 
 ### Core Specializations
 - **Obstetrics**: High-risk pregnancy management, normal & surgical deliveries.
