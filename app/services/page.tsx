@@ -123,7 +123,7 @@ export default function Page() {
         <div className="container max-w-5xl mx-auto px-4">
           <div className="prose prose-slate max-w-none">
             <h2 className="text-3xl md:text-4xl font-bold text-nila-navy mb-8 text-center">
-              Why Nila Hospital is Considered the <span className="text-[hsl(var(--nila-warm))]">Best Gynaecology Hospital in Namakkal</span>
+              Why Nila Hospital is <span className="text-[hsl(var(--nila-warm))]">One of the Most Trusted Hospitals in Namakkal</span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
@@ -158,7 +158,7 @@ export default function Page() {
               <div className="p-6">
                 <CheckCircle className="h-10 w-10 text-[hsl(var(--nila-warm))] mx-auto mb-4" />
                 <h4 className="font-bold mb-2">Evidence-Based Treatment</h4>
-                <p className="text-sm text-muted-foreground">Following WHO and international clinical guidelines for all obstetric procedures.</p>
+                <p className="text-sm text-muted-foreground">Rigid clinical protocols and proven medical standards for all obstetric procedures.</p>
               </div>
               <div className="p-6">
                 <Shield className="h-10 w-10 text-[hsl(var(--nila-warm))] mx-auto mb-4" />
@@ -183,9 +183,7 @@ export default function Page() {
             Have Questions About Our Services?
           </h2>
           <p className="text-nila-light-blue mb-8 max-w-md mx-auto">We're happy to explain any service in detail. Just give us a call.</p>
-          <div className="mb-8 text-[10px] text-white/40 uppercase tracking-[0.2em]">
-            Clinical information based on <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">WHO</a> & <a href="https://www.nih.gov" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">NIH</a> standards
-          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ClientCTA
               event="phone_click"
