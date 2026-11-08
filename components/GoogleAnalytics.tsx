@@ -13,11 +13,16 @@ function GoogleAnalyticsInner() {
   useEffect(() => {
     if (!GA_ID) return;
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
-    (window as any).gtag?.("event", "page_view", {
-      page_location: window.location.href,
-      page_path: url,
-      page_title: document.title
-    });
+    // Give Next.js a short delay to update document.title for client-side route transitions
+    const timer = setTimeout(() => {
+      (window as any).gtag?.("event", "page_view", {
+        page_location: window.location.href,
+        page_path: url,
+        page_title: document.title,
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [pathname, searchParams]);
 
   return null;
