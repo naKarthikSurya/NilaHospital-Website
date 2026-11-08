@@ -221,7 +221,7 @@ export default function Page() {
               <div className="bg-card p-8 rounded-3xl border border-border shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1 h-full bg-[hsl(var(--nila-warm))]" />
                 <p className="text-xl font-bold text-foreground leading-snug">
-                  "Every patient at Nila Hospital is seen directly by <span className="text-[hsl(var(--nila-warm))]">Dr. Nithya Subashini (MBBS, DGO)</span>, ensuring continuity of care that is often missing in larger corporate hospitals."
+                  "Every patient at Nila Hospital is seen directly by <span className="text-[hsl(var(--nila-warm))]">Dr. Nithya Subashini, MBBS, DGO</span>, ensuring personalized attention, direct doctor-patient communication, and dedicated continuity of care throughout your treatment."
                 </p>
               </div>
             </div>
@@ -254,7 +254,7 @@ export default function Page() {
         <div className="container max-w-4xl mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold text-nila-navy mb-8">Comprehensive Gynaecological Care</h3>
           <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-            Our Gynaecology department also addresses complex issues like <strong>uterine fibroids</strong>, ovarian cysts, and menstrual irregularities. We utilize modern diagnostic tools and evidence-based medicine (citing WHO standards) to provide treatments that are both safe and effective.
+            Our Gynaecology department also addresses complex issues like <strong>uterine fibroids</strong>, ovarian cysts, and menstrual irregularities. We utilize modern diagnostic tools and evidence-based medicine to provide treatments that are both safe and effective.
           </p>
           <p className="text-2xl font-bold text-primary italic">
             Experience the difference of personalized medical care at Namakkal's most trusted maternity center.
