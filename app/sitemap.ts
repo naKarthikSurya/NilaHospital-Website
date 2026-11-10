@@ -3,7 +3,7 @@ import { doctorsList } from '@/data/doctors';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nilahospital.com';
-  const lastUpdated = new Date();
+  const lastUpdated = new Date('2026-11-10');
 
   const staticRoutes = [
     { route: '', priority: 1.0, changeFrequency: 'weekly' as const },
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const doctorRoutes = doctorsList.map((doctor) => ({
     url: `${baseUrl}/doctors/${doctor.id}`,
-    lastModified: lastUpdated,
+    lastModified: new Date(doctor.lastModified || '2026-11-08'),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));

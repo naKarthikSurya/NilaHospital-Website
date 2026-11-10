@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Col 1: Logo & Tagline */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-0 mb-4">
-              <img src="/assets/NHLogo_NB.svg" alt="Nila Hospital" className="h-32 w-auto" />
+              <img src="/assets/NHLogo_NB.svg" alt="Nila Hospital" width={56} height={56} className="h-32 w-auto" />
               <div className="-ml-4">
                 <div className="font-bold text-lg leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>{hospital.name}</div>
                 <div className="text-nila-light-blue text-xs tracking-wide">{hospital.tagline}</div>
@@ -55,7 +55,7 @@ export default function Footer() {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Quick Links</h4>
+            <h2 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Quick Links</h2>
             <ul className="space-y-2.5">
               {[
                 { label: "Home", path: "/" },
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Col 3: Specialties & Treatments (High-intent SEO internal links) */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Specialties &amp; Care</h4>
+            <h2 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Specialties &amp; Care</h2>
             <ul className="space-y-2.5">
               {specialtyLinks.map((link) => (
                 <li key={link.path}>
@@ -89,7 +89,7 @@ export default function Footer() {
 
           {/* Col 4: Contact Info */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Contact</h4>
+            <h2 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Contact</h2>
             <ul className="space-y-4">
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-[hsl(var(--nila-warm))] mt-0.5 shrink-0" />
@@ -121,7 +121,7 @@ export default function Footer() {
 
           {/* Col 5: Working Hours */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Working Hours</h4>
+            <h2 className="font-bold text-sm uppercase tracking-widest mb-5 text-white">Working Hours</h2>
             <ul className="space-y-3">
               {hospital.openingHours.map((oh) => (
                 <li key={oh.days} className="flex items-start gap-2.5">

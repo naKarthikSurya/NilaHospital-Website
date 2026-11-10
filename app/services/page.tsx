@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -51,6 +52,16 @@ const serviceCategories = [
       { name: "Family Planning", for: "Women and couples", when: "When contraception or birth spacing is needed", how: "Confidential counselling on safe and effective family planning options." },
     ],
   },
+];
+
+const specializedGuides = [
+  { href: "/maternity-hospital-namakkal", label: "Maternity Hospital in Namakkal" },
+  { href: "/obstetrics-namakkal", label: "Obstetrics in Namakkal" },
+  { href: "/gynaecology-namakkal", label: "Gynaecology in Namakkal" },
+  { href: "/womens-health-namakkal", label: "Women's Health in Namakkal" },
+  { href: "/general-medicine-namakkal", label: "General Medicine in Namakkal" },
+  { href: "/womens-hospital-namakkal", label: "Women's Hospital in Namakkal" },
+  { href: "/why-choose-nila-hospital-namakkal", label: "Why Choose Nila Hospital" },
 ];
 
 export default function Page() {
@@ -115,6 +126,27 @@ export default function Page() {
           </div>
         </section>
       ))}
+
+      <section className="py-16 bg-muted/20 border-y border-border/40">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-nila-navy mb-3">Explore Specialized Guides</h2>
+            <p className="text-muted-foreground">Learn more about our focused care pathways and hospital services in Namakkal.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {specializedGuides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card p-5 font-semibold text-foreground transition-colors hover:border-[hsl(var(--nila-warm))]/50 hover:text-primary"
+              >
+                {guide.label}
+                <span aria-hidden="true">&rarr;</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Advanced Care Narrative Section — SEO Powerhouse */}
       <section className="py-24 bg-background">
