@@ -4,17 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Navigation } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { contactPageSchema } from "@/lib/seo";
+import { contactPageSchema, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact Nila Hospital Namakkal",
   description: "Visit Nila Hospital, Namakkal for expert maternity, pregnancy (ANC), and gynaecology care. Call +91 96552 25192 to schedule a consultation.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+  path: "/contact",
+});
 
 export default function Page() {
   return (

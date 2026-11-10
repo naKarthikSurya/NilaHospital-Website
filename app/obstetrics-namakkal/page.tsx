@@ -26,18 +26,16 @@ import {
   Sparkles,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { obstetricsNamakkalPageSchemas } from "@/lib/seo";
+import { obstetricsNamakkalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
-  title: "Obstetrician & Pregnancy Care in Namakkal | Nila Hospital",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Obstetrician & Pregnancy Care in Namakkal",
   description: "Comprehensive obstetrics care in Namakkal — antenatal monitoring (ANC), high-risk pregnancy management, ultrasound tracking, and delivery planning with Dr. Nithya Subashini.",
-  alternates: {
-    canonical: "/obstetrics-namakkal",
-  },
-};
+  path: "/obstetrics-namakkal",
+});
 
 const obstetricsFaqs = [
   {

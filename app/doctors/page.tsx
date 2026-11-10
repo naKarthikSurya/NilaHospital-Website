@@ -8,15 +8,13 @@ import { Badge } from "@/components/ui/badge";
 import { Stethoscope, ArrowRight, User, GraduationCap } from "lucide-react";
 import { doctorsList } from "@/data/doctors";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { doctorsListingSchema } from "@/lib/seo";
+import { doctorsListingSchema, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Doctors at Nila Hospital Namakkal",
   description: "Meet our specialist medical team at Nila Hospital Namakkal. Led by experienced obstetricians, gynaecologists, and anaesthesiologists providing trusted care.",
-  alternates: {
-    canonical: "/doctors",
-  },
-};
+  path: "/doctors",
+});
 
 export default function Page() {
   const practitioners = doctorsList.filter(d => d.type === 'practitioner');

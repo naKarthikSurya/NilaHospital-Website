@@ -24,18 +24,16 @@ import {
   CalendarHeart,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { gynaecologyNamakkalPageSchemas } from "@/lib/seo";
+import { gynaecologyNamakkalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Gynaecologist in Namakkal | Fibroid & PCOS Care",
   description: "Consult Dr. Nithya Subashini, MBBS, DGO at Nila Hospital for expert treatment of uterine fibroids, PCOS, ovarian cysts, and menstrual disorders in Namakkal.",
-  alternates: {
-    canonical: "/gynaecology-namakkal",
-  },
-};
+  path: "/gynaecology-namakkal",
+});
 
 const gynaecologyFaqs = [
   {
