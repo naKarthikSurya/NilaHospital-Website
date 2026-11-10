@@ -118,7 +118,7 @@ export default function Page() {
                         className="object-cover"
                       />
                     ) : (
-                      <img src="/assets/NHLogo_NB.svg" alt="Dr. Nithya Subashini" className="w-full h-full object-cover" />
+                      <img src="/assets/NHLogo_NB.svg" alt="Nila Hospital logo" width={80} height={80} className="w-full h-full object-cover" />
                     )}
                   </div>
                   <div>

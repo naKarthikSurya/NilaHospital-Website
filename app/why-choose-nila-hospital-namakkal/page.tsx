@@ -182,7 +182,7 @@ export default function Page() {
               }
             ].map((item, idx) => (
               <div key={idx} className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-2">
-                <h4 className="font-bold text-nila-navy text-lg">{item.q}</h4>
+                <h3 className="font-bold text-nila-navy text-lg">{item.q}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}

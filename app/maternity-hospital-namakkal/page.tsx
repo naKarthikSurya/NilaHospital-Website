@@ -110,7 +110,7 @@ export default function Page() {
                 <div className="bg-[hsl(var(--nila-warm-light))] p-3 rounded-2xl w-fit mx-auto mb-4">
                   <item.icon className="h-6 w-6 text-[hsl(var(--nila-warm))]" />
                 </div>
-                <h4 className="font-bold text-nila-navy mb-2">{item.title}</h4>
+                <h3 className="font-bold text-nila-navy mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}

@@ -129,7 +129,7 @@ export default async function DoctorProfile({ params }: Props) {
               </div>
 
               <div className="prose prose-slate max-w-none mb-10">
-                <h3 className="text-2xl font-bold text-nila-navy mb-4 border-b border-border pb-2 inline-block">About the Doctor</h3>
+                <h2 className="text-2xl font-bold text-nila-navy mb-4 border-b border-border pb-2 inline-block">About the Doctor</h2>
                 <p className="text-muted-foreground text-lg leading-relaxed">{doctor.description}</p>
               </div>
 
@@ -137,9 +137,9 @@ export default async function DoctorProfile({ params }: Props) {
                 <div className="grid grid-cols-1 gap-6">
                   {doctor.infoCards.map((card, i) => (
                     <div key={i} className="mb-4">
-                      <h3 className="text-xl font-bold text-nila-navy mb-4 flex items-center gap-2">
+                      <h2 className="text-xl font-bold text-nila-navy mb-4 flex items-center gap-2">
                         <card.icon className="h-5 w-5 text-primary" /> {card.title}
-                      </h3>
+                      </h2>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {card.items.map((item, j) => (
                           <li key={j} className="flex items-start gap-2 text-muted-foreground bg-white border border-border/50 p-3 rounded-xl shadow-sm">

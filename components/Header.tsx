@@ -47,8 +47,9 @@ export default function Header() {
           <img
             src="/assets/NHLogo_NB.svg"
             alt="Nila Hospital Logo"
-            style={{ height: "120px" }}
-            className="h-20 md:h-[90px] w-auto transition-transform group-hover:scale-105"
+            width={80}
+            height={80}
+            className="h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105"
           />
           <div className="-ml-4">
             <div
@@ -65,6 +66,14 @@ export default function Header() {
             </div>
           </div>
         </Link>
+
+        <nav aria-label="Specialty Services" className="sr-only">
+          {specialtyLinks.map((link) => (
+            <Link key={link.path} href={link.path}>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
         {/* Desktop Nav & Call Button Group */}
         <div className="hidden md:flex items-center gap-6">

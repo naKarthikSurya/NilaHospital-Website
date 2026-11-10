@@ -76,7 +76,7 @@ export const defaultSchema = {
   "@id": HOSPITAL_ID,
   name: HOSPITAL_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/assets/NHLogo_NB.svg`,
+  logo: `${SITE_URL}/icon-512.png`,
   image: `${SITE_URL}/images/gallery/521A6952.JPG`, // Genuine exterior image
   description: "Nila Hospital Namakkal is a premier center for specialist maternity, obstetrics, gynaecology, and general medicine.",
   telephone: hospital.phoneDisplay,
@@ -84,14 +84,19 @@ export const defaultSchema = {
   address: HOSPITAL_ADDRESS,
   hasMap: hospital.mapsUrl,
   priceRange: "$$",
-  medicalSpecialty: ["ObstetricAndGynecologic", "Anesthesia", "GeneralMedicine"],
+  medicalSpecialty: [
+    "https://schema.org/Obstetric",
+    "https://schema.org/Gynecologic",
+    "https://schema.org/Anesthesia",
+    "https://schema.org/PrimaryCare",
+  ],
   availableService: [
     "Pregnancy Care (ANC)",
     "Normal and Caesarean Delivery Care",
     "Gynaecology and Women's Health Care",
     "Women's Preventive Care & Screening",
-    "General Medicine & Primary Care"
-  ],
+    "General Medicine & Primary Care",
+  ].map((name) => ({ "@type": "MedicalProcedure", name })),
   amenityFeature: [
     {
       "@type": "LocationFeatureSpecification",
@@ -119,11 +124,12 @@ export const defaultSchema = {
 };
 
 export const homePageSchemas = [
-  defaultSchema,
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: HOSPITAL_NAME,
+    "@id": `${SITE_URL}/#website`,
+    name: "Nila Hospital",
+    alternateName: ["Nila Hospital Namakkal"],
     url: SITE_URL,
   },
   {
@@ -174,43 +180,65 @@ export const homePageSchemas = [
   }
 ];
 
-export const contactPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  name: "Contact Nila Hospital Namakkal",
-  url: `${SITE_URL}/contact`,
-  about: { "@id": HOSPITAL_ID },
-};
+export const contactPageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Nila Hospital Namakkal",
+    url: `${SITE_URL}/contact`,
+    about: { "@id": HOSPITAL_ID },
+  },
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Contact", path: "/contact" },
+  ]),
+];
 
-export const aboutPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  name: "About Nila Hospital Namakkal",
-  url: `${SITE_URL}/about`,
-  about: { "@id": HOSPITAL_ID },
-};
+export const aboutPageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Nila Hospital Namakkal",
+    url: `${SITE_URL}/about`,
+    about: { "@id": HOSPITAL_ID },
+  },
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]),
+];
 
-export const doctorsListingSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Doctors at Nila Hospital Namakkal",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Dr. Nithya Subashini",
-      url: `${SITE_URL}/doctors/nithya-subashini`,
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Dr. Arul Ramasamy",
-      url: `${SITE_URL}/doctors/arul-ramasamy`,
-    },
-  ],
-};
+export const doctorsListingSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Doctors at Nila Hospital Namakkal",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Dr. Nithya Subashini",
+        url: `${SITE_URL}/doctors/nithya-subashini`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Dr. Arul Ramasamy",
+        url: `${SITE_URL}/doctors/arul-ramasamy`,
+      },
+    ],
+  },
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Doctors", path: "/doctors" },
+  ]),
+];
 
 export const servicesPageSchemas = [
+  breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+  ]),
   {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
@@ -562,33 +590,50 @@ export const generalMedicineNamakkalPageSchemas = [
 
 function getMedicalSpecialty(doctor: Doctor): string {
   if (doctor.category === "gynaecologist") {
-    return "ObstetricAndGynecologic";
+    return "https://schema.org/Obstetric";
   }
   if (doctor.category === "anaesthesiologist") {
-    return "Anesthesia";
+    return "https://schema.org/Anesthesia";
   }
-  return "GeneralMedicine";
+  return "https://schema.org/PrimaryCare";
 }
 
 export function physicianSchemaForDoctor(doctor: Doctor) {
-  return {
+  const physicianNode = {
     "@context": "https://schema.org",
     "@type": "Physician",
     "@id": `${SITE_URL}/doctors/${doctor.id}#physician`,
     name: doctor.name,
     url: `${SITE_URL}/doctors/${doctor.id}`,
-    image: doctor.image ? `${SITE_URL}${doctor.image}` : `${SITE_URL}/assets/NHLogo_NB.svg`,
+    ...(doctor.image ? { image: `${SITE_URL}${doctor.image}` } : {}),
     jobTitle: doctor.title,
     description: doctor.description,
     telephone: hospital.phoneDisplay,
     address: HOSPITAL_ADDRESS,
     hospitalAffiliation: { "@id": HOSPITAL_ID },
     medicalSpecialty: getMedicalSpecialty(doctor),
-    knowsAbout: doctor.knowsAbout || [],
-    sameAs: doctor.sameAs || [],
-    medicalRegistrationNumber: doctor.registrationNumber || undefined,
-    qualifications: doctor.qualifications
+    hasCredential: doctor.qualifications,
+    ...(doctor.knowsAbout?.length ? { knowsAbout: doctor.knowsAbout } : {}),
+    ...(doctor.sameAs?.length ? { sameAs: doctor.sameAs } : {}),
+    ...(doctor.registrationNumber
+      ? {
+          identifier: {
+            "@type": "PropertyValue",
+            name: "Tamil Nadu Medical Council Registration Number",
+            value: doctor.registrationNumber,
+          },
+        }
+      : {}),
   };
+
+  return [
+    physicianNode,
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Doctors", path: "/doctors" },
+      { name: doctor.name, path: `/doctors/${doctor.id}` },
+    ]),
+  ];
 }
 
 export function breadcrumbSchema(

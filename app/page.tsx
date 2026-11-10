@@ -316,6 +316,21 @@ export default function Page() {
             <p className="text-muted-foreground text-lg mt-4">
               Comprehensive women's healthcare, maternity services, and clinical treatments in Namakkal.
             </p>
+            <p className="text-muted-foreground mt-4 leading-relaxed">
+              Care is supported by{" "}
+              <Link href="/doctors/arul-ramasamy" className="font-semibold text-primary hover:text-[hsl(var(--nila-warm))] hover:underline">
+                Dr. Arul Ramasamy (Senior Anaesthesiologist)
+              </Link>
+              .{" "}
+              <Link href="/doctors" className="font-semibold text-primary hover:text-[hsl(var(--nila-warm))] hover:underline">
+                Meet our full medical team
+              </Link>{" "}
+              and explore our{" "}
+              <Link href="/womens-hospital-namakkal" className="font-semibold text-primary hover:text-[hsl(var(--nila-warm))] hover:underline">
+                women's hospital in Namakkal
+              </Link>
+              .
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

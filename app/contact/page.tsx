@@ -94,7 +94,7 @@ export default function Page() {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <MapPin className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
-                  <h3 className="font-bold text-foreground text-lg">Address</h3>
+                  <h2 className="font-bold text-foreground text-lg">Address</h2>
                 </div>
                 <Card className="border border-border shadow-sm rounded-xl md:max-w-[36rem]">
                   <CardContent className="p-4 text-muted-foreground text-sm">
@@ -111,9 +111,9 @@ export default function Page() {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Phone className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
-                  <h3 className="font-bold text-foreground text-lg">
+                  <h2 className="font-bold text-foreground text-lg">
                     Phone Numbers
-                  </h3>
+                  </h2>
                 </div>
                 <Card className="border border-border shadow-sm rounded-xl">
                   <CardContent className="p-4 space-y-2">
@@ -132,9 +132,9 @@ export default function Page() {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <Clock className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
-                  <h3 className="font-bold text-foreground text-lg">
+                  <h2 className="font-bold text-foreground text-lg">
                     Visiting Hours
-                  </h3>
+                  </h2>
                 </div>
                 <Card className="border border-border shadow-sm rounded-xl">
                   <CardContent className="p-4 space-y-3">
@@ -150,10 +150,10 @@ export default function Page() {
             </div>
 
             <div>
-              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2 text-lg">
+              <h2 className="font-bold text-foreground mb-4 flex items-center gap-2 text-lg">
                 <MapPin className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
                 Find Us on the Map
-              </h3>
+              </h2>
               <div className="rounded-2xl overflow-hidden shadow-lg border border-border h-80">
                 <iframe
                   title="Nila Hospital Location"

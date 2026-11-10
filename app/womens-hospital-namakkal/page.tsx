@@ -111,7 +111,7 @@ export default function Page() {
                       <item.icon className="h-5 w-5 text-[hsl(var(--nila-warm))]" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-nila-navy">{item.title}</h4>
+                      <h3 className="font-bold text-nila-navy">{item.title}</h3>
                       <p className="text-sm text-muted-foreground mb-2">{item.desc}</p>
                       <Link href={item.href} className="text-primary text-xs font-semibold inline-flex items-center gap-1 hover:text-[hsl(var(--nila-warm))]">
                         Learn more <ArrowRight className="h-3.5 w-3.5" />

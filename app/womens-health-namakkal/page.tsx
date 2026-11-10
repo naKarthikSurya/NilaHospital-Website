@@ -108,7 +108,7 @@ export default function Page() {
             ].map((item, idx) => (
               <div key={idx} className="bg-card p-6 rounded-2xl border border-border shadow-sm text-center">
                 <item.icon className="h-8 w-8 text-[hsl(var(--nila-warm))] mb-4 mx-auto" />
-                <h4 className="font-bold text-nila-navy text-lg mb-2">{item.title}</h4>
+                <h3 className="font-bold text-nila-navy text-lg mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
               </div>
             ))}
