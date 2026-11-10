@@ -23,18 +23,16 @@ import {
   Clock,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { womensHospitalPageSchemas } from "@/lib/seo";
+import { womensHospitalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
-  title: "Women's Specialty Hospital in Namakkal | Nila Hospital",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Women's Specialty Hospital in Namakkal",
   description: "Nila Hospital is one of the most trusted women's specialty hospitals in Namakkal, offering consultant-led maternity care, gynaecology, and hormonal wellness.",
-  alternates: {
-    canonical: "/womens-hospital-namakkal",
-  },
-};
+  path: "/womens-hospital-namakkal",
+});
 
 const womensFaqs = [
   {

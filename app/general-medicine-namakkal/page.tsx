@@ -25,18 +25,16 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { generalMedicineNamakkalPageSchemas } from "@/lib/seo";
+import { generalMedicineNamakkalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
-  title: "General Medicine & Outpatient Clinic in Namakkal | Nila Hospital",
+export const metadata: Metadata = buildPageMetadata({
+  title: "General Medicine & Outpatient Clinic in Namakkal",
   description: "Consult Nila Hospital's outpatient clinic in Namakkal for primary healthcare, seasonal infections, fever care, diabetes and blood pressure monitoring for families.",
-  alternates: {
-    canonical: "/general-medicine-namakkal",
-  },
-};
+  path: "/general-medicine-namakkal",
+});
 
 const medicineFaqs = [
   {

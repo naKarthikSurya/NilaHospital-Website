@@ -25,18 +25,16 @@ import {
   CalendarHeart,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { womensHealthNamakkalPageSchemas } from "@/lib/seo";
+import { womensHealthNamakkalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
-  title: "Women's Preventive Healthcare in Namakkal | Nila Hospital",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Women's Preventive Healthcare in Namakkal",
   description: "Comprehensive women's health in Namakkal — preventive screenings, Pap smears, cervical cancer prevention, menopause care, and adolescent support with Dr. Nithya Subashini.",
-  alternates: {
-    canonical: "/womens-health-namakkal",
-  },
-};
+  path: "/womens-health-namakkal",
+});
 
 const womensHealthFaqs = [
   {

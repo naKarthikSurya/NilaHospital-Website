@@ -4,18 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Clock, Bed, Activity, Users, Shield, Lock, Heart, CheckCircle, Microscope, Building } from "lucide-react";
 import Gallery from "@/components/Gallery";
-import { aboutPageSchema } from "@/lib/seo";
+import { aboutPageSchema, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import { doctorsList } from "@/data/doctors";
 import ClientCTA from "@/components/ClientCTA";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About Nila Hospital Namakkal",
   description: "The story of Nila Hospital — committed to providing sterile, safe, and women-focused maternity healthcare in Namakkal. Dedicated to clinical excellence and personal attention since inception.",
-  alternates: {
-    canonical: "/about",
-  },
-};
+  path: "/about",
+});
 
 const highlights = [
   { icon: Bed, label: "15+ Beds", desc: "Well-equipped inpatient care" },

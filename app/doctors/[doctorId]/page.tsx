@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, MapPin, Phone, Mail, Award, Clock, CalendarHeart, HeartPulse, GraduationCap, Link as LinkIcon, User, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
-import { physicianSchemaForDoctor } from '@/lib/seo';
+import { physicianSchemaForDoctor, buildPageMetadata } from '@/lib/seo';
 import { hospital } from '@/data/hospital';
 import DoctorProfileTracker from '@/components/DoctorProfileTracker';
 import DoctorContactButton from '@/components/DoctorContactButton';
@@ -30,13 +30,12 @@ export async function generateMetadata(
 
   const specialty = doctor.category === 'gynaecologist' ? 'Gynaecologist' : 'Anaesthesiologist';
 
-  return {
+  return buildPageMetadata({
     title: `${doctor.name}, ${specialty} in Namakkal`,
     description: doctor.description,
-    alternates: {
-      canonical: `/doctors/${doctor.id}`,
-    },
-  };
+    path: `/doctors/${doctor.id}`,
+    ...(doctor.image ? { image: doctor.image } : {}),
+  });
 }
 
 export async function generateStaticParams() {

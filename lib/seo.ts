@@ -1,7 +1,60 @@
+import type { Metadata } from "next";
 import { hospital } from "@/data/hospital";
 import type { Doctor } from "@/data/doctors";
 
 export const SITE_URL = "https://nilahospital.com";
+export const DEFAULT_OG_IMAGE = "/images/gallery/521A6952.JPG";
+
+export function buildPageMetadata({
+  title,
+  description,
+  path,
+  ogTitle,
+  image = DEFAULT_OG_IMAGE,
+}: {
+  title?: string;
+  description: string;
+  path: string;
+  ogTitle?: string;
+  image?: string;
+}): Metadata {
+  const fullOgTitle =
+    ogTitle ??
+    (title
+      ? `${title} | Nila Hospital`
+      : "Nila Hospital Namakkal | Maternity & Women’s Care");
+  const canonicalUrl = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
+
+  return {
+    ...(title ? { title } : {}),
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      title: fullOgTitle,
+      description,
+      url: canonicalUrl,
+      siteName: "Nila Hospital",
+      locale: "en_IN",
+      type: "website",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: fullOgTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullOgTitle,
+      description,
+      images: [image],
+    },
+  };
+}
 export const HOSPITAL_NAME = hospital.fullName;
 export const HOSPITAL_ID = `${SITE_URL}/#hospital`;
 export const MAIN_PHONE = hospital.phoneHref.replace("tel:", "");

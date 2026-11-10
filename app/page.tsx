@@ -20,16 +20,14 @@ import {
   HeartPulse,
   Baby,
 } from "lucide-react";
-import { homePageSchemas } from "@/lib/seo";
+import { homePageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   description: "Nila Hospital is Namakkal's leading center for obstetrics, gynaecology, and general medicine. Expert surgical capabilities and dedicated patient care.",
-  alternates: {
-    canonical: "/",
-  },
-};
+  path: "/",
+});
 
 const quickInfoCards = [
   {

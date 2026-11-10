@@ -3,17 +3,15 @@ import HeroGradientSection from "@/components/HeroGradientSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, MapPin, Baby, Heart, Activity, Stethoscope, Shield, CheckCircle, Clock, Users } from "lucide-react";
-import { servicesPageSchemas } from "@/lib/seo";
+import { servicesPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Obstetrics & Gynaecology Services in Namakkal",
   description: "Comprehensive women's healthcare in Namakkal — ANC, normal delivery, Pap smear, gynaecology & more. Consult Dr. Nithya Subashini today.",
-  alternates: {
-    canonical: "/services",
-  },
-};
+  path: "/services",
+});
 
 const serviceCategories = [
   {

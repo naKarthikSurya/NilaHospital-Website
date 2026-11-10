@@ -27,18 +27,16 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { maternityHospitalNamakkalPageSchemas } from "@/lib/seo";
+import { maternityHospitalNamakkalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Maternity Hospital in Namakkal | Normal Delivery & Care",
   description: "Nila Hospital is one of the most trusted maternity hospitals in Namakkal. Led by Dr. Nithya Subashini, MBBS, DGO, offering normal delivery focus, private labor suites, and 24/7 care.",
-  alternates: {
-    canonical: "/maternity-hospital-namakkal",
-  },
-};
+  path: "/maternity-hospital-namakkal",
+});
 
 const maternityFaqs = [
   {

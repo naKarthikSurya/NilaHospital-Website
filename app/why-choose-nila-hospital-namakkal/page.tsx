@@ -26,18 +26,16 @@ import {
   FileCheck,
 } from "lucide-react";
 import ReviewPrompt from "@/components/ReviewPrompt";
-import { whyChooseNilaHospitalPageSchemas } from "@/lib/seo";
+import { whyChooseNilaHospitalPageSchemas, buildPageMetadata } from "@/lib/seo";
 import { hospital } from "@/data/hospital";
 import ClientCTA from "@/components/ClientCTA";
 import MedicalDisclaimer from "@/components/MedicalDisclaimer";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Why Choose Nila Hospital Namakkal | Trusted Care",
   description: "Discover why families consider Nila Hospital one of the best and most trusted hospitals in Namakkal for obstetrics, gynaecology, and consultant-led patient care.",
-  alternates: {
-    canonical: "/why-choose-nila-hospital-namakkal",
-  },
-};
+  path: "/why-choose-nila-hospital-namakkal",
+});
 
 const trustFaqs = [
   {
