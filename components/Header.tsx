@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-nila-navy/95 backdrop-blur-md shadow-lg">
-      <div className="container max-w-6xl mx-auto px-4 py-1 md:py-0 flex items-center justify-between">
+      <div className="container max-w-6xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-0 group">
           <img
