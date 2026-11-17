@@ -96,7 +96,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${dmSans.variable} ${playfair.variable}`}>
-        <div className="min-h-screen flex flex-col pt-20 md:pt-24 selection:bg-[hsl(var(--nila-warm))]/20 selection:text-nila-navy antialiased">
+        <div className="min-h-screen flex flex-col pt-16 md:pt-20 selection:bg-[hsl(var(--nila-warm))]/20 selection:text-nila-navy antialiased">
           <Header />
           <main className="flex-grow flex flex-col relative w-full overflow-hidden">
             {children}
