@@ -43,3 +43,39 @@ export function trackEvent(event: AnalyticsEvent, params?: EventParams) {
     }
   }
 }
+
+export function triggerConversionContactEvent(
+  e: { preventDefault: () => void } | undefined,
+  url?: string,
+  target?: string
+) {
+  if (typeof window === "undefined") return;
+
+  const shouldDelayNavigation = Boolean(url && target !== "_blank");
+  if (shouldDelayNavigation && e) {
+    e.preventDefault();
+  }
+
+  const w = window as any;
+  if (typeof w.gtagSendEvent === "function") {
+    w.gtagSendEvent(shouldDelayNavigation ? url : undefined);
+    return;
+  }
+
+  if (typeof w.gtag === "function") {
+    const callback = () => {
+      if (shouldDelayNavigation && typeof url === "string") {
+        window.location.href = url;
+      }
+    };
+    w.gtag("event", "conversion_event_contact_2", {
+      event_callback: callback,
+      event_timeout: 2000,
+    });
+    return;
+  }
+
+  if (shouldDelayNavigation && typeof url === "string") {
+    window.location.href = url;
+  }
+}
