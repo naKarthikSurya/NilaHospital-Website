@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Phone, MapPin, Clock, Facebook, Instagram, ShieldCheck } from "lucide-react";
 import { hospital } from "@/data/hospital";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, triggerConversionContactEvent } from "@/lib/analytics";
 
 const specialtyLinks = [
   { label: "Maternity Hospital Namakkal", path: "/maternity-hospital-namakkal" },
@@ -97,7 +97,10 @@ export default function Footer() {
                   href={hospital.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackEvent("directions_click", { cta_location: "footer_address", link_url: hospital.mapsUrl })}
+                  onClick={(e) => {
+                    trackEvent("directions_click", { cta_location: "footer_address", link_url: hospital.mapsUrl });
+                    triggerConversionContactEvent(e, hospital.mapsUrl, "_blank");
+                  }}
                   className="text-nila-light-blue hover:text-white text-sm leading-relaxed transition-colors"
                 >
                   {hospital.address.streetAddress},<br />{hospital.address.addressLocality},<br />{hospital.address.addressRegion} {hospital.address.postalCode}
@@ -108,7 +111,10 @@ export default function Footer() {
                 <div className="flex flex-col">
                   <a 
                     href={hospital.phoneHref}
-                    onClick={() => trackEvent("phone_click", { cta_location: "footer_contact", link_url: hospital.phoneHref })}
+                    onClick={(e) => {
+                      trackEvent("phone_click", { cta_location: "footer_contact", link_url: hospital.phoneHref });
+                      triggerConversionContactEvent(e, hospital.phoneHref);
+                    }}
                     className="text-nila-light-blue hover:text-white text-sm transition-colors font-medium"
                   >
                     {hospital.phoneDisplay}

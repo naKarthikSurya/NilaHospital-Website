@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { hospital } from "@/data/hospital";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, triggerConversionContactEvent } from "@/lib/analytics";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -134,7 +134,10 @@ export default function Header() {
           <div className="flex items-center">
             <a 
               href={hospital.phoneHref}
-              onClick={() => trackEvent("phone_click", { cta_location: "header_desktop", link_url: hospital.phoneHref })}
+              onClick={(e) => {
+                trackEvent("phone_click", { cta_location: "header_desktop", link_url: hospital.phoneHref });
+                triggerConversionContactEvent(e, hospital.phoneHref);
+              }}
             >
               <Button className="bg-[hsl(var(--nila-warm))] hover:bg-[hsl(var(--nila-warm))]/90 text-white gap-2 font-semibold shadow-md">
                 <Phone className="h-4 w-4" />
@@ -222,9 +225,10 @@ export default function Header() {
                 <a
                   href={hospital.phoneHref}
                   className="mt-4 flex items-center justify-center gap-2 bg-[hsl(var(--nila-warm))] text-white rounded-lg py-3 font-semibold shadow-md"
-                  onClick={() => {
+                  onClick={(e) => {
                     setOpen(false);
                     trackEvent("phone_click", { cta_location: "header_mobile", link_url: hospital.phoneHref });
+                    triggerConversionContactEvent(e, hospital.phoneHref);
                   }}
                 >
                   <Phone className="h-4 w-4" />
